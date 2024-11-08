@@ -6,14 +6,19 @@
 
 .main-nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: var(--base-gutter);
   padding-block: var(--space-2xs);
 }
 
-.main-nav {
+@media screen and (min-width: 1600px) {
+  .main-nav__left *,
+  .main-nav__right * {
+    display: none;
+  }
   
 }
+
 
 .main-nav a {
   color: var(--text-color);

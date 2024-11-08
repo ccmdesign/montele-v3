@@ -1,11 +1,51 @@
 .app-layout {
   display: grid;
-  grid-template-columns: minmax(200px, 300px) 1fr minmax(200px, 400px);
-  grid-template-rows: auto 1fr;
   height: 100dvh;
-  grid-template-areas:
+  grid-template-columns: minmax(200px, 300px) 1fr minmax(200px, 400px);
+
+  .app-layout__logo { grid-area: logo; }
+  .app-layout__nav { grid-area: nav; }
+  .app-layout__sidebar-left { grid-area: left; }
+  .app-layout__main { grid-area: main; }
+  .app-layout__sidebar-right { grid-area: right; }
+}
+
+@media screen and (max-width: 960px) {
+  .app-layout {
+    grid-template-areas:
+      "nav nav nav"
+      "main main main";
+  }
+  
+  /* Hides Left Sidebar */
+  .app-layout__logo,
+  .app-layout__sidebar-left,
+  /* Hides Right Sidebar */
+  .app-layout__sidebar-right { display: none; }
+
+}
+
+@media screen and (min-width: 961px) and (max-width: 1599px) {
+  /*  */
+  .app-layout {
+    grid-template-columns: minmax(200px, 300px) 1fr minmax(200px, 400px);
+    grid-template-areas:
+    "logo nav nav"
+    "left main main";
+  }
+  
+  /* Hides Right Sidebar */
+  .app-layout__sidebar-right { display: none; }
+}
+
+@media screen and (min-width: 1600px) {
+  .app-layout {
+    grid-template-columns: minmax(200px, 300px) 1fr minmax(200px, 400px);
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
     "logo nav right"
     "left main right";
+  }
 }
 
 /* 
@@ -18,12 +58,6 @@ A doca fica fixa sempre
 
 */
 
-
-.app-layout__logo { grid-area: logo; }
-.app-layout__nav { grid-area: nav; }
-.app-layout__sidebar-left { grid-area: left; }
-.app-layout__main { grid-area: main; }
-.app-layout__sidebar-right { grid-area: right; }
 
 .app-layout__nav {
   
