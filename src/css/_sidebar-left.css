@@ -1,20 +1,21 @@
 .sidebar-left {
   padding-block: var(--space-l);
   padding-inline: var(--base-padding-inline);
-  background-color: var(--base-color);
+
+  height: 100%;
   
   h4 { font-size: var(--size-0); }
 }
 
 .sidebar-left {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   height: 100%;
   gap: var(--space-xs);
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr auto;
 }
 
 .user-info {
+  margin-top: auto;
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto auto auto;

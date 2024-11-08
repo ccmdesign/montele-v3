@@ -32,9 +32,6 @@
 @import "_feed-message.css";
 
 @import "_sidebar-left.css";
-
-@import "_sidebar.css";
-@import "_sidebar-form.css";
-@import "_sidebar-header.css";
+@import "_sidebar-right.css";
 
 @import "_dev.css";

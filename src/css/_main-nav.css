@@ -11,15 +11,18 @@
   padding-block: var(--space-2xs);
 }
 
+/* 
+This hides and shows the sidebar triggers based on the browser size 
+We might need to update this logic, to allow for different routes 
+hide the sidebars, forcing the riggers to show.
+*/
+
 @media screen and (min-width: 1600px) {
-  .main-nav__left *,
-  .main-nav__right * {
-    display: none;
-  }
-  
+  .main-nav__right * { display: none; }
 }
 
-
-.main-nav a {
-  color: var(--text-color);
+@media screen and (min-width: 960px) {
+  .main-nav__left * { display: none; }
 }
+
+.main-nav a { color: var(--text-color); }

@@ -28,3 +28,20 @@
       button.addEventListener('click', closeDialog);
     });
   });
+
+
+  // Function to toggle aria attribute for visibility
+  function toggleAriaVisibility(event) {
+    const targetId = event.target.getAttribute('trigger-target');
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      const isVisible = targetElement.getAttribute('aria-hidden') === 'true';
+      targetElement.setAttribute('aria-hidden', isVisible ? 'false' : 'true');
+    }
+  }
+
+  // Add event listeners to elements with the trigger-target attribute
+  const triggerElements = document.querySelectorAll('[trigger-target]');
+  triggerElements.forEach(element => {
+    element.addEventListener('click', toggleAriaVisibility);
+  });
