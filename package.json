@@ -1,0 +1,23 @@
+{
+  "name": "montele-keen",
+  "version": "1.0.0",
+  "main": "eleventy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx eleventy --serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11tyrocks/eleventy-plugin-lightningcss": "^1.4.0",
+    "browserslist": "^4.24.2",
+    "lightningcss": "^1.28.1"
+  },
+  "devDependencies": {
+    "postcss": "^8.4.47",
+    "postcss-import": "^16.1.0"
+  }
+}
