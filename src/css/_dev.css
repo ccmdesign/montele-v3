@@ -1,0 +1,11 @@
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  h1 {
+    font-size: var(--size-2);
+    font-weight: 200;
+  }
+}

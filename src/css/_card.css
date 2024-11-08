@@ -1,0 +1,14 @@
+.card {
+  --_card-box-shadow: var(--box-shadow-m);
+  --_card-border-radius: var(--border-radius-m);
+
+  /* border-radius: var(--base-border-radius); */
+  /* box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); */
+  padding: var(--space-m-l) var(--base-padding-inline);
+  --_stack-space: var(--space-s);
+  border-bottom: 1px solid #ddd;
+  box-shadow: var(--_card-box-shadow);
+  border-radius: var(--_card-border-radius);
+  background-color: white;
+}
+

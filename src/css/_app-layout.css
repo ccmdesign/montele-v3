@@ -1,0 +1,45 @@
+.app-layout {
+  display: grid;
+  grid-template-columns: minmax(200px, 300px) 1fr minmax(200px, 400px);
+  grid-template-rows: auto 1fr;
+  height: 100dvh;
+  grid-template-areas:
+    "logo nav right"
+    "left main right";
+}
+
+/* 
+Lista e Feed
+- A docka fica fixa em telas muito largas
+- A docka abre e fecha em telas medias
+
+Detalhe
+A doca fica fixa sempre
+
+*/
+
+
+.app-layout__logo { grid-area: logo; }
+.app-layout__nav { grid-area: nav; }
+.app-layout__sidebar-left { grid-area: left; }
+.app-layout__main { grid-area: main; }
+.app-layout__sidebar-right { grid-area: right; }
+
+.app-layout__nav {
+  
+}
+
+.app-layout__sidebar-left { 
+  overflow-y: auto;
+}
+
+ .app-layout__main {
+  
+  overflow-y: auto;
+  
+}
+.app-layout__sidebar-right {
+  overflow-y: auto;
+  box-shadow: var(--box-shadow-m);
+}
+

@@ -1,0 +1,20 @@
+.main-nav {
+  background-color: var(--white-color);
+  border-bottom: var(--base-separator);
+  /* box-shadow: var(--base-box-shadow); */
+}
+
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: var(--base-gutter);
+  padding-block: var(--space-2xs);
+}
+
+.main-nav {
+  
+}
+
+.main-nav a {
+  color: var(--text-color);
+}

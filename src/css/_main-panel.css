@@ -1,0 +1,11 @@
+.main-panel {
+  --_stack-space: var(--space-xs);
+  padding-inline: var(--space-s-m);
+  background-color: var(--base-color-02-tint);
+  padding-block: var(--space-s);
+  height: 100%;
+}
+
+.main-panel__controls {
+  --_stack-space: var(--space-xs);
+}

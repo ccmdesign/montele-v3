@@ -1,0 +1,75 @@
+/* Adicionar um container-query aqui 
+pra não empurrar o icone pra direita 
+quando a largura do container for muito larga */
+
+.collapse {
+  h4 { 
+    margin: 0;
+    font-weight: 400;
+  }
+
+  h4, a {
+    color: currentColor;
+  }
+
+  summary {
+    cursor: pointer;
+    position: relative;
+  }
+
+  summary::marker {
+    content: " ";
+  }
+
+  summary::after {
+    font-family: "Material Symbols Outlined";    
+    content: "chevron_left";
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.collapse[open] summary::after {
+    content: "expand_more";
+  }
+
+.menu[data-mode="dark"] {
+  color: var(--base-color-10-tint);
+  padding-block: var(--base-padding-block);
+  border-bottom: var(--base-separator-dark);
+}
+
+.sidebar-left {
+  padding-bottom: var(--base-padding-block);
+}
+
+.menu {
+  padding-block: var(--base-padding-block);
+
+  ul {
+    padding-block: var(--space-xs);
+    padding-left: 0;
+  }
+
+  li {
+    padding-block: 0;
+    list-style: none;
+  }
+
+  a { 
+    color: var(--base-color-40-tint);  
+    text-decoration: none;
+    transition: all 0.4s ease;
+  }
+  a:hover { 
+    color: var(--accent-color);  
+    margin-left: var(--space-3xs);
+  }
+
+}
+
+
+
+
+
