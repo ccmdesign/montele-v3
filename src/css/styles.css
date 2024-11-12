@@ -4,22 +4,17 @@
 @import "_vars.css";
 @import "_colors.css";
 
-
 @import "_utils.css";
 
 @import "_typography.css";
 
-
-
 /* Copied from Pure.css */
-@import "_forms.css";
+/* @import "_forms.css"; */
+@import "_forms-custom.css";
 @import "_table.css";
 
 @import "_button.css";
 /* @import "_pure-button.css"; */
-
-
-
 
 @import "_app-layout.css";
 @import "_modal-window.css";

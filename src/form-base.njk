@@ -1,0 +1,132 @@
+---
+layout: "_layouts/app.njk"
+doca_hidden: "false"
+---
+
+<form class="form main-panel">
+  <div class="form-tab | stack">
+    <fieldset class="form-panel | stack">
+      <header class="form-panel__header">
+        <h2 class="form-panel__title">Text Based Inputs</h2>
+      </header>
+
+      <section class="form-panel__main | columns">
+        <div class="form__field">
+          <label for="id1">Text</label>
+          <input type="text" id="id1" name="" value="RESIDENCIA HERCULES JUNIOR" required>
+        </div>
+        
+        <div class="form__field">
+          <label for="id2">Text Invalid</label>
+          <input type="text" id="id2" name="" value="RESIDENCIA HERCULES JUNIOR">
+        </div>
+        
+        <div class="form__field">
+          <label for="id3">Text Disabled</label>
+          <input type="text" id="id3" name="" value="RESIDENCIA HERCULES JUNIOR" disabled>
+        </div>
+        
+        <div class="form__field">
+          <label for="id3">Text Read-only</label>
+          <input type="text" id="id3" name="" value="RESIDENCIA HERCULES JUNIOR" readonly>
+        </div>
+
+        <div class="form__field">
+          <label for="id4">Senha</label>
+          <input type="password" id="id4" name="" value="" placeholder="Senha">
+        </div>
+        <div class="form__field">
+          <label for="id5">Email</label>
+          <input type="email" id="id5" name="" value="" placeholder="nome@montele.ind.br">
+        </div>
+        <div class="form__field">
+          <label for="id6">URL</label>
+          <input type="url" id="id6" name="" value="" placeholder="montele.ind.br">
+        </div>
+
+        <div class="form__field">
+          <label for="id14">Busca</label>
+          <div class="group">
+            <input type="search" id="id14" name="" value="" placeholder="Busca">
+            <input class="button" type="submit">
+          </div>
+          
+        </div>
+      </section>
+      
+      <footer class="form-panel__footer | cluster">
+        <button class="button" type="submit">Salvar</button>
+        <button class="button" type="submit" disabled>Botão Desabilitado</button>
+      </footer>
+    </fieldset>
+    <fieldset class="form-panel | stack">
+      <header class="form-panel__header">
+        <h2 class="form-panel__title">Date Based Inputs</h2>
+      </header>
+
+      <section class="form-panel__main | columns">
+        <div class="form__field">
+          <label for="id7">Data</label>
+          <input type="date" id="id7" name="" value="">
+        </div>
+        <div class="form__field">
+          <label for="id8">Mês</label>
+          <input type="month" id="id8" name="" value="">
+        </div>
+        <div class="form__field">
+          <label for="id9">Hora</label>
+          <input type="time" id="id9" name="" value="">
+        </div>
+        <div class="form__field">
+          <label for="id10">Data e Hora</label>
+          <input type="datetime" id="id10" name="" value="">
+        </div>
+        <div class="form__field">
+          <label for="id11">Data e Hora Local</label>
+          <input type="datetime-local" id="id11" name="" value="">
+        </div>
+        <div class="form__field">
+          <label for="id12">Semana</label>
+          <input type="week" id="id12" name="" value="">
+        </div>
+      </section>
+      
+      <footer class="form-panel__footer | cluster">
+        <button class="button" type="submit">Salvar</button>
+        <button class="button" type="submit" disabled>Botão Desabilitado</button>
+      </footer>
+    </fieldset>
+    <fieldset class="form-panel | stack">
+      <header class="form-panel__header">
+        <h2 class="form-panel__title">Extra Form Fields</h2>
+      </header>
+
+      <section class="form-panel__main | columns">
+        <div class="form__field">
+          <label for="id13">Número</label>
+          <input type="number" id="id13" name="" value="" placeholder="999">
+        </div>
+        <div class="form__field">
+          <label for="id15">Telefone</label>
+          <input type="tel" id="id15" name="" value="" placeholder="999">
+        </div>
+        <div class="form__field">
+          <label for="id17">Seleção</label>
+          <select id="id17" name="">
+            <option value="option1">Opção 1</option>
+            <option value="option2">Opção 2</option>
+          </select>
+        </div>
+        <div class="form__field">
+          <label for="id18">Área de Texto</label>
+          <textarea id="id18" name=""></textarea>
+        </div>
+      </section>
+      
+      <footer class="form-panel__footer | cluster">
+        <button class="button" type="submit">Salvar</button>
+        <button class="button" type="submit" disabled>Botão Desabilitado</button>
+      </footer>
+    </fieldset>
+  </div>
+</form>  

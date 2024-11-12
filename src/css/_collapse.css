@@ -3,12 +3,15 @@ pra não empurrar o icone pra direita
 quando a largura do container for muito larga */
 
 .collapse {
-  h4 { 
+  overflow: hidden;
+
+  h4 {
     margin: 0;
     font-weight: 400;
   }
 
-  h4, a {
+  h4,
+  a {
     color: currentColor;
   }
 
@@ -22,7 +25,7 @@ quando a largura do container for muito larga */
   }
 
   summary::after {
-    font-family: "Material Symbols Outlined";    
+    font-family: "Material Symbols Outlined";
     content: "chevron_left";
     position: absolute;
     right: 0;
@@ -30,9 +33,19 @@ quando a largura do container for muito larga */
   }
 }
 
+.collapse::details-content {
+  block-size: 0;
+  transition-behavior: allow-discrete; /* bleeding edge stuff */
+  transition: block-size 0.4s ease, content-visibility 0.4s ease; /* bleeding edge stuff */
+}
+
+.collapse[open]::details-content {
+  block-size: auto; /* bleeding edge stuff */
+}
+
 .collapse[open] summary::after {
-    content: "expand_more";
-  }
+  content: "expand_more";
+}
 
 .menu[data-mode="dark"] {
   color: var(--base-color-10-tint);
@@ -57,19 +70,13 @@ quando a largura do container for muito larga */
     list-style: none;
   }
 
-  a { 
-    color: var(--base-color-40-tint);  
+  a {
+    color: var(--base-color-40-tint);
     text-decoration: none;
     transition: all 0.4s ease;
   }
-  a:hover { 
-    color: var(--accent-color);  
+  a:hover {
+    color: var(--accent-color);
     margin-left: var(--space-3xs);
   }
-
 }
-
-
-
-
-

@@ -1,10 +1,14 @@
+/* TODO: Need to find a way to vertically center align the submenu with the gem  */
+
 .sidebar-left {
   padding-block: var(--space-l);
   padding-inline: var(--base-padding-inline);
+  height: fill-available;
+  justify-content: center;
 
-  height: 100%;
-  
-  h4 { font-size: var(--size-0); }
+  h4 {
+    font-size: var(--size-0);
+  }
 }
 
 .sidebar-left {
@@ -19,9 +23,10 @@
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto auto auto;
-  grid-template-areas: "image name"
-                       "image inbox"
-                       "tools tools";
+  grid-template-areas:
+    "image name"
+    "image inbox"
+    "tools tools";
 
   gap: var(--space-xs);
   padding-block: var(--base-padding-block);
@@ -32,10 +37,18 @@
   border-radius: 50%;
 }
 
-.user-info__image { grid-area: image; }
-.user-info__name { grid-area: name; } 
-.user-info__inbox { grid-area: inbox; } 
-.user-info__tools { grid-area: tools; } 
+.user-info__image {
+  grid-area: image;
+}
+.user-info__name {
+  grid-area: name;
+}
+.user-info__inbox {
+  grid-area: inbox;
+}
+.user-info__tools {
+  grid-area: tools;
+}
 
 .user-info__tools {
   display: flex;
@@ -48,12 +61,12 @@
 .user-info[data-mode="dark"] {
   color: var(--base-color-10-tint);
 
-  a { 
-    color: var(--base-color-40-tint);  
+  a {
+    color: var(--base-color-40-tint);
     text-decoration: none;
     transition: all 0.4s ease;
   }
-  a:hover { 
+  a:hover {
     color: var(--accent-color);
     transform: scale(1.1);
   }
@@ -73,14 +86,7 @@
   display: inline-block;
   width: 3ch;
   text-align: center;
-  
 }
-
-
-
-
-
-
 
 .system-version[data-mode="dark"] {
   color: var(--base-color-60-tint);

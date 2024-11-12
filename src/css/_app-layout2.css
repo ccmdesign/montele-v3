@@ -1,0 +1,136 @@
+.app-layout {
+  display: grid;
+  height: 100dvh;
+  grid-template-columns: 1fr;
+  position: relative;
+
+  .app-layout__nav {
+    grid-area: nav;
+  }
+  .app-layout__sidebar-left {
+    grid-area: left;
+  }
+  .app-layout__main {
+    grid-area: main;
+  }
+  .app-layout__sidebar-right {
+    grid-area: right;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .app-layout {
+    grid-template-areas:
+      "nav nav nav"
+      "main main main"
+      "gems gems gems";
+  }
+
+  /* Hides Left Sidebar */
+  .app-layout__logo {
+    display: none;
+  }
+
+  .app-layout__sidebar-left,
+  /* Hides Right Sidebar */
+  .app-layout__sidebar-right {
+    height: 100%;
+    position: absolute;
+    max-width: 300px;
+    transition: all 0.3s ease;
+    /* height: 100%; */
+  }
+
+  .app-layout__sidebar-right {
+    right: 0;
+    transform: translateX(300px);
+  }
+
+  #sidebar-right[aria-hidden="false"] {
+    transform: translateX(0);
+  }
+
+  .app-layout__sidebar-left {
+    left: 0;
+    transform: translateX(0);
+  }
+
+  #sidebar-left[aria-hidden="false"] {
+    transform: translateX(-300px);
+  }
+}
+
+@media screen and (min-width: 961px) and (max-width: 1599px) {
+  /*  */
+  .app-layout {
+    grid-template-columns: auto minmax(200px, 300px) 1fr minmax(200px, 400px);
+    grid-template-areas:
+      "gems left nav nav"
+      "gems left main main";
+  }
+
+  [trigger-target="sidebar-left"] {
+    display: none;
+  }
+
+  /* Hides Right Sidebar */
+  .app-layout__sidebar-right {
+    height: 100%;
+    position: absolute;
+    max-width: 300px;
+    transition: all 0.3s ease;
+    /* height: 100%; */
+  }
+
+  .app-layout__sidebar-right {
+    right: 0;
+    transform: translateX(300px);
+  }
+
+  #sidebar-right[aria-hidden="false"] {
+    transform: translateX(0);
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .app-layout {
+    grid-template-columns: minmax(200px, 300px) 1fr minmax(200px, 400px);
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "left nav right"
+      "left main right";
+  }
+
+  [trigger-target="sidebar-left"],
+  [trigger-target="sidebar-right"] {
+    display: none;
+  }
+}
+
+/* 
+Lista e Feed
+- A docka fica fixa em telas muito largas
+- A docka abre e fecha em telas medias
+
+Detalhe
+A doca fica fixa sempre
+
+*/
+
+.app-layout__nav {
+}
+
+.app-layout__sidebar-left {
+  background-color: var(--primary-color);
+  overflow-y: auto;
+}
+
+.app-layout__main {
+  background-color: var(--base-color-02-tint);
+  overflow-y: auto;
+}
+.app-layout__sidebar-right {
+  background-color: var(--white-color);
+  overflow-y: auto;
+  box-shadow: var(--box-shadow-m);
+}

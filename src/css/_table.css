@@ -5,22 +5,24 @@
   border: 0;
   width: 100%;
 
-  th, td {
+  th,
+  td {
     text-align: left;
-    /* border-bottom: 1px solid var(--base-color-20-tint); */
+    border-bottom: 1px solid var(--base-color-20-tint);
     font-size: var(--size-0);
   }
 
-  td { 
-    padding-block: var(--space-3xs-2xs); 
-    padding-inline: var(--space-3xs-2xs); 
+  td {
+    padding-block: var(--space-3xs-2xs);
+    padding-inline: var(--space-3xs-2xs);
   }
 
   td:first-child,
-  td:last-child { padding-left: var(--space-xs-s); }
+  td:last-child {
+    padding-left: var(--space-xs-s);
+  }
 
   th {
-    
   }
 
   tr:nth-child(2n) {
@@ -31,10 +33,11 @@
     /* color: var(--primary-color); */
   }
 
-  a:empty ~ br, 
-  a:empty { display: none; }
+  a:empty ~ br,
+  a:empty {
+    display: none;
+  }
 }
-
 
 /* Esse é um PoC dos container queries */
 /* Estamos usando o .table-wrapper pq o comportamento da tabela é de manter a largura fixa,
@@ -54,20 +57,27 @@
 }
 
 @container (max-width: 900px) {
-  .table :nth-child(4) { display: none; }
+  .table :nth-child(4) {
+    display: none;
+  }
 }
 @container (max-width: 800px) {
-  .table :nth-child(5) { display: none; }
+  .table :nth-child(5) {
+    display: none;
+  }
 }
 @container (max-width: 700px) {
-  .table :nth-child(7) { display: none; }
+  .table :nth-child(7) {
+    display: none;
+  }
 }
 @container (max-width: 600px) {
-  .table :nth-child(8) { display: none; }
+  .table :nth-child(8) {
+    display: none;
+  }
 }
 @container (max-width: 500px) {
-  .table :nth-child(9) { display: none; }
+  .table :nth-child(9) {
+    display: none;
+  }
 }
-
-
-

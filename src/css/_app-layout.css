@@ -1,129 +1,84 @@
 .app-layout {
   display: grid;
   height: 100dvh;
-  grid-template-columns: minmax(200px, 300px) 1fr minmax(200px, 400px);
+  grid-template-columns: auto 0 1fr 0;
+  grid-template-rows: auto 1fr;
+  transition: all 0.3s ease;
+  grid-template-areas:
+    "gems cdm cdm right"
+    "gems main main right";
+}
+
+.app-layout:has(.app-layout__sidebar-left[aria-hidden="false"]) {
+  grid-template-columns: auto 300px 1fr 0;
+}
+
+.app-layout:has(.app-layout__sidebar-right[aria-hidden="false"]) {
+  grid-template-columns: auto 0 1fr 300px;
+}
+
+.app-layout:has(.app-layout__sidebar-right[aria-hidden="false"]):has(
+    .app-layout__sidebar-left[aria-hidden="false"]
+  ) {
+  grid-template-columns: auto 300px 1fr 300px;
+}
+
+.app-layout__sidebar-left {
+  grid-column: 2 / 3;
+  grid-row: 1 / 3;
+}
+
+.app-layout__sidebar-right {
+  grid-area: right;
+}
+
+.app-layout__gems {
+  grid-area: gems;
+}
+.app-layout__main {
+  grid-area: main;
+}
+.app-layout__cdm {
+  grid-area: cdm;
   position: relative;
-
-  .app-layout__logo { grid-area: logo; }
-  .app-layout__nav { grid-area: nav; }
-  .app-layout__sidebar-left { grid-area: left; }
-  .app-layout__main { grid-area: main; }
-  .app-layout__sidebar-right { grid-area: right; }
 }
 
-@media screen and (max-width: 960px) {
-  .app-layout {
-    grid-template-areas:
-      "nav nav nav"
-      "main main main";
-    }
-  
-  /* Hides Left Sidebar */
-  .app-layout__logo { display: none; }
-  
-  .app-layout__sidebar-left,
-  /* Hides Right Sidebar */
-  .app-layout__sidebar-right { 
-    height: 100%;
-    position: absolute;
-    max-width: 300px;
-    transition: all 0.3s ease;
-    /* height: 100%; */
-  }
-
-  .app-layout__sidebar-right { 
-    right: 0;
-    transform: translateX(300px);
-  }
-
-  #sidebar-right[aria-hidden="false"] { 
-    transform: translateX(0);
-  }
-
-  .app-layout__sidebar-left {
-    left: 0;
-    transform: translateX(0);
-  }
-  
-  #sidebar-left[aria-hidden="false"] { 
-    transform: translateX(-300px);
-  }
-
-}
-
-@media screen and (min-width: 961px) and (max-width: 1599px) {
-  /*  */
-  .app-layout {
-    grid-template-columns: minmax(200px, 300px) 1fr minmax(200px, 400px);
-    grid-template-areas:
-    "logo nav nav"
-    "left main main";
-  }
-  
-  [trigger-target="sidebar-left"] { display: none; }
-
-  /* Hides Right Sidebar */
-  .app-layout__sidebar-right { 
-    height: 100%;
-    position: absolute;
-    max-width: 300px;
-    transition: all 0.3s ease;
-    /* height: 100%; */
-  }
-
-  .app-layout__sidebar-right { 
-    right: 0;
-    transform: translateX(300px);
-  }
-
-  #sidebar-right[aria-hidden="false"] { 
-    transform: translateX(0);
-  }
-}
-
-@media screen and (min-width: 1600px) {
-  .app-layout {
-    grid-template-columns: minmax(200px, 300px) 1fr minmax(200px, 400px);
-    grid-template-rows: auto 1fr;
-    grid-template-areas:
-    "logo nav right"
-    "left main right";
-  }
-
-  [trigger-target="sidebar-left"],
-  [trigger-target="sidebar-right"] { display: none; }
-}
-
-
-
-/* 
-Lista e Feed
-- A docka fica fixa em telas muito largas
-- A docka abre e fecha em telas medias
-
-Detalhe
-A doca fica fixa sempre
-
-*/
-
-
-.app-layout__nav {
-  
-}
-
-.app-layout__sidebar-left { 
+.app-layout__gems {
   background-color: var(--base-color);
-  overflow-y: auto;
 }
 
- .app-layout__main {
+.app-layout__sidebar-left {
+  background-color: var(--primary-color);
+  max-height: 100dvh;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.app-layout__main {
   background-color: var(--base-color-02-tint);
   overflow-y: auto;
-  
 }
+
 .app-layout__sidebar-right {
   background-color: var(--white-color);
   overflow-y: auto;
   box-shadow: var(--box-shadow-m);
 }
 
+/* Interactions */
+.app-layout__sidebar-left,
+.app-layout__sidebar-right {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.app-layout__sidebar-right-trigger {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* TODO: Need to find a way to swicth this icon to "arrow_menu_open" when the sidebar-right is active */
+.app-layout__cdm .app-layout__sidebar-right-trigger .icon:before {
+  content: "arrow_menu_close";
+}

@@ -9,18 +9,25 @@
   max-height: 100dvh;
 }
 
-.sidebar__header { 
-  h1 { font-size: var(--size--1); }
-  h2 { font-size: var(--size-0); }
-  h3 { font-size: var(--size--1);}
-  h4 { font-size: var(--size--1);}
+.sidebar__header {
+  h1 {
+    font-size: var(--size--1);
+  }
+  h2 {
+    font-size: var(--size-0);
+  }
+  h3 {
+    font-size: var(--size--1);
+  }
+  h4 {
+    font-size: var(--size--1);
+  }
 
   * {
     --_stack-space: var(--space-2xs);
   }
 }
-.sidebar__form { 
-  
+.sidebar__form {
 }
 
 .sidebar__messages {
@@ -48,13 +55,14 @@
 
 .sidebar-header {
   --_stack-space: var(--space-2xs);
-  
+
   hgroup * {
-    
   }
 
-  h1, h2, h3, h4 {
-  
+  h1,
+  h2,
+  h3,
+  h4 {
   }
 
   h1 {
@@ -89,4 +97,14 @@
 .sidebar-form__textarea textarea {
   min-height: 200px;
   resize: vertical;
+}
+
+.sidebar-right__trigger {
+  position: absolute;
+  left: 0;
+  background: red;
+  z-index: 1000000;
+  outline: 2px solid red;
+  color: red;
+  top: 100px;
 }

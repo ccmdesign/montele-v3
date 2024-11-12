@@ -9,3 +9,42 @@
     font-weight: 200;
   }
 }
+
+.gems {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+
+  .icon {
+    color: hsla(var(--white-hsl), 0.6);
+    padding: var(--space-m);
+    font-size: var(--size-5);
+    line-height: 1;
+  }
+
+  .icon[open] {
+    background-color: var(--primary-color);
+    color: hsla(var(--white-hsl), 1);
+  }
+}
+
+.gems__item {
+  padding: var(--space-m);
+  overflow: hidden;
+  position: relative;
+}
+
+.gems__item[open] {
+  overflow: visible;
+}
+
+.gems__submenu {
+  position: absolute;
+  width: max-content;
+  height: 100dvh;
+  top: 0;
+  left: 100%;
+  background-color: red;
+}
