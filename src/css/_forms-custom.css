@@ -79,30 +79,39 @@
     transition: all 0.2s ease;
   }
 
+  .form textarea {
+    resize: vertical;
+  }
+
   .form input:user-invalid,
   .form input:invalid,
-  .form select:invalid {
+  .form select:invalid,
+  .form textarea:invalid {
     --_input-border-color: var(--red-color);
   }
 
   .form select:user-valid,
-  .form input:user-valid {
+  .form input:user-valid,
+  .form textarea:user-valid {
     --_input-border-color: var(--green-color);
   }
 
   .form select:focus,
-  .form input:focus {
+  .form input:focus,
+  .form textarea:focus {
     --_input-border-color: var(--base-color-60-tint);
   }
 
-  .form input:disabled {
+  .form input:disabled,
+  .form textarea:disabled {
     pointer-events: none;
     cursor: not-allowed;
     --_input-color: var(--base-color-40-tint);
     --_input-background-color: transparent;
   }
 
-  .form input[readonly] {
+  .form input[readonly],
+  .form textarea[readonly] {
     background-color: transparent;
 
     &:focus {
@@ -148,27 +157,8 @@
     color: var(--base-color-20-tint); /* Set text color for disabled state */
     cursor: not-allowed; /* Set cursor to not-allowed */
   }
-}
 
-/* Container Query for the Form width */
-.form {
-  container-type: inline-size;
-  container-name: form;
-}
-
-@container form (min-width: 800px) {
-  .columns {
-    columns: 2;
-    column-gap: var(--space-xl);
-
-    > * + * {
-      margin-block-start: var(--space-xs);
-    }
-  }
-}
-
-@container form (max-width: 500px) {
-  .form__field {
+  .form__field:has(textarea) {
     grid-template-columns: 1fr;
     gap: var(--space-xs);
 
@@ -176,9 +166,38 @@
       text-align: left;
       padding-inline: var(--_input-padding-inline);
     }
+  }
 
-    & + & {
-      margin-block-start: var(--space-m);
+  /* Container Query for the Form width */
+  .form {
+    container-type: inline-size;
+    container-name: form;
+  }
+
+  @container form (min-width: 800px) {
+    .columns {
+      columns: 2;
+      column-gap: var(--space-xl);
+
+      > * + * {
+        margin-block-start: var(--space-xs);
+      }
+    }
+  }
+
+  @container form (max-width: 500px) {
+    .form__field {
+      grid-template-columns: 1fr;
+      gap: var(--space-xs);
+
+      label {
+        text-align: left;
+        padding-inline: var(--_input-padding-inline);
+      }
+
+      & + & {
+        margin-block-start: var(--space-m);
+      }
     }
   }
 }

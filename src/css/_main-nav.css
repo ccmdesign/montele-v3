@@ -7,22 +7,24 @@
 .main-nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: var(--base-gutter);
   padding-block: var(--space-2xs);
 }
 
-/* 
-This hides and shows the sidebar triggers based on the browser size 
-We might need to update this logic, to allow for different routes 
-hide the sidebars, forcing the riggers to show.
-*/
-
-@media screen and (min-width: 1600px) {
-  .main-nav__right * { display: none; }
+.main-nav__left * {
+  display: none;
 }
 
+/* This hides the logo on the smaller screens */
 @media screen and (min-width: 960px) {
-  .main-nav__left * { display: none; }
+  .main-nav__left * {
+    display: block;
+    padding-inline: var(--space-m-l);
+    padding-block: 0;
+  }
 }
 
-.main-nav a { color: var(--text-color); }
+.main-nav a {
+  color: var(--text-color);
+}

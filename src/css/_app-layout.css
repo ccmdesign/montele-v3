@@ -71,14 +71,3 @@
   position: relative;
   transition: all 0.3s ease;
 }
-
-.app-layout__sidebar-right-trigger {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-/* TODO: Need to find a way to swicth this icon to "arrow_menu_open" when the sidebar-right is active */
-.app-layout__cdm .app-layout__sidebar-right-trigger .icon:before {
-  content: "arrow_menu_close";
-}
