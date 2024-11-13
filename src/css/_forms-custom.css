@@ -97,6 +97,17 @@
 
   .form-field__info {
     cursor: help;
+    opacity: 0.3;
+    color: var(--blue-color);
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .form-field__info:not([title]),
+  .form-field__info[title=""] {
+    visibility: hidden;
   }
 
   .form-field__label {

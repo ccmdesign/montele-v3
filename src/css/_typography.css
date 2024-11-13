@@ -2,7 +2,7 @@
   :root {
     font-family: var(--body-font);
     font-optical-sizing: auto;
-    /* font-weight: <weight>; */
+    font-weight: 100;
     font-style: normal;
     font-size: 14px;
     line-height: 1.5;
@@ -22,36 +22,33 @@
     margin-block: 0;
   }
 
-  /* --size--2
-  --size--1
-  --size-0:
-  --size-1:
-  --size-2:
-  --size-3:
-  --size-4: */
-
   h1 {
     font-size: var(--size-4);
+    font-weight: 100;
   }
   h2 {
     font-size: var(--size-3);
+    font-weight: 100;
   }
   h3 {
     font-size: var(--size-2);
+    font-weight: 400;
   }
   h4 {
     font-size: var(--size-1);
+    font-weight: 400;
   }
   h5 {
     font-size: var(--size-0);
+    font-weight: 400;
   }
   h6 {
     font-size: var(--size-0);
+    font-weight: 400;
   }
 
   p {
     font-size: var(--size-0);
-    font-weight: 400;
   }
 
   a {
@@ -79,5 +76,16 @@
     padding: 0 var(--base-padding-inline);
     color: var(--base-color, #666);
     border-left: 0;
+  }
+
+  p,
+  input,
+  button,
+  a {
+    font-weight: 100;
+  }
+
+  strong {
+    font-weight: 400;
   }
 }
