@@ -4,6 +4,7 @@
 *::after {
   box-sizing: border-box;
   interpolate-size: allow-keywords;
+  transition-behavior: allow-discrete;
 }
 
 /* Prevent font size inflation */

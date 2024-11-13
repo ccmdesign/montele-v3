@@ -1,65 +1,83 @@
-:root {
-  font-family: var(--body-font);
-  font-optical-sizing: auto;
-  /* font-weight: <weight>; */
-  font-style: normal;
-  font-size: 14px;
-  line-height: 1.5;
-}
+@layer typography {
+  :root {
+    font-family: var(--body-font);
+    font-optical-sizing: auto;
+    /* font-weight: <weight>; */
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.5;
+  }
 
+  body {
+    color: var(--base-color, #333);
+  }
 
-body {
-  color: var(--base-color, #333);
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--body-font, "Helvetica Neue", sans-serif);
+    margin-block: 0;
+  }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--body-font, 'Helvetica Neue', sans-serif);
-  margin-block: 0;
-}
+  /* --size--2
+  --size--1
+  --size-0:
+  --size-1:
+  --size-2:
+  --size-3:
+  --size-4: */
 
-/* --size--2
---size--1
---size-0:
---size-1:
---size-2:
---size-3:
---size-4: */
+  h1 {
+    font-size: var(--size-4);
+  }
+  h2 {
+    font-size: var(--size-3);
+  }
+  h3 {
+    font-size: var(--size-2);
+  }
+  h4 {
+    font-size: var(--size-1);
+  }
+  h5 {
+    font-size: var(--size-0);
+  }
+  h6 {
+    font-size: var(--size-0);
+  }
 
+  p {
+    font-size: var(--size-0);
+    font-weight: 400;
+  }
 
-h1 { font-size: var(--size-4); }
-h2 { font-size: var(--size-3); }
-h3 { font-size: var(--size-2); }
-h4 { font-size: var(--size-1); }
-h5 { font-size: var(--size-0); }
-h6 { font-size: var(--size-0); }
+  a {
+    color: var(--link-color, #007bff);
+    text-decoration: none;
+  }
 
-p {
-  font-size: var(--size-0);
-  font-weight: 400;
-}
+  a:hover {
+    text-decoration: underline;
+  }
 
-a {
-  color: var(--link-color, #007BFF);
-  text-decoration: none;
-}
+  ul,
+  ol {
+    margin-top: 0;
+    margin-bottom: var(--space-3xs);
+    padding-left: var(--space-s);
+  }
 
-a:hover {
-  text-decoration: underline;
-}
+  li {
+    margin-bottom: 0.5em;
+  }
 
-ul, ol {
-  margin-top: 0;
-  margin-bottom: var(--space-3xs);
-  padding-left: var(--space-s);
-}
-
-li {
-  margin-bottom: 0.5em;
-}
-
-blockquote {
-  margin: 0;
-  padding: 0 var(--base-padding-inline);
-  color: var(--base-color, #666);
-  border-left: 0;
+  blockquote {
+    margin: 0;
+    padding: 0 var(--base-padding-inline);
+    color: var(--base-color, #666);
+    border-left: 0;
+  }
 }

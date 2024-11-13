@@ -1,16 +1,4 @@
 @layer form-custom {
-  .form {
-    --_input-border-width: 2px;
-    --_input-border-style: solid;
-    --_input-border-color: transparent;
-    --_input-color: var(--base-color);
-    --_input-background-color: var(--base-color-05-tint);
-    --_input-padding-block: var(--space-xs);
-    --_input-padding-inline: var(--space-s);
-    /* --_input-padding-inline: 0; */
-    --_input-border-radius: var(--border-radius-s);
-  }
-
   .form-tab {
   }
 
@@ -25,101 +13,67 @@
     --_stack-space: var(--space-s-m);
   }
 
-  .form__field {
+  .form-field {
+    --_form-field-message-hsl: var(--base-hsl);
+
+    * {
+      transition: all 0.2s ease;
+    }
+  }
+
+  .form-field__message {
+    display: none;
+  }
+
+  .form-field:has(*:user-invalid) {
+    --_form-field-message-rgb: var(--red-rgb);
+
+    .form-field__message {
+      display: block;
+    }
+  }
+
+  .form-field {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 2fr auto;
     grid-template-rows: auto auto;
-    gap: var(--space-m);
+    gap: var(--space-2xs);
     align-items: center;
-
-    label {
-      text-align: right;
-    }
-
-    & > * {
-      flex: 1;
-    }
+    break-inside: avoid;
+    grid-template-areas:
+      "label input info"
+      ". message .";
 
     & + & {
       margin-block-start: var(--space-s);
     }
   }
 
-  input[type="hidden"],
-  .ui-helper-hidden-accessible {
-    display: none;
+  .form-field__label {
+    grid-area: label;
   }
 
-  .form input[type="text"],
-  .form input[type="password"],
-  .form input[type="email"],
-  .form input[type="url"],
-  .form input[type="date"],
-  .form input[type="month"],
-  .form input[type="time"],
-  .form input[type="datetime"],
-  .form input[type="datetime-local"],
-  .form input[type="week"],
-  .form input[type="number"],
-  .form input[type="search"],
-  .form input[type="tel"],
-  .form select,
-  .form textarea {
-    display: inline-block;
-    vertical-align: middle;
-    box-sizing: border-box;
-    border: var(--_input-border-width) var(--_input-border-style)
-      var(--_input-border-color);
-    padding-block: var(--_input-padding-block);
-    padding-inline: var(--_input-padding-inline);
-    border-radius: var(--_input-border-radius);
-    background-color: var(--_input-background-color);
-    color: var(--_input-color);
-    outline: none;
-    transition: all 0.2s ease;
+  .form-field__input {
+    grid-area: input;
   }
 
-  .form textarea {
-    resize: vertical;
+  .form-field__info {
+    grid-area: info;
   }
 
-  .form input:user-invalid,
-  .form input:invalid,
-  .form select:invalid,
-  .form textarea:invalid {
-    --_input-border-color: var(--red-color);
+  .form-field__message {
+    grid-area: message;
   }
 
-  .form select:user-valid,
-  .form input:user-valid,
-  .form textarea:user-valid {
-    --_input-border-color: var(--green-color);
+  .form-field__message {
+    font-size: var(--size--1);
+    padding: var(--space-xs) var(--space-s);
+    margin: 0;
+    background-color: rgba(var(--_form-field-message-rgb), 0.05);
+    border-left: 2px solid rgba(var(--_form-field-message-rgb), 1);
   }
 
-  .form select:focus,
-  .form input:focus,
-  .form textarea:focus {
-    --_input-border-color: var(--base-color-60-tint);
-  }
-
-  .form input:disabled,
-  .form textarea:disabled {
-    pointer-events: none;
-    cursor: not-allowed;
-    --_input-color: var(--base-color-40-tint);
-    --_input-background-color: transparent;
-  }
-
-  .form input[readonly],
-  .form textarea[readonly] {
-    background-color: transparent;
-
-    &:focus {
-      --_input-border-color: transparent;
-    }
-  }
-
-  .form .group {
+  .form-field .group {
     display: inline-flex;
     position: relative;
     gap: 0;
@@ -129,43 +83,25 @@
     }
   }
 
-  .form .group input[type="submit"],
-  .form .group button {
+  .form-field .group input[type="submit"],
+  .form-field .group button {
     flex: 0;
   }
 
-  .form .group :first-child {
+  .form-field .group :first-child {
     border-radius: var(--_input-border-radius) 0 0 var(--_input-border-radius) !important;
   }
-  .form .group :last-child {
+  .form-field .group :last-child {
     border-radius: 0 var(--_input-border-radius) var(--_input-border-radius) 0 !important;
   }
 
-  select {
-    appearance: none; /* Remove default styling */
-    cursor: pointer; /* Set cursor to pointer */
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAtOTYwIDk2MCA5NjAiIHdpZHRoPSIyNHB4IiBmaWxsPSIjNWY2MzY4Ij48cGF0aCBkPSJNNDgwLTM0NCAyNDAtNTg0bDU2LTU2IDE4NCAxODQgMTg0LTE4NCA1NiA1Ni0yNDAgMjQwWiIvPjwvc3ZnPg=="); /* Custom arrow */
-    background-repeat: no-repeat;
-    background-position: right 1em center;
-    background-size: 1.8rem;
+  .form-field__info {
+    cursor: help;
   }
 
-  select:disabled {
-    background-color: var(
-      --base-color-40-tint
-    ); /* Set background color for disabled state */
-    color: var(--base-color-20-tint); /* Set text color for disabled state */
-    cursor: not-allowed; /* Set cursor to not-allowed */
-  }
-
-  .form__field:has(textarea) {
-    grid-template-columns: 1fr;
-    gap: var(--space-xs);
-
-    label {
-      text-align: left;
-      padding-inline: var(--_input-padding-inline);
-    }
+  .form-field__label {
+    text-align: right;
+    padding-inline: var(--_input-padding-inline);
   }
 
   /* Container Query for the Form width */
@@ -186,18 +122,23 @@
   }
 
   @container form (max-width: 500px) {
-    .form__field {
-      grid-template-columns: 1fr;
+    .form-field {
+      grid-template-columns: 1fr auto;
+      grid-template-rows: auto auto auto;
       gap: var(--space-xs);
-
-      label {
-        text-align: left;
-        padding-inline: var(--_input-padding-inline);
-      }
+      grid-template-areas:
+        "label info"
+        "input input"
+        "message message";
 
       & + & {
         margin-block-start: var(--space-m);
       }
+    }
+
+    .form-field__label {
+      text-align: left;
+      padding-inline: var(--_input-padding-inline);
     }
   }
 }

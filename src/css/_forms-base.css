@@ -1,0 +1,105 @@
+@layer form-base {
+  .form {
+    --_input-border-width: 2px;
+    --_input-border-style: solid;
+    --_input-border-color: transparent;
+    --_input-color: var(--base-color);
+    --_input-background-color: var(--base-color-05-tint);
+    --_input-padding-block: var(--space-xs);
+    --_input-padding-inline: var(--space-s);
+    /* --_input-padding-inline: 0; */
+    --_input-border-radius: var(--border-radius-s);
+  }
+
+  input[type="hidden"],
+  .ui-helper-hidden-accessible {
+    /* Provavelmente posso deletar isso */
+    display: none;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="url"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="week"],
+  input[type="number"],
+  input[type="search"],
+  input[type="tel"],
+  select,
+  textarea {
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    border: var(--_input-border-width) var(--_input-border-style)
+      var(--_input-border-color);
+    padding-block: var(--_input-padding-block);
+    padding-inline: var(--_input-padding-inline);
+    border-radius: var(--_input-border-radius);
+    background-color: var(--_input-background-color);
+    color: var(--_input-color);
+    outline: none;
+    transition: all 0.2s ease;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  input:user-invalid,
+  input:invalid,
+  select:invalid,
+  textarea:invalid {
+    --_input-border-color: var(--red-color);
+  }
+
+  select:user-valid,
+  input:user-valid,
+  textarea:user-valid {
+    --_input-border-color: var(--green-color);
+  }
+
+  select:focus,
+  input:focus,
+  textarea:focus {
+    --_input-border-color: var(--base-color-60-tint);
+  }
+
+  input:disabled,
+  textarea:disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    --_input-color: var(--base-color-40-tint);
+    --_input-background-color: transparent;
+  }
+
+  input[readonly],
+  textarea[readonly] {
+    background-color: transparent;
+
+    &:focus {
+      --_input-border-color: transparent;
+    }
+  }
+
+  select {
+    appearance: none; /* Remove default styling */
+    cursor: pointer; /* Set cursor to pointer */
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAtOTYwIDk2MCA5NjAiIHdpZHRoPSIyNHB4IiBmaWxsPSIjNWY2MzY4Ij48cGF0aCBkPSJNNDgwLTM0NCAyNDAtNTg0bDU2LTU2IDE4NCAxODQgMTg0LTE4NCA1NiA1Ni0yNDAgMjQwWiIvPjwvc3ZnPg=="); /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 1em center;
+    background-size: 1.8rem;
+  }
+
+  select:disabled {
+    background-color: var(
+      --base-color-40-tint
+    ); /* Set background color for disabled state */
+    color: var(--base-color-20-tint); /* Set text color for disabled state */
+    cursor: not-allowed; /* Set cursor to not-allowed */
+  }
+}
