@@ -45,14 +45,9 @@ triggerElements.forEach((element) => {
   element.addEventListener("click", toggleAriaVisibility);
 });
 
-// Function to toggle radio button check state
-function toggleRadioCheck(event) {
-  const inputId = event.target.getAttribute("for");
-  const radioInput = document.getElementById(inputId);
-  if (radioInput && radioInput.checked) {
-    radioInput.checked = false;
-  }
-}
+/////////////////////////////////////
+// GEMS MENU AND SIDEBAR FUNCTIONS //
+/////////////////////////////////////
 
 function handleGemTriggerClick(event) {
   // Set all elements with [gem-trigger-for] to 'aria-active="false"'
@@ -66,7 +61,7 @@ function handleGemTriggerClick(event) {
 
   // Set all elements under #gems-sidebar-menu to aria-hidden="true"
   const gemsSidebarMenuElements = document.querySelectorAll(
-    "#gems-sidebar-menu *"
+    "[gems-sidebar-content]"
   );
   gemsSidebarMenuElements.forEach((element) => {
     element.setAttribute("aria-hidden", "true");
@@ -80,7 +75,7 @@ function handleGemTriggerClick(event) {
 
     // Check if any of #gems-sidebar-menu children has aria-hidden="false"
     const gemsSidebarMenuElements = document.querySelectorAll(
-      "#gems-sidebar-menu > div"
+      "[gems-sidebar-content]"
     );
     const anyVisible = Array.from(gemsSidebarMenuElements).some(
       (element) => element.getAttribute("aria-hidden") === "false"
@@ -96,10 +91,6 @@ function handleGemTriggerClick(event) {
   }
 }
 
-/////////////////////////////////////
-// GEMS MENU AND SIDEBAR FUNCTIONS //
-/////////////////////////////////////
-
 // Add event listeners to elements with the gem-trigger-for attribute
 const gemTriggerElements = document.querySelectorAll("[gem-trigger-for]");
 gemTriggerElements.forEach((element) => {
@@ -109,8 +100,9 @@ gemTriggerElements.forEach((element) => {
 function handleCloseGemsSidebarClick() {
   // Set all elements under #gems-sidebar-menu to aria-hidden="true"
   const gemsSidebarMenuElements = document.querySelectorAll(
-    "#gems-sidebar-menu *"
+    "[gems-sidebar-content]"
   );
+
   gemsSidebarMenuElements.forEach((element) => {
     element.setAttribute("aria-hidden", "true");
   });
