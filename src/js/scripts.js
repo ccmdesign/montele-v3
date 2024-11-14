@@ -121,3 +121,24 @@ const closeGemsSidebarElements = document.querySelectorAll(
 closeGemsSidebarElements.forEach((element) => {
   element.addEventListener("click", handleCloseGemsSidebarClick);
 });
+
+function activateMicrophone() {
+  if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    navigator.mediaDevices
+      .getUserMedia({ audio: true })
+      .then(function (stream) {
+        console.log("Microphone activated");
+        // You can add additional logic here to handle the audio stream
+      })
+      .catch(function (err) {
+        console.error("Error accessing the microphone: ", err);
+      });
+  } else {
+    console.error("getUserMedia not supported on your browser!");
+  }
+}
+
+const dockGravarButton = document.getElementById("dock-gravar");
+if (dockGravarButton) {
+  dockGravarButton.addEventListener("click", activateMicrophone);
+}

@@ -72,20 +72,24 @@
 
 .sidebar-form {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr auto;
-  grid-template-areas: "textarea textarea" "checkin submit";
+  grid-template-areas: "textarea textarea textarea" "mic transcribe submit";
   gap: var(--space-s);
 }
 
 .sidebar-form__textarea {
   grid-area: textarea;
 }
-.sidebar-form__checkin {
-  grid-area: checkin;
+.sidebar-form__mic {
+  grid-area: mic;
+}
+.sidebar-form__transcribe {
+  grid-area: transcribe;
 }
 
-.sidebar-form__checkin,
+.sidebar-form__mic,
+.sidebar-form__transcribe,
 .sidebar-form__submit {
   width: 100%;
 }
