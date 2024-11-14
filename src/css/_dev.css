@@ -9,3 +9,7 @@
     font-weight: 200;
   }
 }
+
+.feed-page {
+  background-color: hsla(var(--tertiary-hsl), 1);
+}
