@@ -44,6 +44,7 @@
     color: var(--_input-color);
     outline: none;
     transition: all 0.2s ease;
+    font-weight: 100;
   }
 
   textarea {

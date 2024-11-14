@@ -73,6 +73,23 @@
     border-left: 2px solid rgba(var(--_form-field-message-rgb), 1);
   }
 
+  .form-field:has(textarea) {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "label info"
+      "input input"
+      "message message";
+
+    label {
+      text-align: left;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+  }
+
   .form-field .group {
     display: inline-flex;
     position: relative;
