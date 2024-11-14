@@ -6,6 +6,8 @@
   height: 100%;
 
   .icon {
+    background-color: transparent;
+    border: 0;
     color: hsla(var(--white-hsl), 0.6);
     padding: var(--space-m);
     font-size: var(--size-5);
