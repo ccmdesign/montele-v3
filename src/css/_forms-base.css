@@ -2,10 +2,10 @@
   .form {
     --_input-border-width: 2px;
     --_input-border-style: solid;
-    --_input-border-color: transparent;
+    --_input-border-color: var(--_input-background-color);
     --_input-color: var(--base-color);
     --_input-background-color: var(--base-color-05-tint);
-    --_input-padding-block: var(--space-xs);
+    --_input-padding-block: calc(var(--space-xs) + var(--_input-border-width));
     --_input-padding-inline: var(--space-s);
     /* --_input-padding-inline: 0; */
     --_input-border-radius: var(--border-radius-s);
@@ -55,13 +55,13 @@
   input:invalid,
   select:invalid,
   textarea:invalid {
-    --_input-border-color: var(--red-color);
+    --_input-border-color: var(--fail-color);
   }
 
   select:user-valid,
   input:user-valid,
   textarea:user-valid {
-    --_input-border-color: var(--green-color);
+    --_input-border-color: var(--success-color);
   }
 
   select:focus,
@@ -103,4 +103,6 @@
     color: var(--base-color-20-tint); /* Set text color for disabled state */
     cursor: not-allowed; /* Set cursor to not-allowed */
   }
+
+  /* @ToDo: Implementar Select Multibox; */
 }

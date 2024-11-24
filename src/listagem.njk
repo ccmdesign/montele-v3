@@ -3,25 +3,30 @@ layout: "_layouts/app.njk"
 doca_hidden: "true"
 ---
 
-<div id="listing-panel" class="main-panel">
-  <details class="collapse">
-    <summary><h2>Filtros</h2></summary>
-    {% include "./_includes/list-filters.njk" %}
-
-    <div id="listing-tools">
-      <span id="paginator">
-        <span class="button-disabled">&nbsp;</span>
-        <span class="button-disabled">&nbsp;</span>
+<div id="listing-panel" class="main-panel listagem">
+  
+  <header class="listagem__header stack">
+    <div class="cluster">
+      <h2>Negócios Abertos</h2>
+      <span id="paginator" class="form-group" data-split>
+        <span class="button" visual="unstyled" disabled data-icon="arrow_back">&nbsp;</span>
         <span class="page-viewer">1 de 3</span>
-        <a class="button" href="#" title="Ir para a próxima página">&nbsp;</a>
-        <a class="button" href="#" title="Ir para a última página">&nbsp;</a>
+        <a class="button" visual="unstyled"  href="#" title="Ir para a próxima página" data-icon="arrow_forward">&nbsp;</a>
       </span>
-      
-      <a href="#" class="button">Ver no mapa</a>
-      <button id="abrir-modal-assinatura-feed">Assinatura</button>
-      <button id="filters-button">Filtros</button>
+      <button class="button" popovertarget="menu-ferramentas">Ferramentas</button>
+      <button class="button" popovertarget="modal-table-filter">Filtros</button>
     </div>
-  </details>
+
+    <div class="listagem__summary | repel">
+      <div class="h4">Exibindo <strong>31</strong> negócios</div>
+      <div class="h4">Preço de tabela: total <strong>R$ 4.201.194,76</strong></div>
+      <div class="h4">Preço final: total: <strong>R$ 4.159.066,97</strong></div>
+    </div>
+  </header>
+{#   
+  <div id="table-filter-modal" class="modal" popover>
+    {% include "./_includes/list-tools.njk" %}
+  </div> #}
   
   <div class="table-wrapper">
   <table id="listing" class="table">

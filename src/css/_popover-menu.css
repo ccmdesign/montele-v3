@@ -1,0 +1,28 @@
+.popover-menu {
+  margin: 0;
+  inset: auto;
+
+  position: absolute;
+  top: anchor(bottom);
+  right: anchor(right);
+}
+
+.popover-menu {
+  box-shadow: var(--box-shadow-m);
+  background-color: var(--base-color);
+  border-radius: var(--border-radius-m);
+  border: 1px solid var(--base-color);
+  color: var(--white-color);
+  /* padding: var(--space-s); */
+  margin-top: var(--space-3xs);
+
+  > .menu-item:not(:last-child) {
+    box-shadow: var(--box-shadow-s);
+    border-bottom: var(--base-separator-dark);
+  }
+}
+
+.popover-menu:popover-open {
+  display: grid;
+  /* Resetting the positioning of the popover when Open */
+}

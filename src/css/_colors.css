@@ -10,12 +10,18 @@
   --accent-hsl: 34, 76%, 67%;
 
   /* We might need to normalize this - convert to hsla */
-  --green-rgb: 0, 128, 0;
-  --red-rgb: 128, 0, 0;
+  --green-hsl: 120, 100%, 25%;
+  --red-hsl: 0, 100%, 25%;
   /* ToDO */
-  --orange-rgb: 255, 165, 0;
-  --yellow-rgb: 120, 0, 120;
-  --blue-rgb: 0, 0, 120;
+  --orange-hsl: 39, 100%, 50%;
+  --yellow-hsl: 300, 100%, 24%;
+  --blue-hsl: 240, 100%, 24%;
+  --teal-hsl: 180, 100%, 24%;
+
+  --success-hsl: var(--blue-hsl);
+  --fail-hsl: var(--red-hsl);
+  --warning-hsl: var(--yellow-hsl);
+  --info-hsl: var(--teal-hsl);
 }
 
 /* Solid Colors */
@@ -30,10 +36,11 @@
   --accent-color: hsl(var(--accent-hsl));
 
   /* We might need to normalize this - convert to hsla */
-  --green-color: rgba(var(--green-rgb), 1);
-  --red-color: rgba(var(--red-rgb), 1);
-  --yellow-color: rgba(var(--yellow-rgb), 1);
-  --blue-color: rgba(var(--blue-rgb), 1);
+  --green-color: hsl(var(--green-hsl));
+  --red-color: hsl(var(--red-hsl));
+  --yellow-color: hsl(var(--yellow-hsl));
+  --blue-color: hsl(var(--blue-hsl));
+  --teal-color: hsl(var(--teal-hsl));
 }
 
 /* Color Aliases  */
@@ -45,10 +52,10 @@
   --text-color: var(--base-color);
   --link-color: var(--primary-color);
 
-  --success-color: var(--green-color);
+  --success-color: var(--blue-color);
   --fail-color: var(--red-color);
   --warning-color: var(--yellow-color);
-  --info-color: var(--blue-color);
+  --info-color: var(--teal-color);
 }
 
 /* Color Mix | Tints */
@@ -318,6 +325,118 @@
   );
   --yellow-color-05-tint: color-mix(in srgb, var(--yellow-color) 5%, white 95%);
   --yellow-color-02-tint: color-mix(in srgb, var(--yellow-color) 2%, white 98%);
+
+  --success-color-90-tint: color-mix(
+    in srgb,
+    var(--success-color) 90%,
+    white 10%
+  );
+  --success-color-80-tint: color-mix(
+    in srgb,
+    var(--success-color) 80%,
+    white 20%
+  );
+  --success-color-70-tint: color-mix(
+    in srgb,
+    var(--success-color) 70%,
+    white 30%
+  );
+  --success-color-60-tint: color-mix(
+    in srgb,
+    var(--success-color) 60%,
+    white 40%
+  );
+  --success-color-30-tint: color-mix(
+    in srgb,
+    var(--success-color) 30%,
+    white 70%
+  );
+  --success-color-20-tint: color-mix(
+    in srgb,
+    var(--success-color) 20%,
+    white 80%
+  );
+  --success-color-10-tint: color-mix(
+    in srgb,
+    var(--success-color) 10%,
+    white 90%
+  );
+  --success-color-05-tint: color-mix(
+    in srgb,
+    var(--success-color) 5%,
+    white 95%
+  );
+  --success-color-02-tint: color-mix(
+    in srgb,
+    var(--success-color) 2%,
+    white 98%
+  );
+
+  --fail-color-90-tint: color-mix(in srgb, var(--fail-color) 90%, white 10%);
+  --fail-color-80-tint: color-mix(in srgb, var(--fail-color) 80%, white 20%);
+  --fail-color-70-tint: color-mix(in srgb, var(--fail-color) 70%, white 30%);
+  --fail-color-60-tint: color-mix(in srgb, var(--fail-color) 60%, white 40%);
+  --fail-color-30-tint: color-mix(in srgb, var(--fail-color) 30%, white 70%);
+  --fail-color-20-tint: color-mix(in srgb, var(--fail-color) 20%, white 80%);
+  --fail-color-10-tint: color-mix(in srgb, var(--fail-color) 10%, white 90%);
+  --fail-color-05-tint: color-mix(in srgb, var(--fail-color) 5%, white 95%);
+  --fail-color-02-tint: color-mix(in srgb, var(--fail-color) 2%, white 98%);
+
+  --warning-color-90-tint: color-mix(
+    in srgb,
+    var(--warning-color) 90%,
+    white 10%
+  );
+  --warning-color-80-tint: color-mix(
+    in srgb,
+    var(--warning-color) 80%,
+    white 20%
+  );
+  --warning-color-70-tint: color-mix(
+    in srgb,
+    var(--warning-color) 70%,
+    white 30%
+  );
+  --warning-color-60-tint: color-mix(
+    in srgb,
+    var(--warning-color) 60%,
+    white 40%
+  );
+  --warning-color-30-tint: color-mix(
+    in srgb,
+    var(--warning-color) 30%,
+    white 70%
+  );
+  --warning-color-20-tint: color-mix(
+    in srgb,
+    var(--warning-color) 20%,
+    white 80%
+  );
+  --warning-color-10-tint: color-mix(
+    in srgb,
+    var(--warning-color) 10%,
+    white 90%
+  );
+  --warning-color-05-tint: color-mix(
+    in srgb,
+    var(--warning-color) 5%,
+    white 95%
+  );
+  --warning-color-02-tint: color-mix(
+    in srgb,
+    var(--warning-color) 2%,
+    white 98%
+  );
+
+  --info-color-90-tint: color-mix(in srgb, var(--info-color) 90%, white 10%);
+  --info-color-80-tint: color-mix(in srgb, var(--info-color) 80%, white 20%);
+  --info-color-70-tint: color-mix(in srgb, var(--info-color) 70%, white 30%);
+  --info-color-60-tint: color-mix(in srgb, var(--info-color) 60%, white 40%);
+  --info-color-30-tint: color-mix(in srgb, var(--info-color) 30%, white 70%);
+  --info-color-20-tint: color-mix(in srgb, var(--info-color) 20%, white 80%);
+  --info-color-10-tint: color-mix(in srgb, var(--info-color) 10%, white 90%);
+  --info-color-05-tint: color-mix(in srgb, var(--info-color) 5%, white 95%);
+  --info-color-02-tint: color-mix(in srgb, var(--info-color) 2%, white 98%);
 }
 
 /* Color Mix | Shade */
@@ -601,6 +720,118 @@
     var(--yellow-color) 2%,
     black 98%
   );
+
+  --success-color-90-shade: color-mix(
+    in srgb,
+    var(--success-color) 90%,
+    black 10%
+  );
+  --success-color-80-shade: color-mix(
+    in srgb,
+    var(--success-color) 80%,
+    black 20%
+  );
+  --success-color-70-shade: color-mix(
+    in srgb,
+    var(--success-color) 70%,
+    black 30%
+  );
+  --success-color-60-shade: color-mix(
+    in srgb,
+    var(--success-color) 60%,
+    black 40%
+  );
+  --success-color-30-shade: color-mix(
+    in srgb,
+    var(--success-color) 30%,
+    black 70%
+  );
+  --success-color-20-shade: color-mix(
+    in srgb,
+    var(--success-color) 20%,
+    black 80%
+  );
+  --success-color-10-shade: color-mix(
+    in srgb,
+    var(--success-color) 10%,
+    black 90%
+  );
+  --success-color-05-shade: color-mix(
+    in srgb,
+    var(--success-color) 5%,
+    black 95%
+  );
+  --success-color-02-shade: color-mix(
+    in srgb,
+    var(--success-color) 2%,
+    black 98%
+  );
+
+  --fail-color-90-shade: color-mix(in srgb, var(--fail-color) 90%, black 10%);
+  --fail-color-80-shade: color-mix(in srgb, var(--fail-color) 80%, black 20%);
+  --fail-color-70-shade: color-mix(in srgb, var(--fail-color) 70%, black 30%);
+  --fail-color-60-shade: color-mix(in srgb, var(--fail-color) 60%, black 40%);
+  --fail-color-30-shade: color-mix(in srgb, var(--fail-color) 30%, black 70%);
+  --fail-color-20-shade: color-mix(in srgb, var(--fail-color) 20%, black 80%);
+  --fail-color-10-shade: color-mix(in srgb, var(--fail-color) 10%, black 90%);
+  --fail-color-05-shade: color-mix(in srgb, var(--fail-color) 5%, black 95%);
+  --fail-color-02-shade: color-mix(in srgb, var(--fail-color) 2%, black 98%);
+
+  --info-color-90-shade: color-mix(in srgb, var(--info-color) 90%, black 10%);
+  --info-color-80-shade: color-mix(in srgb, var(--info-color) 80%, black 20%);
+  --info-color-70-shade: color-mix(in srgb, var(--info-color) 70%, black 30%);
+  --info-color-60-shade: color-mix(in srgb, var(--info-color) 60%, black 40%);
+  --info-color-30-shade: color-mix(in srgb, var(--info-color) 30%, black 70%);
+  --info-color-20-shade: color-mix(in srgb, var(--info-color) 20%, black 80%);
+  --info-color-10-shade: color-mix(in srgb, var(--info-color) 10%, black 90%);
+  --info-color-05-shade: color-mix(in srgb, var(--info-color) 5%, black 95%);
+  --info-color-02-shade: color-mix(in srgb, var(--info-color) 2%, black 98%);
+
+  --wraning-color-90-shade: color-mix(
+    in srgb,
+    var(--wraning-color) 90%,
+    black 10%
+  );
+  --wraning-color-80-shade: color-mix(
+    in srgb,
+    var(--wraning-color) 80%,
+    black 20%
+  );
+  --wraning-color-70-shade: color-mix(
+    in srgb,
+    var(--wraning-color) 70%,
+    black 30%
+  );
+  --wraning-color-60-shade: color-mix(
+    in srgb,
+    var(--wraning-color) 60%,
+    black 40%
+  );
+  --wraning-color-30-shade: color-mix(
+    in srgb,
+    var(--wraning-color) 30%,
+    black 70%
+  );
+  --wraning-color-20-shade: color-mix(
+    in srgb,
+    var(--wraning-color) 20%,
+    black 80%
+  );
+  --wraning-color-10-shade: color-mix(
+    in srgb,
+    var(--wraning-color) 10%,
+    black 90%
+  );
+  --wraning-color-05-shade: color-mix(
+    in srgb,
+    var(--wraning-color) 5%,
+    black 95%
+  );
+  --wraning-color-02-shade: color-mix(
+    in srgb,
+    var(--wraning-color) 2%,
+    black 98%
+  );
 }
 
 /* Color Variables - Alpha */
@@ -645,183 +876,183 @@
   --white-color-90-alpha: hsla(var(--white-hsl), 90);
   --white-color-95-alpha: hsla(var(--white-hsl), 95);
 
-  --base-color-05-alpha: hsla(var(--base-color), 0.05);
-  --base-color-10-alpha: hsla(var(--base-color), 0.1);
-  --base-color-15-alpha: hsla(var(--base-color), 0.15);
-  --base-color-20-alpha: hsla(var(--base-color), 0.2);
-  --base-color-25-alpha: hsla(var(--base-color), 0.25);
-  --base-color-30-alpha: hsla(var(--base-color), 0.3);
-  --base-color-35-alpha: hsla(var(--base-color), 0.35);
-  --base-color-40-alpha: hsla(var(--base-color), 0.4);
-  --base-color-45-alpha: hsla(var(--base-color), 0.45);
-  --base-color-50-alpha: hsla(var(--base-color), 0.5);
-  --base-color-55-alpha: hsla(var(--base-color), 0.55);
-  --base-color-60-alpha: hsla(var(--base-color), 0.6);
-  --base-color-65-alpha: hsla(var(--base-color), 0.65);
-  --base-color-70-alpha: hsla(var(--base-color), 0.7);
-  --base-color-75-alpha: hsla(var(--base-color), 0.75);
-  --base-color-80-alpha: hsla(var(--base-color), 0.8);
-  --base-color-85-alpha: hsla(var(--base-color), 0.85);
-  --base-color-90-alpha: hsla(var(--base-color), 0.9);
-  --base-color-95-alpha: hsla(var(--base-color), 0.95);
+  --base-color-05-alpha: hsla(var(--base-hsl), 0.05);
+  --base-color-10-alpha: hsla(var(--base-hsl), 0.1);
+  --base-color-15-alpha: hsla(var(--base-hsl), 0.15);
+  --base-color-20-alpha: hsla(var(--base-hsl), 0.2);
+  --base-color-25-alpha: hsla(var(--base-hsl), 0.25);
+  --base-color-30-alpha: hsla(var(--base-hsl), 0.3);
+  --base-color-35-alpha: hsla(var(--base-hsl), 0.35);
+  --base-color-40-alpha: hsla(var(--base-hsl), 0.4);
+  --base-color-45-alpha: hsla(var(--base-hsl), 0.45);
+  --base-color-50-alpha: hsla(var(--base-hsl), 0.5);
+  --base-color-55-alpha: hsla(var(--base-hsl), 0.55);
+  --base-color-60-alpha: hsla(var(--base-hsl), 0.6);
+  --base-color-65-alpha: hsla(var(--base-hsl), 0.65);
+  --base-color-70-alpha: hsla(var(--base-hsl), 0.7);
+  --base-color-75-alpha: hsla(var(--base-hsl), 0.75);
+  --base-color-80-alpha: hsla(var(--base-hsl), 0.8);
+  --base-color-85-alpha: hsla(var(--base-hsl), 0.85);
+  --base-color-90-alpha: hsla(var(--base-hsl), 0.9);
+  --base-color-95-alpha: hsla(var(--base-hsl), 0.95);
 
-  --primary-color-05-alpha: hsla(var(--primary-color), 0.05);
-  --primary-color-10-alpha: hsla(var(--primary-color), 0.1);
-  --primary-color-15-alpha: hsla(var(--primary-color), 0.15);
-  --primary-color-20-alpha: hsla(var(--primary-color), 0.2);
-  --primary-color-25-alpha: hsla(var(--primary-color), 0.25);
-  --primary-color-30-alpha: hsla(var(--primary-color), 0.3);
-  --primary-color-35-alpha: hsla(var(--primary-color), 0.35);
-  --primary-color-40-alpha: hsla(var(--primary-color), 0.4);
-  --primary-color-45-alpha: hsla(var(--primary-color), 0.45);
-  --primary-color-50-alpha: hsla(var(--primary-color), 0.5);
-  --primary-color-55-alpha: hsla(var(--primary-color), 0.55);
-  --primary-color-60-alpha: hsla(var(--primary-color), 0.6);
-  --primary-color-65-alpha: hsla(var(--primary-color), 0.65);
-  --primary-color-70-alpha: hsla(var(--primary-color), 0.7);
-  --primary-color-75-alpha: hsla(var(--primary-color), 0.75);
-  --primary-color-80-alpha: hsla(var(--primary-color), 0.8);
-  --primary-color-85-alpha: hsla(var(--primary-color), 0.85);
-  --primary-color-90-alpha: hsla(var(--primary-color), 0.9);
-  --primary-color-95-alpha: hsla(var(--primary-color), 0.95);
+  --primary-color-05-alpha: hsla(var(--primary-hsl), 0.05);
+  --primary-color-10-alpha: hsla(var(--primary-hsl), 0.1);
+  --primary-color-15-alpha: hsla(var(--primary-hsl), 0.15);
+  --primary-color-20-alpha: hsla(var(--primary-hsl), 0.2);
+  --primary-color-25-alpha: hsla(var(--primary-hsl), 0.25);
+  --primary-color-30-alpha: hsla(var(--primary-hsl), 0.3);
+  --primary-color-35-alpha: hsla(var(--primary-hsl), 0.35);
+  --primary-color-40-alpha: hsla(var(--primary-hsl), 0.4);
+  --primary-color-45-alpha: hsla(var(--primary-hsl), 0.45);
+  --primary-color-50-alpha: hsla(var(--primary-hsl), 0.5);
+  --primary-color-55-alpha: hsla(var(--primary-hsl), 0.55);
+  --primary-color-60-alpha: hsla(var(--primary-hsl), 0.6);
+  --primary-color-65-alpha: hsla(var(--primary-hsl), 0.65);
+  --primary-color-70-alpha: hsla(var(--primary-hsl), 0.7);
+  --primary-color-75-alpha: hsla(var(--primary-hsl), 0.75);
+  --primary-color-80-alpha: hsla(var(--primary-hsl), 0.8);
+  --primary-color-85-alpha: hsla(var(--primary-hsl), 0.85);
+  --primary-color-90-alpha: hsla(var(--primary-hsl), 0.9);
+  --primary-color-95-alpha: hsla(var(--primary-hsl), 0.95);
 
-  --secondary-color-05-alpha: hsla(var(--secondary-color), 0.05);
-  --secondary-color-10-alpha: hsla(var(--secondary-color), 0.1);
-  --secondary-color-15-alpha: hsla(var(--secondary-color), 0.15);
-  --secondary-color-20-alpha: hsla(var(--secondary-color), 0.2);
-  --secondary-color-25-alpha: hsla(var(--secondary-color), 0.25);
-  --secondary-color-30-alpha: hsla(var(--secondary-color), 0.3);
-  --secondary-color-35-alpha: hsla(var(--secondary-color), 0.35);
-  --secondary-color-40-alpha: hsla(var(--secondary-color), 0.4);
-  --secondary-color-45-alpha: hsla(var(--secondary-color), 0.45);
-  --secondary-color-50-alpha: hsla(var(--secondary-color), 0.5);
-  --secondary-color-55-alpha: hsla(var(--secondary-color), 0.55);
-  --secondary-color-60-alpha: hsla(var(--secondary-color), 0.6);
-  --secondary-color-65-alpha: hsla(var(--secondary-color), 0.65);
-  --secondary-color-70-alpha: hsla(var(--secondary-color), 0.7);
-  --secondary-color-75-alpha: hsla(var(--secondary-color), 0.75);
-  --secondary-color-80-alpha: hsla(var(--secondary-color), 0.8);
-  --secondary-color-85-alpha: hsla(var(--secondary-color), 0.85);
-  --secondary-color-90-alpha: hsla(var(--secondary-color), 0.9);
-  --secondary-color-95-alpha: hsla(var(--secondary-color), 0.95);
+  --secondary-color-05-alpha: hsla(var(--secondary-hsl), 0.05);
+  --secondary-color-10-alpha: hsla(var(--secondary-hsl), 0.1);
+  --secondary-color-15-alpha: hsla(var(--secondary-hsl), 0.15);
+  --secondary-color-20-alpha: hsla(var(--secondary-hsl), 0.2);
+  --secondary-color-25-alpha: hsla(var(--secondary-hsl), 0.25);
+  --secondary-color-30-alpha: hsla(var(--secondary-hsl), 0.3);
+  --secondary-color-35-alpha: hsla(var(--secondary-hsl), 0.35);
+  --secondary-color-40-alpha: hsla(var(--secondary-hsl), 0.4);
+  --secondary-color-45-alpha: hsla(var(--secondary-hsl), 0.45);
+  --secondary-color-50-alpha: hsla(var(--secondary-hsl), 0.5);
+  --secondary-color-55-alpha: hsla(var(--secondary-hsl), 0.55);
+  --secondary-color-60-alpha: hsla(var(--secondary-hsl), 0.6);
+  --secondary-color-65-alpha: hsla(var(--secondary-hsl), 0.65);
+  --secondary-color-70-alpha: hsla(var(--secondary-hsl), 0.7);
+  --secondary-color-75-alpha: hsla(var(--secondary-hsl), 0.75);
+  --secondary-color-80-alpha: hsla(var(--secondary-hsl), 0.8);
+  --secondary-color-85-alpha: hsla(var(--secondary-hsl), 0.85);
+  --secondary-color-90-alpha: hsla(var(--secondary-hsl), 0.9);
+  --secondary-color-95-alpha: hsla(var(--secondary-hsl), 0.95);
 
-  --tertiary-color-05-alpha: hsla(var(--tertiary-color), 0.05);
-  --tertiary-color-10-alpha: hsla(var(--tertiary-color), 0.1);
-  --tertiary-color-15-alpha: hsla(var(--tertiary-color), 0.15);
-  --tertiary-color-20-alpha: hsla(var(--tertiary-color), 0.2);
-  --tertiary-color-25-alpha: hsla(var(--tertiary-color), 0.25);
-  --tertiary-color-30-alpha: hsla(var(--tertiary-color), 0.3);
-  --tertiary-color-35-alpha: hsla(var(--tertiary-color), 0.35);
-  --tertiary-color-40-alpha: hsla(var(--tertiary-color), 0.4);
-  --tertiary-color-45-alpha: hsla(var(--tertiary-color), 0.45);
-  --tertiary-color-50-alpha: hsla(var(--tertiary-color), 0.5);
-  --tertiary-color-55-alpha: hsla(var(--tertiary-color), 0.55);
-  --tertiary-color-60-alpha: hsla(var(--tertiary-color), 0.6);
-  --tertiary-color-65-alpha: hsla(var(--tertiary-color), 0.65);
-  --tertiary-color-70-alpha: hsla(var(--tertiary-color), 0.7);
-  --tertiary-color-75-alpha: hsla(var(--tertiary-color), 0.75);
-  --tertiary-color-80-alpha: hsla(var(--tertiary-color), 0.8);
-  --tertiary-color-85-alpha: hsla(var(--tertiary-color), 0.85);
-  --tertiary-color-90-alpha: hsla(var(--tertiary-color), 0.9);
-  --tertiary-color-95-alpha: hsla(var(--tertiary-color), 0.95);
+  --tertiary-color-05-alpha: hsla(var(--tertiary-hsl), 0.05);
+  --tertiary-color-10-alpha: hsla(var(--tertiary-hsl), 0.1);
+  --tertiary-color-15-alpha: hsla(var(--tertiary-hsl), 0.15);
+  --tertiary-color-20-alpha: hsla(var(--tertiary-hsl), 0.2);
+  --tertiary-color-25-alpha: hsla(var(--tertiary-hsl), 0.25);
+  --tertiary-color-30-alpha: hsla(var(--tertiary-hsl), 0.3);
+  --tertiary-color-35-alpha: hsla(var(--tertiary-hsl), 0.35);
+  --tertiary-color-40-alpha: hsla(var(--tertiary-hsl), 0.4);
+  --tertiary-color-45-alpha: hsla(var(--tertiary-hsl), 0.45);
+  --tertiary-color-50-alpha: hsla(var(--tertiary-hsl), 0.5);
+  --tertiary-color-55-alpha: hsla(var(--tertiary-hsl), 0.55);
+  --tertiary-color-60-alpha: hsla(var(--tertiary-hsl), 0.6);
+  --tertiary-color-65-alpha: hsla(var(--tertiary-hsl), 0.65);
+  --tertiary-color-70-alpha: hsla(var(--tertiary-hsl), 0.7);
+  --tertiary-color-75-alpha: hsla(var(--tertiary-hsl), 0.75);
+  --tertiary-color-80-alpha: hsla(var(--tertiary-hsl), 0.8);
+  --tertiary-color-85-alpha: hsla(var(--tertiary-hsl), 0.85);
+  --tertiary-color-90-alpha: hsla(var(--tertiary-hsl), 0.9);
+  --tertiary-color-95-alpha: hsla(var(--tertiary-hsl), 0.95);
 
-  --accent-color-05-alpha: hsla(var(--accent-color), 0.05);
-  --accent-color-10-alpha: hsla(var(--accent-color), 0.1);
-  --accent-color-15-alpha: hsla(var(--accent-color), 0.15);
-  --accent-color-20-alpha: hsla(var(--accent-color), 0.2);
-  --accent-color-25-alpha: hsla(var(--accent-color), 0.25);
-  --accent-color-30-alpha: hsla(var(--accent-color), 0.3);
-  --accent-color-35-alpha: hsla(var(--accent-color), 0.35);
-  --accent-color-40-alpha: hsla(var(--accent-color), 0.4);
-  --accent-color-45-alpha: hsla(var(--accent-color), 0.45);
-  --accent-color-50-alpha: hsla(var(--accent-color), 0.5);
-  --accent-color-55-alpha: hsla(var(--accent-color), 0.55);
-  --accent-color-60-alpha: hsla(var(--accent-color), 0.6);
-  --accent-color-65-alpha: hsla(var(--accent-color), 0.65);
-  --accent-color-70-alpha: hsla(var(--accent-color), 0.7);
-  --accent-color-75-alpha: hsla(var(--accent-color), 0.75);
-  --accent-color-80-alpha: hsla(var(--accent-color), 0.8);
-  --accent-color-85-alpha: hsla(var(--accent-color), 0.85);
-  --accent-color-90-alpha: hsla(var(--accent-color), 0.9);
-  --accent-color-95-alpha: hsla(var(--accent-color), 0.95);
+  --accent-color-05-alpha: hsla(var(--accent-hsl), 0.05);
+  --accent-color-10-alpha: hsla(var(--accent-hsl), 0.1);
+  --accent-color-15-alpha: hsla(var(--accent-hsl), 0.15);
+  --accent-color-20-alpha: hsla(var(--accent-hsl), 0.2);
+  --accent-color-25-alpha: hsla(var(--accent-hsl), 0.25);
+  --accent-color-30-alpha: hsla(var(--accent-hsl), 0.3);
+  --accent-color-35-alpha: hsla(var(--accent-hsl), 0.35);
+  --accent-color-40-alpha: hsla(var(--accent-hsl), 0.4);
+  --accent-color-45-alpha: hsla(var(--accent-hsl), 0.45);
+  --accent-color-50-alpha: hsla(var(--accent-hsl), 0.5);
+  --accent-color-55-alpha: hsla(var(--accent-hsl), 0.55);
+  --accent-color-60-alpha: hsla(var(--accent-hsl), 0.6);
+  --accent-color-65-alpha: hsla(var(--accent-hsl), 0.65);
+  --accent-color-70-alpha: hsla(var(--accent-hsl), 0.7);
+  --accent-color-75-alpha: hsla(var(--accent-hsl), 0.75);
+  --accent-color-80-alpha: hsla(var(--accent-hsl), 0.8);
+  --accent-color-85-alpha: hsla(var(--accent-hsl), 0.85);
+  --accent-color-90-alpha: hsla(var(--accent-hsl), 0.9);
+  --accent-color-95-alpha: hsla(var(--accent-hsl), 0.95);
 
-  --green-color-05-alpha: hsla(var(--green-color), 0.05);
-  --green-color-10-alpha: hsla(var(--green-color), 0.1);
-  --green-color-15-alpha: hsla(var(--green-color), 0.15);
-  --green-color-20-alpha: hsla(var(--green-color), 0.2);
-  --green-color-25-alpha: hsla(var(--green-color), 0.25);
-  --green-color-30-alpha: hsla(var(--green-color), 0.3);
-  --green-color-35-alpha: hsla(var(--green-color), 0.35);
-  --green-color-40-alpha: hsla(var(--green-color), 0.4);
-  --green-color-45-alpha: hsla(var(--green-color), 0.45);
-  --green-color-50-alpha: hsla(var(--green-color), 0.5);
-  --green-color-55-alpha: hsla(var(--green-color), 0.55);
-  --green-color-60-alpha: hsla(var(--green-color), 0.6);
-  --green-color-65-alpha: hsla(var(--green-color), 0.65);
-  --green-color-70-alpha: hsla(var(--green-color), 0.7);
-  --green-color-75-alpha: hsla(var(--green-color), 0.75);
-  --green-color-80-alpha: hsla(var(--green-color), 0.8);
-  --green-color-85-alpha: hsla(var(--green-color), 0.85);
-  --green-color-90-alpha: hsla(var(--green-color), 0.9);
-  --green-color-95-alpha: hsla(var(--green-color), 0.95);
+  --green-color-05-alpha: hsla(var(--green-hsl), 0.05);
+  --green-color-10-alpha: hsla(var(--green-hsl), 0.1);
+  --green-color-15-alpha: hsla(var(--green-hsl), 0.15);
+  --green-color-20-alpha: hsla(var(--green-hsl), 0.2);
+  --green-color-25-alpha: hsla(var(--green-hsl), 0.25);
+  --green-color-30-alpha: hsla(var(--green-hsl), 0.3);
+  --green-color-35-alpha: hsla(var(--green-hsl), 0.35);
+  --green-color-40-alpha: hsla(var(--green-hsl), 0.4);
+  --green-color-45-alpha: hsla(var(--green-hsl), 0.45);
+  --green-color-50-alpha: hsla(var(--green-hsl), 0.5);
+  --green-color-55-alpha: hsla(var(--green-hsl), 0.55);
+  --green-color-60-alpha: hsla(var(--green-hsl), 0.6);
+  --green-color-65-alpha: hsla(var(--green-hsl), 0.65);
+  --green-color-70-alpha: hsla(var(--green-hsl), 0.7);
+  --green-color-75-alpha: hsla(var(--green-hsl), 0.75);
+  --green-color-80-alpha: hsla(var(--green-hsl), 0.8);
+  --green-color-85-alpha: hsla(var(--green-hsl), 0.85);
+  --green-color-90-alpha: hsla(var(--green-hsl), 0.9);
+  --green-color-95-alpha: hsla(var(--green-hsl), 0.95);
 
-  --red-color-05-alpha: hsla(var(--red-color), 0.05);
-  --red-color-10-alpha: hsla(var(--red-color), 0.1);
-  --red-color-15-alpha: hsla(var(--red-color), 0.15);
-  --red-color-20-alpha: hsla(var(--red-color), 0.2);
-  --red-color-25-alpha: hsla(var(--red-color), 0.25);
-  --red-color-30-alpha: hsla(var(--red-color), 0.3);
-  --red-color-35-alpha: hsla(var(--red-color), 0.35);
-  --red-color-40-alpha: hsla(var(--red-color), 0.4);
-  --red-color-45-alpha: hsla(var(--red-color), 0.45);
-  --red-color-50-alpha: hsla(var(--red-color), 0.5);
-  --red-color-55-alpha: hsla(var(--red-color), 0.55);
-  --red-color-60-alpha: hsla(var(--red-color), 0.6);
-  --red-color-65-alpha: hsla(var(--red-color), 0.65);
-  --red-color-70-alpha: hsla(var(--red-color), 0.7);
-  --red-color-75-alpha: hsla(var(--red-color), 0.75);
-  --red-color-80-alpha: hsla(var(--red-color), 0.8);
-  --red-color-85-alpha: hsla(var(--red-color), 0.85);
-  --red-color-90-alpha: hsla(var(--red-color), 0.9);
-  --red-color-95-alpha: hsla(var(--red-color), 0.95);
+  --red-color-05-alpha: hsla(var(--red-hsl), 0.05);
+  --red-color-10-alpha: hsla(var(--red-hsl), 0.1);
+  --red-color-15-alpha: hsla(var(--red-hsl), 0.15);
+  --red-color-20-alpha: hsla(var(--red-hsl), 0.2);
+  --red-color-25-alpha: hsla(var(--red-hsl), 0.25);
+  --red-color-30-alpha: hsla(var(--red-hsl), 0.3);
+  --red-color-35-alpha: hsla(var(--red-hsl), 0.35);
+  --red-color-40-alpha: hsla(var(--red-hsl), 0.4);
+  --red-color-45-alpha: hsla(var(--red-hsl), 0.45);
+  --red-color-50-alpha: hsla(var(--red-hsl), 0.5);
+  --red-color-55-alpha: hsla(var(--red-hsl), 0.55);
+  --red-color-60-alpha: hsla(var(--red-hsl), 0.6);
+  --red-color-65-alpha: hsla(var(--red-hsl), 0.65);
+  --red-color-70-alpha: hsla(var(--red-hsl), 0.7);
+  --red-color-75-alpha: hsla(var(--red-hsl), 0.75);
+  --red-color-80-alpha: hsla(var(--red-hsl), 0.8);
+  --red-color-85-alpha: hsla(var(--red-hsl), 0.85);
+  --red-color-90-alpha: hsla(var(--red-hsl), 0.9);
+  --red-color-95-alpha: hsla(var(--red-hsl), 0.95);
 
-  --yellow-color-05-alpha: hsla(var(--yellow-color), 0.05);
-  --yellow-color-10-alpha: hsla(var(--yellow-color), 0.1);
-  --yellow-color-15-alpha: hsla(var(--yellow-color), 0.15);
-  --yellow-color-20-alpha: hsla(var(--yellow-color), 0.2);
-  --yellow-color-25-alpha: hsla(var(--yellow-color), 0.25);
-  --yellow-color-30-alpha: hsla(var(--yellow-color), 0.3);
-  --yellow-color-35-alpha: hsla(var(--yellow-color), 0.35);
-  --yellow-color-40-alpha: hsla(var(--yellow-color), 0.4);
-  --yellow-color-45-alpha: hsla(var(--yellow-color), 0.45);
-  --yellow-color-50-alpha: hsla(var(--yellow-color), 0.5);
-  --yellow-color-55-alpha: hsla(var(--yellow-color), 0.55);
-  --yellow-color-60-alpha: hsla(var(--yellow-color), 0.6);
-  --yellow-color-65-alpha: hsla(var(--yellow-color), 0.65);
-  --yellow-color-70-alpha: hsla(var(--yellow-color), 0.7);
-  --yellow-color-75-alpha: hsla(var(--yellow-color), 0.75);
-  --yellow-color-80-alpha: hsla(var(--yellow-color), 0.8);
-  --yellow-color-85-alpha: hsla(var(--yellow-color), 0.85);
-  --yellow-color-90-alpha: hsla(var(--yellow-color), 0.9);
-  --yellow-color-95-alpha: hsla(var(--yellow-color), 0.95);
+  --yellow-color-05-alpha: hsla(var(--yellow-hsl), 0.05);
+  --yellow-color-10-alpha: hsla(var(--yellow-hsl), 0.1);
+  --yellow-color-15-alpha: hsla(var(--yellow-hsl), 0.15);
+  --yellow-color-20-alpha: hsla(var(--yellow-hsl), 0.2);
+  --yellow-color-25-alpha: hsla(var(--yellow-hsl), 0.25);
+  --yellow-color-30-alpha: hsla(var(--yellow-hsl), 0.3);
+  --yellow-color-35-alpha: hsla(var(--yellow-hsl), 0.35);
+  --yellow-color-40-alpha: hsla(var(--yellow-hsl), 0.4);
+  --yellow-color-45-alpha: hsla(var(--yellow-hsl), 0.45);
+  --yellow-color-50-alpha: hsla(var(--yellow-hsl), 0.5);
+  --yellow-color-55-alpha: hsla(var(--yellow-hsl), 0.55);
+  --yellow-color-60-alpha: hsla(var(--yellow-hsl), 0.6);
+  --yellow-color-65-alpha: hsla(var(--yellow-hsl), 0.65);
+  --yellow-color-70-alpha: hsla(var(--yellow-hsl), 0.7);
+  --yellow-color-75-alpha: hsla(var(--yellow-hsl), 0.75);
+  --yellow-color-80-alpha: hsla(var(--yellow-hsl), 0.8);
+  --yellow-color-85-alpha: hsla(var(--yellow-hsl), 0.85);
+  --yellow-color-90-alpha: hsla(var(--yellow-hsl), 0.9);
+  --yellow-color-95-alpha: hsla(var(--yellow-hsl), 0.95);
 
-  --blue-color-05-alpha: hsla(var(--blue-color), 0.05);
-  --blue-color-10-alpha: hsla(var(--blue-color), 0.1);
-  --blue-color-15-alpha: hsla(var(--blue-color), 0.15);
-  --blue-color-20-alpha: hsla(var(--blue-color), 0.2);
-  --blue-color-25-alpha: hsla(var(--blue-color), 0.25);
-  --blue-color-30-alpha: hsla(var(--blue-color), 0.3);
-  --blue-color-35-alpha: hsla(var(--blue-color), 0.35);
-  --blue-color-40-alpha: hsla(var(--blue-color), 0.4);
-  --blue-color-45-alpha: hsla(var(--blue-color), 0.45);
-  --blue-color-50-alpha: hsla(var(--blue-color), 0.5);
-  --blue-color-55-alpha: hsla(var(--blue-color), 0.55);
-  --blue-color-60-alpha: hsla(var(--blue-color), 0.6);
-  --blue-color-65-alpha: hsla(var(--blue-color), 0.65);
-  --blue-color-70-alpha: hsla(var(--blue-color), 0.7);
-  --blue-color-75-alpha: hsla(var(--blue-color), 0.75);
-  --blue-color-80-alpha: hsla(var(--blue-color), 0.8);
-  --blue-color-85-alpha: hsla(var(--blue-color), 0.85);
-  --blue-color-90-alpha: hsla(var(--blue-color), 0.9);
-  --blue-color-95-alpha: hsla(var(--blue-color), 0.95);
+  --blue-color-05-alpha: hsla(var(--blue-hsl), 0.05);
+  --blue-color-10-alpha: hsla(var(--blue-hsl), 0.1);
+  --blue-color-15-alpha: hsla(var(--blue-hsl), 0.15);
+  --blue-color-20-alpha: hsla(var(--blue-hsl), 0.2);
+  --blue-color-25-alpha: hsla(var(--blue-hsl), 0.25);
+  --blue-color-30-alpha: hsla(var(--blue-hsl), 0.3);
+  --blue-color-35-alpha: hsla(var(--blue-hsl), 0.35);
+  --blue-color-40-alpha: hsla(var(--blue-hsl), 0.4);
+  --blue-color-45-alpha: hsla(var(--blue-hsl), 0.45);
+  --blue-color-50-alpha: hsla(var(--blue-hsl), 0.5);
+  --blue-color-55-alpha: hsla(var(--blue-hsl), 0.55);
+  --blue-color-60-alpha: hsla(var(--blue-hsl), 0.6);
+  --blue-color-65-alpha: hsla(var(--blue-hsl), 0.65);
+  --blue-color-70-alpha: hsla(var(--blue-hsl), 0.7);
+  --blue-color-75-alpha: hsla(var(--blue-hsl), 0.75);
+  --blue-color-80-alpha: hsla(var(--blue-hsl), 0.8);
+  --blue-color-85-alpha: hsla(var(--blue-hsl), 0.85);
+  --blue-color-90-alpha: hsla(var(--blue-hsl), 0.9);
+  --blue-color-95-alpha: hsla(var(--blue-hsl), 0.95);
 }

@@ -7,6 +7,69 @@ doca_hidden: "false"
   <div class="form-tab | stack">
     <fieldset class="form-panel | stack">
       <header class="form-panel__header">
+        <h2 class="form-panel__title">Button Groups</h2>
+      </header>
+
+      <section class="form-panel__main | columns">
+        <div class="form-field">
+          <!-- Exemplo de form field com o .form-field__info dentro do .form-field__label. Isso faz o ícone do info aparecer logo depois da label -->
+          <label class="form-field__label" for="">
+            Button Group - Checkbox
+            <span class="form-field__info | icon" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quis quam sapiente quasi ipsum accusantium hic dolorem porro, qui accusamus libero a laudantium assumenda nostrum enim iusto esse cupiditate architecto.">info</span>
+          </label>
+          <div class="form-field__input form-group">
+            <label class="button" data-color="secondary"><input type="checkbox" name="" value="">Checkbox Label</label>
+            <label class="button" data-color="tertiary"><input type="checkbox" name="" value="">Checkbox Label</label>
+            <label class="button" data-color="success"><input type="checkbox" name="" value="">Checkbox Label</label>
+            <label class="button" data-color="success"><input type="checkbox" name="" value="">Checkbox Label</label>
+          </div>
+          <p class="form-field__message">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+
+        <div class="form-field">
+          <!-- Exemplo de form field com o .form-field__info dentro do .form-field__label. Isso faz o ícone do info aparecer logo depois da label -->
+          <label class="form-field__label" for="">
+            Button Group - Checkbox (multiple colors)
+            <span class="form-field__info | icon" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quis quam sapiente quasi ipsum accusantium hic dolorem porro, qui accusamus libero a laudantium assumenda nostrum enim iusto esse cupiditate architecto.">info</span>
+          </label>
+          <div class="form-field__input form-group">
+            <label class="button" data-color="secondary"><input type="checkbox" name="" value="">Checkbox Label</label>
+            <label class="button" data-color="tertiary"><input type="checkbox" name="" value="">Checkbox Label</label>
+            <label class="button" data-color="success"><input type="checkbox" name="" value="">Checkbox Label</label>
+            <label class="button" data-color="accent"><input type="checkbox" name="" value="">Checkbox Label</label>
+          </div>
+          <p class="form-field__message">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+
+        <div class="form-field">
+          <!-- Exemplo de form field com o .form-field__info dentro do .form-field__label. Isso faz o ícone do info aparecer logo depois da label -->
+          <label class="form-field__label" for="">
+            Button Group - Radios
+            <span class="form-field__info | icon" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quis quam sapiente quasi ipsum accusantium hic dolorem porro, qui accusamus libero a laudantium assumenda nostrum enim iusto esse cupiditate architecto.">info</span>
+          </label>
+          <div class="form-field__input form-group">
+            <label class="button" data-color="primary"><input type="radio" name="radio-03" value="">Radio Label</label>
+            <label class="button" data-color="primary"><input type="radio" name="radio-03" value="">Radio Label</label>
+            <label class="button" data-color="primary"><input type="radio" name="radio-03" value="">Radio Label</label>
+            <label class="button" data-color="primary"><input type="radio" name="radio-03" value="">Radio Label</label>
+          </div>
+          <p class="form-field__message">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+      </section>
+      
+      <footer class="form-panel__footer | cluster">
+        <button class="button" data-color="primary" type="submit">Primary</button>
+        <button class="button" data-color="secondary" type="submit">Secondary</button>
+        <button class="button" data-color="accent" type="submit">Accent</button>
+        <!-- Exemplo de data-split - Veja _utils.css > cluster  -->
+        <button class="button" data-color="base" type="submit" data-split>Base</button>
+        <button class="button" data-color="base" type="submit" disabled>Base</button>
+        
+      </footer>
+    </fieldset>
+
+    <fieldset class="form-panel | stack">
+      <header class="form-panel__header">
         <h2 class="form-panel__title">Text Based Inputs</h2>
       </header>
 
@@ -66,7 +129,7 @@ doca_hidden: "false"
 
         <div class="form-field">
           <label class="form-field__label" for="id14">Busca</label>
-          <div class="group">
+          <div class="form-group">
             <input class="form-field__input" type="search" id="id14" name="" value="" placeholder="Busca">
             <input class="button" type="submit">
           </div>
@@ -83,6 +146,7 @@ doca_hidden: "false"
         <button class="button" data-visual="primary" data-color="base" type="submit" disabled>Base</button>
       </footer>
     </fieldset>
+    
     <fieldset class="form-panel | stack">
       <header class="form-panel__header">
         <h2 class="form-panel__title">Date Based Inputs</h2>
@@ -125,6 +189,81 @@ doca_hidden: "false"
         
       </footer>
     </fieldset>
+
+    <fieldset class="form-panel | stack">
+      <header class="form-panel__header">
+        <h2 class="form-panel__title">Checkboxes and Radios</h2>
+      </header>
+
+      <section class="form-panel__main | columns" data-columns="4">
+        <div class="form-field">
+          <!-- Exemplo de form field com checkbox base -->
+          <label class="form-field__label" for="">Base Checkbox</label>
+          <span class="form-field__info | icon" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quis quam sapiente quasi ipsum accusantium hic dolorem porro, qui accusamus libero a laudantium assumenda nostrum enim iusto esse cupiditate architecto.">info</span>
+          <div class="form-field__input">
+            <label><input type="checkbox" name="base-checkbox-01" value="">Checkbox Label</label>
+            <label><input type="checkbox" name="base-checkbox-01" value="">Checkbox Label</label>
+            <label><input type="checkbox" name="base-checkbox-01" value="">Checkbox Label</label>
+            <label><input type="checkbox" name="base-checkbox-01" value="">Checkbox Label</label>
+          </div>
+          <p class="form-field__message">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+
+        <div class="form-field">
+          <!-- Exemplo de form field com os elementos internos em outra ordem. Repare que isso não afeta a interface -->
+          <label class="form-field__label" for="">Base Radio</label>
+          <div class="form-field__input">
+            <label><input type="radio" name="base-radio-01" value="">Radio Label</label>
+            <label><input type="radio" name="base-radio-01" value="">Radio Label</label>
+            <label><input type="radio" name="base-radio-01" value="">Radio Label</label>
+            <label><input type="radio" name="base-radio-01" value="">Radio Label</label>
+          </div>
+          <span class="form-field__info | icon" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quis quam sapiente quasi ipsum accusantium hic dolorem porro, qui accusamus libero a laudantium assumenda nostrum enim iusto esse cupiditate architecto.">info</span>
+          <p class="form-field__message">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        
+        <div class="form-field">
+          <!-- Exemplo de form field com o .form-field__info dentro do .form-field__label. Isso faz o ícone do info aparecer logo depois da label -->
+          <label class="form-field__label" for="">
+            Fancy Checkbox
+            <span class="form-field__info | icon" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quis quam sapiente quasi ipsum accusantium hic dolorem porro, qui accusamus libero a laudantium assumenda nostrum enim iusto esse cupiditate architecto.">info</span>
+          </label>
+          <div class="form-field__input form-field--fancy">
+            <label><input type="checkbox" name="" value="">Checkbox Label</label>
+            <label><input type="checkbox" name="" value="">Checkbox Label</label>
+            <label><input type="checkbox" name="" value="">Checkbox Label</label>
+            <label><input type="checkbox" name="" value="">Checkbox Label</label>
+          </div>
+          <p class="form-field__message">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+
+        <div class="form-field">
+          <!-- Exemplo de form field com o .form-field__info dentro do .form-field__label. Isso faz o ícone do info aparecer logo depois da label -->
+          <label class="form-field__label" for="">
+            Fancy Radio
+            <span class="form-field__info | icon" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quis quam sapiente quasi ipsum accusantium hic dolorem porro, qui accusamus libero a laudantium assumenda nostrum enim iusto esse cupiditate architecto.">info</span>
+          </label>
+          <div class="form-field__input form-field--fancy">
+            <label><input type="radio" name="radio-fancy-01" value="">Radio Label</label>
+            <label><input type="radio" name="radio-fancy-01" value="">Radio Label</label>
+            <label><input type="radio" name="radio-fancy-01" value="">Radio Label</label>
+            <label><input type="radio" name="radio-fancy-01" value="">Radio Label</label>
+          </div>
+          <p class="form-field__message">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        
+      </section>
+      
+      <footer class="form-panel__footer | cluster">
+        <button class="button" data-visual="unstyled" data-color="primary" type="submit">Primary</button>
+        <button class="button" data-visual="unstyled" data-color="secondary" type="submit">Secondary</button>
+        <button class="button" data-visual="unstyled" data-color="accent" type="submit">Accent</button>
+        <button class="button" data-visual="unstyled" data-color="base" type="submit">Base</button>
+        <button class="button" data-visual="unstyled" data-color="base" disabled type="submit">Base</button>
+      </footer>
+    </fieldset>
+    
+    
     <fieldset class="form-panel | stack">
       <header class="form-panel__header">
         <h2 class="form-panel__title">Extra Form Fields</h2>
@@ -146,9 +285,10 @@ doca_hidden: "false"
             <option value="option2">Opção 2</option>
           </select>
         </div>
+
         <div class="form-field">
-          <label class="form-field__label" for="id18">Área de Texto</label>
-          <textarea class="form-field__input" id="id18" name=""></textarea>
+          <label class="form-field__label" for="id19">Área de Texto</label>
+          <textarea class="form-field__input" id="id19" name=""></textarea>
           <span class="form-field__info | icon" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quis quam sapiente quasi ipsum accusantium hic dolorem porro, qui accusamus libero a laudantium assumenda nostrum enim iusto esse cupiditate architecto.">info</span>
           <p class="form-field__message">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
         </div>
@@ -162,5 +302,6 @@ doca_hidden: "false"
         <button class="button" data-visual="unstyled" data-color="base" disabled type="submit">Base</button>
       </footer>
     </fieldset>
+    
   </div>
 </form>  

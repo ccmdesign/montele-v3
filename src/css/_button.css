@@ -127,8 +127,8 @@
 }
 
 .button[data-color="success"] {
-  --_button-hsl: var(--green-hsl);
-  --_button-text-color: var(--green-color);
+  --_button-hsl: var(--success-hsl);
+  --_button-text-color: var(--success-color);
 }
 
 .button[data-color="cancel"],
@@ -200,7 +200,9 @@
 }
 
 .button[data-visual="primary"],
-.button[visual="primary"] {
+.button[visual="primary"],
+/* This makes the checkbox checked look like the primary button */
+.button:has(:checked) {
   color: white;
   border-width: var(--_button-border-width, 0);
   border-style: var(--_button-border-style, solid);

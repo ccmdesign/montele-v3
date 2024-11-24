@@ -1,0 +1,39 @@
+.listagem {
+  .table-wrapper {
+    padding-top: var(--space-xl);
+  }
+}
+
+.listagem__header {
+  .h4 {
+    font-weight: 200;
+  }
+
+  .h4 strong {
+    font-weight: 400;
+    color: var(--primary-color);
+  }
+}
+
+.listagem__summary {
+  border-block: 1px solid var(--primary-color);
+  padding-block: var(--space-s);
+}
+
+.page-viewer {
+  padding-inline: var(--space-2xs);
+}
+
+.menu-item {
+  padding: var(--space-s) var(--space-s);
+  align-items: center;
+  justify-content: flex-start;
+  background-color: transparent;
+  border: unset;
+  color: currentColor;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: var(--base-color-80-tint);
+  }
+}

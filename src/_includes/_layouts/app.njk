@@ -18,9 +18,15 @@ layout: _layouts/base.njk
 
   <main class="app-layout__main bg-secondary">
     {{ content | safe }}
+
+    
   </main>
 
   <aside class="app-layout__sidebar-right" id="sidebar-right" aria-hidden="{{ doca_hidden | default('true') }}">
     {% include "src/_includes/sidebar-right.njk" %}
   </aside>
+
 </div>
+
+{% include "src/_includes/popovers-and-modals.njk" %}
+
