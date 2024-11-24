@@ -13,17 +13,3 @@
 .feed-page {
   background-color: hsla(var(--tertiary-hsl), 1);
 }
-
-.modal-window {
-  /* display: none; */
-  width: 80%;
-  height: 80svh;
-
-  &__main {
-    overflow-y: auto;
-  }
-}
-
-.modal-window::backdrop {
-  background-color: var(--base-color-40-alpha);
-}

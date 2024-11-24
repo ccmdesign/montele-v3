@@ -1,4 +1,7 @@
 @layer form-custom {
+  /* @ToDo: Styles para o form-group de range - exemplo na modal de filtros  */
+  /* @ToDo: Styles para o multibox com autocomplete, tipo o campo de tags do Notion - exemplo na modal de filtros  */
+
   .form-tab {
   }
 
@@ -159,7 +162,7 @@
     }
   }
 
-  .form-field--fancy {
+  .form-field__input[data-visual="fancy"] {
     > label {
       background-color: var(--_input-background-color);
       border-radius: var(--border-radius-s);
