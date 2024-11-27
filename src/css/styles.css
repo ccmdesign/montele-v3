@@ -7,6 +7,10 @@
 @import "_vars.css";
 @import "_colors.css";
 
+@import "_color-utils-background-color.css";
+@import "_color-utils-color.css";
+@import "_color-utils-border-color.css";
+
 @import "_utils.css";
 
 @import "_typography.css";

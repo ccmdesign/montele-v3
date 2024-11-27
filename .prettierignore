@@ -1,0 +1,10 @@
+# Ignore specific files
+_color-utils-background-color.css
+_color-utils-color.css
+_color-utils-border-color.css
+
+# Ignore all files in a specific directory
+dist/
+
+# # Ignore all CSS files in a specific directory
+# styles/*.css

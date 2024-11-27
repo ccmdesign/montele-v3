@@ -2,50 +2,227 @@
   <header class="modal-window__header">
     <h1>Filtrar Negócio</h1>
   </header>
-  
 
   <section class="modal-window__main">
-    <form class="form">
-    <div class="columns" data-columns="2">
-      <div class="form-field">
-        <label class="form-field__label">Nº Série</label>
-        <div class="form-group">
-          <input type="text" class="form-field__input serial gte" name="controlevenda.numero_serie" value=""> até <input type="text" class="serial lte" name="controlevenda.numero_serie" value="">
-        </div>
-      </div>
+    <!-- Essa seção só aparece se tivermos algum filtro ativo-->
+    <div class="active-filters">
+      <h3>Filtros Ativos</h3>
+      <form class="form">
+        <div class="columns" data-columns="2">
+          <div class="form-field">
+            <label class="form-field__label">Nº Série</label>
+            <div class="form-field__input form-group">
+              <input type="text" class="form-field__input serial gte" name="controlevenda.numero_serie" value="">
+              <input type="text" class="form-field__input serial lte" name="controlevenda.numero_serie" value="">
+            </div>
+            <span class="form-field__info | icon" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quis quam sapiente quasi ipsum accusantium hic dolorem porro, qui accusamus libero a laudantium assumenda nostrum enim iusto esse cupiditate architecto.">info</span>
+          </div>
 
-      <div class="form-field">
-        <label class="form-field__label">Nº Negócio</label>
-        <input type="text" class="form-field__input serial" name="codigo" value="">
-      </div>
-      
-      <div class="form-field">
-        <label class="form-field__label">Cliente</label>
-        <input type="text" class="form-field__input autocomplete empresa" value="">
-        <input type="hidden" class="object-id" name="cliente.id" value="">
-      </div>
-      
-      <div class="form-field">
-        <label class="form-field__label">Negócio</label>
-        <input type="text" class="form-field__input regex" name="normalized.nome_do_estabelecimento" value="">
-      </div>
+          <div class="form-field">
+            <label class="form-field__label">Nº Negócio</label>
+            <div class="form-group">
+              <input type="text" class="form-field__input serial gte" name="controlevenda.numero_serie" value="">
+              <button class="button">Test</button>
+            </div>
+            <span class="form-field__info | icon" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quis quam sapiente quasi ipsum accusantium hic dolorem porro, qui accusamus libero a laudantium assumenda nostrum enim iusto esse cupiditate architecto.">info</span>
+          </div>
+          
+          <div class="form-field">
+            <label class="form-field__label">Cliente</label>
+            <input type="text" class="form-field__input autocomplete empresa" value="">
+            <input type="hidden" class="object-id" name="cliente.id" value="">
+          </div>
+          
+          <div class="form-field">
+            <label class="form-field__label">Negócio</label>
+            <input type="text" class="form-field__input regex" name="normalized.nome_do_estabelecimento" value="">
+          </div>
 
-      <div class="form-field">
-        <label class="form-field__label" for="">Série</label>
-        <span class="form-field__info | icon" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quis quam sapiente quasi ipsum accusantium hic dolorem porro, qui accusamus libero a laudantium assumenda nostrum enim iusto esse cupiditate architecto.">info</span>
-        <div class="form-field__input | columns" data-visual="fancy" data-columns="auto">
-          <label><input type="checkbox" name="base-checkbox-01" value="pl200" selected="selected">PL-200</label>
-          <label><input type="checkbox" name="base-checkbox-01" value="elevador">Elevador</label>
-          <label><input type="checkbox" name="base-checkbox-01" value="predial">Predial</label>
-          <label><input type="checkbox" name="base-checkbox-01" value="mc230">MC-230</label>
-          <label><input type="checkbox" name="base-checkbox-01" value="mc250">MC-250</label>
-          <label><input type="checkbox" name="base-checkbox-01" value="mc1000">MC-1000</label>
-          <label><input type="checkbox" name="base-checkbox-01" value="cargueiro">Cargueiro</label>
-          <label><input type="checkbox" name="base-checkbox-01" value="hidraulico">Hidráulico</label>
-          <label><input type="checkbox" name="base-checkbox-01" value="especial">Especial</label>
+          <div class="form-field">
+            <label class="form-field__label" for="">Série</label>
+            <span class="form-field__info | icon" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quis quam sapiente quasi ipsum accusantium hic dolorem porro, qui accusamus libero a laudantium assumenda nostrum enim iusto esse cupiditate architecto.">info</span>
+            <div class="form-field__input | columns" data-visual="fancy" data-columns="auto">
+              <label><input type="checkbox" name="base-checkbox-01" value="pl200" selected="selected">PL-200</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="elevador">Elevador</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="predial">Predial</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="mc230">MC-230</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="mc250">MC-250</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="mc1000">MC-1000</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="cargueiro">Cargueiro</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="hidraulico">Hidráulico</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="especial">Especial</label>
+            </div>
+            <p class="form-field__message">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
         </div>
-        <p class="form-field__message">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-      </div>
+      </form>
+    </div>
+
+    <div class="all-filters">
+      <h3>Todos os Filtros</h3>
+      <form class="form">
+        <div class="columns" data-columns="2">
+          <div class="form-field">
+            <label class="form-field__label">Nº Série</label>
+            <div class="form-group">
+              <input type="text" class="form-field__input serial gte" name="controlevenda.numero_serie" value=""> até <input type="text" class="serial lte" name="controlevenda.numero_serie" value="">
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label class="form-field__label">Nº Negócio</label>
+            <input type="text" class="form-field__input serial" name="codigo" value="">
+          </div>
+          
+          <div class="form-field">
+            <label class="form-field__label">Cliente</label>
+            <input type="text" class="form-field__input autocomplete empresa" value="">
+            <input type="hidden" class="object-id" name="cliente.id" value="">
+          </div>
+          
+          <div class="form-field">
+            <label class="form-field__label">Negócio</label>
+            <input type="text" class="form-field__input regex" name="normalized.nome_do_estabelecimento" value="">
+          </div>
+
+          <div class="form-field">
+            <label class="form-field__label" for="">Série</label>
+            <span class="form-field__info | icon" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quis quam sapiente quasi ipsum accusantium hic dolorem porro, qui accusamus libero a laudantium assumenda nostrum enim iusto esse cupiditate architecto.">info</span>
+            <div class="form-field__input | columns" data-visual="fancy" data-columns="auto">
+              <label><input type="checkbox" name="base-checkbox-01" value="pl200" selected="selected">PL-200</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="elevador">Elevador</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="predial">Predial</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="mc230">MC-230</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="mc250">MC-250</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="mc1000">MC-1000</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="cargueiro">Cargueiro</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="hidraulico">Hidráulico</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="especial">Especial</label>
+            </div>
+            <p class="form-field__message">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+          <div class="form-field">
+            <label class="form-field__label">Nº Série</label>
+            <div class="form-group">
+              <input type="text" class="form-field__input serial gte" name="controlevenda.numero_serie" value=""> até <input type="text" class="serial lte" name="controlevenda.numero_serie" value="">
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label class="form-field__label">Nº Negócio</label>
+            <input type="text" class="form-field__input serial" name="codigo" value="">
+          </div>
+          
+          <div class="form-field">
+            <label class="form-field__label">Cliente</label>
+            <input type="text" class="form-field__input autocomplete empresa" value="">
+            <input type="hidden" class="object-id" name="cliente.id" value="">
+          </div>
+          
+          <div class="form-field">
+            <label class="form-field__label">Negócio</label>
+            <input type="text" class="form-field__input regex" name="normalized.nome_do_estabelecimento" value="">
+          </div>
+
+          <div class="form-field">
+            <label class="form-field__label" for="">Série</label>
+            <span class="form-field__info | icon" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quis quam sapiente quasi ipsum accusantium hic dolorem porro, qui accusamus libero a laudantium assumenda nostrum enim iusto esse cupiditate architecto.">info</span>
+            <div class="form-field__input | columns" data-visual="fancy" data-columns="auto">
+              <label><input type="checkbox" name="base-checkbox-01" value="pl200" selected="selected">PL-200</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="elevador">Elevador</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="predial">Predial</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="mc230">MC-230</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="mc250">MC-250</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="mc1000">MC-1000</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="cargueiro">Cargueiro</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="hidraulico">Hidráulico</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="especial">Especial</label>
+            </div>
+            <p class="form-field__message">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+          <div class="form-field">
+            <label class="form-field__label">Nº Série</label>
+            <div class="form-group">
+              <input type="text" class="form-field__input serial gte" name="controlevenda.numero_serie" value=""> até <input type="text" class="serial lte" name="controlevenda.numero_serie" value="">
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label class="form-field__label">Nº Negócio</label>
+            <input type="text" class="form-field__input serial" name="codigo" value="">
+          </div>
+          
+          <div class="form-field">
+            <label class="form-field__label">Cliente</label>
+            <input type="text" class="form-field__input autocomplete empresa" value="">
+            <input type="hidden" class="object-id" name="cliente.id" value="">
+          </div>
+          
+          <div class="form-field">
+            <label class="form-field__label">Negócio</label>
+            <input type="text" class="form-field__input regex" name="normalized.nome_do_estabelecimento" value="">
+          </div>
+
+          <div class="form-field">
+            <label class="form-field__label" for="">Série</label>
+            <span class="form-field__info | icon" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quis quam sapiente quasi ipsum accusantium hic dolorem porro, qui accusamus libero a laudantium assumenda nostrum enim iusto esse cupiditate architecto.">info</span>
+            <div class="form-field__input | columns" data-visual="fancy" data-columns="auto">
+              <label><input type="checkbox" name="base-checkbox-01" value="pl200" selected="selected">PL-200</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="elevador">Elevador</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="predial">Predial</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="mc230">MC-230</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="mc250">MC-250</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="mc1000">MC-1000</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="cargueiro">Cargueiro</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="hidraulico">Hidráulico</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="especial">Especial</label>
+            </div>
+            <p class="form-field__message">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+          <div class="form-field">
+            <label class="form-field__label">Nº Série</label>
+            <div class="form-group">
+              <input type="text" class="form-field__input serial gte" name="controlevenda.numero_serie" value=""> até <input type="text" class="serial lte" name="controlevenda.numero_serie" value="">
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label class="form-field__label">Nº Negócio</label>
+            <input type="text" class="form-field__input serial" name="codigo" value="">
+          </div>
+          
+          <div class="form-field">
+            <label class="form-field__label">Cliente</label>
+            <input type="text" class="form-field__input autocomplete empresa" value="">
+            <input type="hidden" class="object-id" name="cliente.id" value="">
+          </div>
+          
+          <div class="form-field">
+            <label class="form-field__label">Negócio</label>
+            <input type="text" class="form-field__input regex" name="normalized.nome_do_estabelecimento" value="">
+          </div>
+
+          <div class="form-field">
+            <label class="form-field__label" for="">Série</label>
+            <span class="form-field__info | icon" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quis quam sapiente quasi ipsum accusantium hic dolorem porro, qui accusamus libero a laudantium assumenda nostrum enim iusto esse cupiditate architecto.">info</span>
+            <div class="form-field__input | columns" data-visual="fancy" data-columns="auto">
+              <label><input type="checkbox" name="base-checkbox-01" value="pl200" selected="selected">PL-200</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="elevador">Elevador</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="predial">Predial</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="mc230">MC-230</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="mc250">MC-250</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="mc1000">MC-1000</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="cargueiro">Cargueiro</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="hidraulico">Hidráulico</label>
+              <label><input type="checkbox" name="base-checkbox-01" value="especial">Especial</label>
+            </div>
+            <p class="form-field__message">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+        </div>
+      </form>
+    </div>
+
+      
 
       
   
@@ -670,7 +847,7 @@
     </form>
   </section>
   <footer class="modal-window__footer | cluster">
-    <button class="button" type="submit" data-split>Confirmar</button>
-    <button class="button cancel" type="reset">Cancelar</button>
+    <button popovertarget="modal-table-filter" popovertargetaction="hide" class="button" type="submit" data-split>Confirmar</button>
+    <button popovertarget="modal-table-filter" popovertargetaction="hide" class="button cancel" type="reset">Cancelar</button>
   </footer>  
 </dialog>

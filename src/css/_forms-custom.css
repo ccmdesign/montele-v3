@@ -54,7 +54,8 @@
 
   /* Sets the grid for the base form-field layout */
   .form-field {
-    grid-template-columns: 1fr 2fr auto;
+    /* o 36ch controla a largura máxima dos labels do .form-field */
+    grid-template-columns: 36ch 1fr 3ch;
     grid-template-rows: auto auto;
     grid-template-areas:
       "label input info"
@@ -205,6 +206,8 @@
   }
 
   .form-group {
+    max-width: 100%;
+
     label:before {
       display: none;
     }
@@ -216,6 +219,10 @@
 
     > :not(:first-child) {
       margin-left: calc(var(--_input-border-width) * -1);
+    }
+
+    &:has(input[type="text"] ~ input[type="text"]) {
+      gap: var(--space-xs);
     }
   }
 
@@ -236,7 +243,7 @@
   }
 
   .form-field__label {
-    text-align: right;
+    /* text-align: right; */
     padding-inline: var(--_input-padding-inline);
   }
 

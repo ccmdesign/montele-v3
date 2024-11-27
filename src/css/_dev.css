@@ -10,6 +10,35 @@
   }
 }
 
-.feed-page {
-  background-color: hsla(var(--tertiary-hsl), 1);
+.active-filters,
+.all-filters {
+  padding-block: var(--space-l);
+
+  h3 {
+    text-align: center;
+    padding-bottom: var(--space-m);
+  }
+}
+
+.active-filters {
+  border-bottom: var(--base-separator);
+}
+
+.all-filters {
+}
+
+.color-grid {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-l);
+}
+
+.color-grid__row {
+  display: flex;
+
+  * {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+  }
 }

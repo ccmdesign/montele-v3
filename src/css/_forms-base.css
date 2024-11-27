@@ -4,7 +4,7 @@
     --_input-border-style: solid;
     --_input-border-color: var(--_input-background-color);
     --_input-color: var(--base-color);
-    --_input-background-color: var(--base-color-05-tint);
+    --_input-background-color: var(--base-color-07-tint);
     --_input-padding-block: calc(var(--space-xs) + var(--_input-border-width));
     --_input-padding-inline: var(--space-s);
     /* --_input-padding-inline: 0; */
@@ -35,8 +35,7 @@
     display: inline-block;
     vertical-align: middle;
     box-sizing: border-box;
-    border: var(--_input-border-width) var(--_input-border-style)
-      var(--_input-border-color);
+    border: var(--_input-border-width) var(--_input-border-style) var(--_input-border-color);
     padding-block: var(--_input-padding-block);
     padding-inline: var(--_input-padding-inline);
     border-radius: var(--_input-border-radius);
@@ -97,9 +96,7 @@
   }
 
   select:disabled {
-    background-color: var(
-      --base-color-40-tint
-    ); /* Set background color for disabled state */
+    background-color: var(--base-color-40-tint); /* Set background color for disabled state */
     color: var(--base-color-20-tint); /* Set text color for disabled state */
     cursor: not-allowed; /* Set cursor to not-allowed */
   }

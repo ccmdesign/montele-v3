@@ -78,6 +78,7 @@
 
   .columns[data-columns="2"] {
     columns: 2;
+    column-width: auto;
     --_column-gap: var(--space-xl);
   }
   .columns[data-columns="3"] {

@@ -42,5 +42,5 @@
 }
 
 .modal-window::backdrop {
-  background-color: var(--base-color-10-alpha);
+  background-color: var(--base-color-40-alpha);
 }
