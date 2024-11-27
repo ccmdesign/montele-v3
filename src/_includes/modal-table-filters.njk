@@ -28,14 +28,32 @@
           </div>
           
           <div class="form-field">
-            <label class="form-field__label">Cliente</label>
-            <input type="text" class="form-field__input autocomplete empresa" value="">
+            <label class="form-field__label" for="cliente-autocomplete">Cliente</label>
+            <input type="text" class="form-field__input autocomplete empresa" id="cliente-autocomplete" list="clientes" value="">
+            <datalist id="clientes">
+              <option value="Cliente 1">
+              <option value="Cliente 2">
+              <option value="Cliente 3">
+              <option value="Cliente 4">
+              <option value="Cliente 5">
+            </datalist>
             <input type="hidden" class="object-id" name="cliente.id" value="">
           </div>
           
           <div class="form-field">
             <label class="form-field__label">Negócio</label>
             <input type="text" class="form-field__input regex" name="normalized.nome_do_estabelecimento" value="">
+          </div>
+
+          <div class="form-field">
+            <label class="form-field__label">Negócio</label>
+            <select name="" id="">
+              <option value="">Option</option>
+              <option value="">Option</option>
+              <option value="">Option</option>
+              <option value="">Option</option>
+              <option value="">Option</option>
+            </select>
           </div>
 
           <div class="form-field">
