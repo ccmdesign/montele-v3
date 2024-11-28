@@ -1,22 +1,11 @@
 @layer form-base {
-  .form {
-    --_input-border-width: 2px;
-    --_input-border-style: solid;
-    --_input-border-color: var(--_input-background-color);
-    --_input-color: var(--base-color);
-    --_input-background-color: var(--base-color-07-tint);
-    --_input-padding-block: calc(var(--space-xs) + var(--_input-border-width));
-    --_input-padding-inline: var(--space-s);
-    /* --_input-padding-inline: 0; */
-    --_input-border-radius: var(--border-radius-s);
-  }
-
   input[type="hidden"],
   .ui-helper-hidden-accessible {
     /* Provavelmente posso deletar isso */
     display: none;
   }
 
+  label,
   input[type="text"],
   input[type="password"],
   input[type="email"],
@@ -44,6 +33,24 @@
     outline: none;
     transition: all 0.2s ease;
     font-weight: 100;
+    line-height: 1;
+    font-size: var(--_input-font-size);
+  }
+
+  label {
+    border: var(--_input-border-width) var(--_input-border-style) var(--_input-border-color);
+    position: relative;
+    border-color: transparent;
+    background-color: transparent;
+  }
+
+  label .icon {
+    position: absolute;
+    line-height: 1;
+    top: 0;
+    height: 100%;
+    padding-block: calc(var(--_input-padding-block) / 2);
+    padding-inline: calc(var(--_input-padding-inline) / 2);
   }
 
   textarea {
@@ -80,12 +87,14 @@
   input[readonly],
   textarea[readonly] {
     background-color: transparent;
+    --_input-border-color: transparent;
 
     &:focus {
       --_input-border-color: transparent;
     }
   }
 
+  input[list],
   select {
     appearance: none; /* Remove default styling */
     cursor: pointer; /* Set cursor to pointer */
@@ -95,11 +104,21 @@
     background-size: 1.8rem;
   }
 
+  /* @ToDo: Talvez pensar em adicionar um ícone tipo 3 pontinhos para indicar o autocomplete */
+  input[list]:hover::-webkit-calendar-picker-indicator,
+  input[list]:focus::-webkit-calendar-picker-indicator,
+  input[list]:active::-webkit-calendar-picker-indicator {
+    display: none !important;
+  }
+
+  select:not(:focus) {
+    border-color: transparent;
+  }
+
+  input[list]:disabled,
   select:disabled {
     background-color: var(--base-color-40-tint); /* Set background color for disabled state */
     color: var(--base-color-20-tint); /* Set text color for disabled state */
     cursor: not-allowed; /* Set cursor to not-allowed */
   }
-
-  /* @ToDo: Implementar Select Multibox; */
 }

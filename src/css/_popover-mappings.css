@@ -23,3 +23,12 @@
 #modal-table-filter {
   position-anchor: --modal-table-filter;
 }
+
+/* Form Component - Multi Select  */
+[multiselect] {
+  anchor-name: --form-multiselect-001;
+}
+
+#form-multiselect-001 {
+  position-anchor: --form-multiselect-001;
+}

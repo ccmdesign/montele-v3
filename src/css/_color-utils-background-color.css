@@ -1,3 +1,6 @@
+.background-color\:test {background-color: red;}
+
+
 .background-color\:base-color,
 .background-color\:base-100-tint { background-color: var(--base-color) !important; }
 .background-color\:base-98-tint { background-color: var(--base-color-98-tint) !important; }

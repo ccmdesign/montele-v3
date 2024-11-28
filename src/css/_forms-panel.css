@@ -1,0 +1,38 @@
+.form {
+  --_form-field-margin-inline: var(--space-xs);
+
+  --_input-border-width: 2px;
+  --_input-border-style: solid;
+  --_input-border-color: var(--_input-background-color);
+  --_input-color: var(--base-color);
+  --_input-background-color: var(--base-color-07-tint);
+  --_input-padding-block: calc(var(--space-xs) + var(--_input-border-width));
+  --_input-padding-inline: var(--space-s);
+  --_input-border-radius: var(--border-radius-s);
+}
+
+/* Container Query for the Form width */
+.form {
+  container-type: inline-size;
+  container-name: form;
+}
+
+.form-panel {
+  --_stack-space: var(--space-m-l);
+  padding-bottom: var(--space-m-l);
+  padding-inline: 0;
+  border: 0;
+  border-bottom: 1px solid #000;
+}
+
+.form-panel > * {
+  --_stack-space: var(--space-s-m);
+}
+
+.form-tab * {
+  --_stack-space: var(--space-xs);
+}
+
+.form .button {
+  --_button-padding-block: calc(var(--size--2));
+}

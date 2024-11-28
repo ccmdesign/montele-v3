@@ -11,7 +11,7 @@
 
   .h4 strong {
     font-weight: 400;
-    color: var(--primary-color);
+    color: var(--accent-color);
   }
 }
 
@@ -22,18 +22,4 @@
 
 .page-viewer {
   padding-inline: var(--space-2xs);
-}
-
-.menu-item {
-  padding: var(--space-s) var(--space-s);
-  align-items: center;
-  justify-content: flex-start;
-  background-color: transparent;
-  border: unset;
-  color: currentColor;
-  transition: all 0.2s ease;
-
-  &:hover {
-    background-color: var(--base-color-80-tint);
-  }
 }

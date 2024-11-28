@@ -26,3 +26,17 @@
   display: grid;
   /* Resetting the positioning of the popover when Open */
 }
+
+.popover-menu__item {
+  padding: var(--space-s) var(--space-s);
+  align-items: center;
+  justify-content: flex-start;
+  background-color: transparent;
+  border: unset;
+  color: currentColor;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: var(--base-color-90-tint);
+  }
+}

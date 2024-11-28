@@ -15,8 +15,8 @@
   }
 
   .icon[aria-active="true"] {
-    background-color: var(--primary-color);
-    color: hsla(var(--white-hsl), 1);
+    background-color: color-mix(in srgb, var(--sidebar-left-color) 40%, white);
+    color: hsla(var(--primary-hsl), 1);
   }
 }
 

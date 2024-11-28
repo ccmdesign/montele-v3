@@ -1,135 +1,180 @@
 ---
 layout: "_layouts/app.njk"
-doca_hidden: "true"
+doca_hidden: "false"
 ---
 
-<div class="test">
-  <div class="color-grid">
-    <div class="background-color:base-100"></div>
-    <div class="background-color:base-98"></div>
-    <div class="background-color:base-90"></div>
-    <div class="background-color:base-80"></div>
-    <div class="background-color:base-73"></div>
-    <div class="background-color:base-70"></div>
-    <div class="background-color:base-60"></div>
-    <div class="background-color:base-50"></div>
-    <div class="background-color:base-40"></div>
-    <div class="background-color:base-30"></div>
-    <div class="background-color:base-20"></div>
-    <div class="background-color:base-11"></div>
-    <div class="background-color:base-10"></div>
-    <div class="background-color:base-2"></div>
+<form class="form main-panel">
+  <div class="form-tab | stack">
+    <fieldset class="form-panel | stack">
+      <header class="form-panel__header">
+        <h2 class="form-panel__title">Multibox</h2>
+      </header>
+
+      <section class="form-panel__main | columns">
+        <div class="form-field">
+          <label class="form-field__label" for="id2">Text</label>
+          <select class="form-field__input">
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
+          <span class="form-field__info | icon" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quis quam sapiente quasi ipsum accusantium hic dolorem porro, qui accusamus libero a laudantium assumenda nostrum enim iusto esse cupiditate architecto.">info</span>
+          <p class="form-field__message">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <div class="form-field">
+          <label class="form-field__label" for="id1">Text</label>
+          
+          <div class="form-field__input form-group" multiselect >
+            <input type="text">
+
+            <div id="form-multiselect-001" class="form-field__options" data-visual="fancy" popover>
+              <!-- We need to have this alternative implementation
+                   with the .icon inside the label because 
+                   a :before inside a label inside a popover doesn't work -->
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+            </div>
+            
+            <button popovertarget="form-multiselect-001" class="button" type="button">Select</button>
+            
+          </div>
+          
+          <span class="form-field__info | icon" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quis quam sapiente quasi ipsum accusantium hic dolorem porro, qui accusamus libero a laudantium assumenda nostrum enim iusto esse cupiditate architecto.">info</span>
+          <p class="form-field__message">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          
+          
+        </div>
+
+        <div class="form-field" stacked>
+          <!-- Exemplo de form field com o .form-field__info dentro do .form-field__label. Isso faz o ícone do info aparecer logo depois da label -->
+          <label class="form-field__label" for="">Fancy Checkbox
+            <span class="form-field__info | icon" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quis quam sapiente quasi ipsum accusantium hic dolorem porro, qui accusamus libero a laudantium assumenda nostrum enim iusto esse cupiditate architecto.">info</span>
+          </label>
+          <div class="form-field__options" data-visual="fancy">
+            <label><input type="checkbox" name="" value="">Checkbox Label</label>
+            <label><input type="checkbox" name="" value="">Checkbox Label</label>
+            <label><input type="checkbox" name="" value="">Checkbox Label</label>
+            <label><input type="checkbox" name="" value="">Checkbox Label</label>
+          </div>
+          <p class="form-field__message">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        
+      </section>
+      
+      <footer class="form-panel__footer | cluster">
+        <button class="button" data-color="primary" type="submit">Primary</button>
+        <button class="button" data-color="secondary" type="submit">Secondary</button>
+        <button class="button" data-color="accent" type="submit">Accent</button>
+        <!-- Exemplo de data-split - Veja _utils.css > cluster  -->
+        <button class="button" data-color="base" type="submit" data-split>Base</button>
+        <button class="button" data-color="base" type="submit" disabled>Base</button>
+        
+      </footer>
+    </fieldset>
   </div>
-  <div class="color-grid">
-    <div class="background-color:primary-100"></div>
-    <div class="background-color:primary-98"></div>
-    <div class="background-color:primary-90"></div>
-    <div class="background-color:primary-80"></div>
-    <div class="background-color:primary-73"></div>
-    <div class="background-color:primary-70"></div>
-    <div class="background-color:primary-60"></div>
-    <div class="background-color:primary-50"></div>
-    <div class="background-color:primary-40"></div>
-    <div class="background-color:primary-30"></div>
-    <div class="background-color:primary-20"></div>
-    <div class="background-color:primary-11"></div>
-    <div class="background-color:primary-10"></div>
-    <div class="background-color:primary-2"></div>
+</form>  
+
+
+{# Uma ideia que o Copilot deu #}
+{# <form class="form main-panel">
+  <div class="form-tab | stack">
+    <fieldset class="form-panel | stack">
+      <header class="form-panel__header">
+        <h2 class="form-panel__title">Multibox</h2>
+      </header>
+
+      <section class="form-panel__main | columns">
+        <div class="form-field">
+          <label class="form-field__label" for="checkboxes">Checkboxes</label>
+          <div id="checkboxes" class="form-field__input" data-visual="fancy">
+            <label><input type="checkbox" value="Option 1">Option 1</label>
+            <label><input type="checkbox" value="Option 2">Option 2</label>
+            <label><input type="checkbox" value="Option 3">Option 3</label>
+            <label><input type="checkbox" value="Option 4">Option 4</label>
+          </div>
+        </div>
+        <div class="form-field">
+          <label class="form-field__label" for="select">Select</label>
+          <select id="select" class="form-field__input" multiple>
+            <option value="Option 1">Option 1</option>
+            <option value="Option 2">Option 2</option>
+            <option value="Option 3">Option 3</option>
+            <option value="Option 4">Option 4</option>
+          </select>
+        </div>
+      </section>
+    </fieldset>
   </div>
-  <div class="color-grid">
-    <div class="background-color:secondary-100"></div>
-    <div class="background-color:secondary-98"></div>
-    <div class="background-color:secondary-90"></div>
-    <div class="background-color:secondary-80"></div>
-    <div class="background-color:secondary-73"></div>
-    <div class="background-color:secondary-70"></div>
-    <div class="background-color:secondary-60"></div>
-    <div class="background-color:secondary-50"></div>
-    <div class="background-color:secondary-40"></div>
-    <div class="background-color:secondary-30"></div>
-    <div class="background-color:secondary-20"></div>
-    <div class="background-color:secondary-11"></div>
-    <div class="background-color:secondary-10"></div>
-    <div class="background-color:secondary-2"></div>
-  </div>
-  <div class="color-grid">
-    <div class="background-color:accent-100"></div>
-    <div class="background-color:accent-98"></div>
-    <div class="background-color:accent-90"></div>
-    <div class="background-color:accent-80"></div>
-    <div class="background-color:accent-73"></div>
-    <div class="background-color:accent-70"></div>
-    <div class="background-color:accent-60"></div>
-    <div class="background-color:accent-50"></div>
-    <div class="background-color:accent-40"></div>
-    <div class="background-color:accent-30"></div>
-    <div class="background-color:accent-20"></div>
-    <div class="background-color:accent-11"></div>
-    <div class="background-color:accent-10"></div>
-    <div class="background-color:accent-2"></div>
-  </div>
-  <div class="color-grid">
-    <div class="background-color:fail-100"></div>
-    <div class="background-color:fail-98"></div>
-    <div class="background-color:fail-90"></div>
-    <div class="background-color:fail-80"></div>
-    <div class="background-color:fail-73"></div>
-    <div class="background-color:fail-70"></div>
-    <div class="background-color:fail-60"></div>
-    <div class="background-color:fail-50"></div>
-    <div class="background-color:fail-40"></div>
-    <div class="background-color:fail-30"></div>
-    <div class="background-color:fail-20"></div>
-    <div class="background-color:fail-11"></div>
-    <div class="background-color:fail-10"></div>
-    <div class="background-color:fail-2"></div>
-  </div>
-  <div class="color-grid">
-    <div class="background-color:warning-100"></div>
-    <div class="background-color:warning-98"></div>
-    <div class="background-color:warning-90"></div>
-    <div class="background-color:warning-80"></div>
-    <div class="background-color:warning-73"></div>
-    <div class="background-color:warning-70"></div>
-    <div class="background-color:warning-60"></div>
-    <div class="background-color:warning-50"></div>
-    <div class="background-color:warning-40"></div>
-    <div class="background-color:warning-30"></div>
-    <div class="background-color:warning-20"></div>
-    <div class="background-color:warning-11"></div>
-    <div class="background-color:warning-10"></div>
-    <div class="background-color:warning-2"></div>
-  </div>
-  <div class="color-grid">
-    <div class="background-color:success-100"></div>
-    <div class="background-color:success-98"></div>
-    <div class="background-color:success-90"></div>
-    <div class="background-color:success-80"></div>
-    <div class="background-color:success-73"></div>
-    <div class="background-color:success-70"></div>
-    <div class="background-color:success-60"></div>
-    <div class="background-color:success-50"></div>
-    <div class="background-color:success-40"></div>
-    <div class="background-color:success-30"></div>
-    <div class="background-color:success-20"></div>
-    <div class="background-color:success-11"></div>
-    <div class="background-color:success-10"></div>
-    <div class="background-color:success-2"></div>
-  </div>
-  <div class="color-grid">
-    <div class="background-color:info-100"></div>
-    <div class="background-color:info-98"></div>
-    <div class="background-color:info-90"></div>
-    <div class="background-color:info-80"></div>
-    <div class="background-color:info-73"></div>
-    <div class="background-color:info-70"></div>
-    <div class="background-color:info-60"></div>
-    <div class="background-color:info-50"></div>
-    <div class="background-color:info-40"></div>
-    <div class="background-color:info-30"></div>
-    <div class="background-color:info-20"></div>
-    <div class="background-color:info-11"></div>
-    <div class="background-color:info-10"></div>
-    <div class="background-color:info-2"></div>
-  </div>
-</div>
+</form>
+
+<script>
+  document.querySelectorAll('#checkboxes input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+      const select = document.getElementById('select');
+      const option = Array.from(select.options).find(opt => opt.value === this.value);
+      if (this.checked) {
+        option.selected = true;
+      } else {
+        option.selected = false;
+      }
+    });
+  });
+</script> #}

@@ -1,0 +1,45 @@
+.form-group,
+.form-field__input.form-group {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  gap: 0;
+
+  & > * {
+    flex: 1;
+  }
+}
+
+.form-group input[type="submit"],
+.form-group button,
+.form-group .button {
+  flex: 0;
+  align-self: stretch;
+}
+
+.form-group :first-child {
+  border-radius: var(--_input-border-radius) 0 0 var(--_input-border-radius) !important;
+}
+
+.form-group :last-child {
+  border-radius: 0 var(--_input-border-radius) var(--_input-border-radius) 0 !important;
+}
+
+.form-group {
+  label:before {
+    display: none;
+  }
+
+  > * {
+    margin-top: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  > :not(:first-child) {
+    margin-left: calc(var(--_input-border-width) * -1);
+  }
+
+  &:has(input[type="text"] ~ input[type="text"]) {
+    gap: var(--space-xs);
+  }
+}

@@ -63,10 +63,8 @@
   .columns {
     columns: 2;
     column-gap: var(--space-xl);
-
-    > * + * {
-      margin-block-start: var(--space-xs);
-    }
+    max-width: 98%;
+    /* @ToDo: Magic Number - Precisamos resolver esse problema do columns. */
   }
 
   .columns {

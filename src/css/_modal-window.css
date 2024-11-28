@@ -12,7 +12,8 @@
   border-radius: var(--_modal-border-radius);
   background-color: var(--white-color);
   width: 80svw;
-  height: 80svh;
+  max-height: 80svh;
+  height: min-content;
 
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;

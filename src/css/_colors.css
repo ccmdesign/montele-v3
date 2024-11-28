@@ -15,7 +15,9 @@
   --green-hsl: 188, 97%, 28%;
 
   --success-hsl: var(--blue-hsl);
+  --error-hsl: var(--red-hsl);
   --fail-hsl: var(--red-hsl);
+  --cancel-hsl: var(--red-hsl);
   --warning-hsl: var(--yellow-hsl);
   --info-hsl: var(--navy-hsl);
 }

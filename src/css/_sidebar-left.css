@@ -2,6 +2,7 @@
 
 .sidebar-left {
   padding-block: var(--space-l);
+  background-color: color-mix(in srgb, var(--sidebar-left-color) 20%, white 80%);
   padding-inline: var(--base-padding-inline);
   height: fill-available;
   justify-content: center;

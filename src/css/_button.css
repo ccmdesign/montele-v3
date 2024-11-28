@@ -24,14 +24,10 @@
   --_button-border-radius: var(--border-radius-s); /* Fallback to 0 */
   --_button-border-color: var(--_button-color); /* Fallback to 1px */
   --_button-border-width: 2px; /* Fallback to 1px */
-  --_button-border-style: var(
-    --base-border-style,
-    solid
-  ); /* Fallback to solid */
+  --_button-border-style: var(--base-border-style, solid); /* Fallback to solid */
   --_button-font-weight: var(--font-weight, 400); /* Fallback to 400 */
-  --_button-font-size: 100%;
+  --_button-font-size: var(--ui-font-size);
   --_button-icon-color: var(--_button-text-color);
-  /* --_button-box-shadow: var(--box-shadow-m); */
 
   --_button-font-family: var(--body-font);
   --_button-letter-spacing: 0.1px;
@@ -49,14 +45,11 @@
   -webkit-user-drag: none;
   user-select: none;
   box-sizing: border-box;
-  font-size: 1rem;
+  font-size: var(--_button-font-size);
   text-decoration: none;
   align-self: self-start;
   justify-self: flex-start;
-  font-family: var(
-    --_button-font-family,
-    sans-serif
-  ); /* Fallback to sans-serif */
+  font-family: var(--_button-font-family, sans-serif); /* Fallback to sans-serif */
   font-weight: var(--_button-font-weight, 400);
   letter-spacing: var(--_button-letter-spacing);
 }
@@ -131,6 +124,7 @@
   --_button-text-color: var(--success-color);
 }
 
+.button[data-color="error"],
 .button[data-color="cancel"],
 .button[data-color="fail"] {
   --_button-hsl: var(--red-hsl);
@@ -185,17 +179,11 @@
 }
 
 .button:hover {
-  background-image: linear-gradient(
-    hsla(var(--_button-hsl), 0.05),
-    hsla(var(--_button-hsl), 0.05)
-  );
+  background-image: linear-gradient(hsla(var(--_button-hsl), 0.05), hsla(var(--_button-hsl), 0.05));
 }
 
 .button:active {
-  background-image: linear-gradient(
-    hsla(var(--_button-hsl), 0.15),
-    hsla(var(--_button-hsl), 0.15)
-  );
+  background-image: linear-gradient(hsla(var(--_button-hsl), 0.15), hsla(var(--_button-hsl), 0.15));
   border-color: hsla(var(--_button-color), 1);
 }
 
@@ -214,10 +202,7 @@
 .button[data-visual="primary"]:focus,
 .button[visual="primary"]:hover,
 .button[visual="primary"]:focus {
-  background-image: linear-gradient(
-    hsla(0, 0%, 0%, 0.15),
-    hsla(0, 0%, 0%, 0.25)
-  );
+  background-image: linear-gradient(hsla(0, 0%, 0%, 0.15), hsla(0, 0%, 0%, 0.25));
 }
 
 .button[data-visual="secondary"],
@@ -233,10 +218,7 @@
 .button[data-visual="secondary"]:focus,
 .button[visual="secondary"]:hover,
 .button[visual="secondary"]:focus {
-  background-image: linear-gradient(
-    hsla(var(--_button-hsl), 0.1),
-    hsla(var(--_button-hsl), 0.1)
-  );
+  background-image: linear-gradient(hsla(var(--_button-hsl), 0.1), hsla(var(--_button-hsl), 0.1));
 }
 
 .button[data-visual="unstyled"],

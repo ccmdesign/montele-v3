@@ -1,0 +1,132 @@
+/* @ToDo: Esse componente ainda está meio frágil */
+
+.form-field__options {
+  & > * + * {
+    margin-block-start: var(--space-3xs);
+  }
+
+  label {
+    position: relative;
+  }
+
+  label:has(input[type="checkbox"]),
+  label:has(input[type="radio"]) {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2xs);
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    display: none;
+  }
+
+  label .icon:before,
+  label:has(input[type="radio"]):before,
+  label:has(input[type="checkbox"])::before {
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--_input-color);
+    opacity: 0.4;
+    font-family: var(--icon-font);
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+  }
+
+  &:not(.form-group) label {
+    padding-left: 3rem;
+    vertical-align: baseline;
+  }
+
+  label .icon,
+  label::before {
+    position: absolute;
+    left: 0;
+  }
+
+  label:before {
+    top: 0;
+    padding: 0.5rem;
+  }
+
+  label .icon:before {
+    content: "check_box_outline_blank";
+  }
+
+  label:has(:checked) .icon:before,
+  label:has(:checked):before {
+    content: "check_box";
+    opacity: 1;
+  }
+
+  label:has(input:checked):before,
+  label:has(input:checked):before {
+    opacity: 1;
+  }
+
+  label:has(input[type="checkbox"]):before {
+    content: "check_box_outline_blank";
+  }
+  label:has(input[type="checkbox"]):has(:checked):before {
+    content: "check_box";
+  }
+  label:has(input[type="radio"]):before {
+    content: "radio_button_unchecked";
+  }
+  label:has(input[type="radio"]):has(:checked):before {
+    content: "radio_button_checked";
+  }
+}
+
+/* So far this only works for checkboxes and radios */
+.form-field__input[data-visual="fancy"],
+.form-field__options[data-visual="fancy"] {
+  label {
+    background-color: var(--_input-background-color);
+    border-radius: var(--border-radius-s);
+    color: var(--_input-color);
+    transition: all 0.2s ease;
+    font-weight: 200;
+  }
+
+  label:has(:checked) {
+    --_input-background-color: var(--success-color-10-tint);
+    --_input-color: var(--success-color);
+    font-weight: 400;
+  }
+}
+
+.form-field__info {
+  cursor: help;
+  opacity: 0.3;
+  color: var(--blue-color);
+  line-height: 1;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.form-field__info:not([title]),
+.form-field__info[title=""] {
+  visibility: hidden;
+}
+
+/* @ToDo: Falta adicionar a lista de valores ao input[text] */
+.form-field__input[multiselect] {
+  .form-field__options {
+    width: 100%;
+    position: absolute;
+    top: anchor(bottom);
+    right: anchor(right);
+    left: anchor(left);
+    width: auto;
+
+    border: 2px solid var(--_input-border-color);
+    border-radius: var(--_input-border-radius);
+    box-shadow: var(--box-shadow-m);
+
+    max-height: 500px;
+    overflow-y: auto;
+  }
+}

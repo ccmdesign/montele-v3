@@ -1,4 +1,7 @@
 .app-layout {
+}
+
+.app-layout {
   display: grid;
   height: 100dvh;
   grid-template-columns: auto 0 1fr 0;
@@ -17,9 +20,7 @@
   grid-template-columns: auto 0 1fr 400px;
 }
 
-.app-layout:has(.app-layout__sidebar-right[aria-hidden="false"]):has(
-    .app-layout__sidebar-left[aria-hidden="false"]
-  ) {
+.app-layout:has(.app-layout__sidebar-right[aria-hidden="false"]):has(.app-layout__sidebar-left[aria-hidden="false"]) {
   grid-template-columns: auto 300px 1fr 400px;
 }
 
@@ -54,10 +55,10 @@ Não sei se a atual estrutura do layout suporta bem essa ideia.
 
 .app-layout__gems {
   background-color: var(--base-color);
+  z-index: 1001;
 }
 
 .app-layout__sidebar-left {
-  background-color: var(--primary-color);
   max-height: 100dvh;
   overflow-y: auto;
   z-index: 1000;
@@ -79,4 +80,14 @@ Não sei se a atual estrutura do layout suporta bem essa ideia.
 .app-layout__sidebar-right {
   position: relative;
   transition: all 0.3s ease;
+  box-shadow: var(--box-shadow-l);
+}
+
+.app-layout__sidebar-left-trigger {
+  position: absolute;
+  z-index: 1000;
+
+  :before {
+    color: yellow;
+  }
 }
