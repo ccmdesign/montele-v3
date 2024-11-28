@@ -63,8 +63,7 @@
   .columns {
     columns: 2;
     column-gap: var(--space-xl);
-    max-width: 98%;
-    /* @ToDo: Magic Number - Precisamos resolver esse problema do columns. */
+    max-width: 98%; /* @ToDo: Magic Number - Precisamos resolver esse problema do columns. Acho que a solução vai acabar sendo uma versão do .grid para os campos do form */
   }
 
   .columns {
