@@ -142,3 +142,15 @@ const dockGravarButton = document.getElementById("dock-gravar");
 if (dockGravarButton) {
   dockGravarButton.addEventListener("click", activateMicrophone);
 }
+
+const sideBarActionButton = document.getElementById("sidebar-action-button");
+if (sideBarActionButton) {
+  sideBarActionButton.addEventListener("click", () => {
+    const sidebarRight = document.getElementById("sidebar-right");
+    const isExpanded = sidebarRight.getAttribute('aria-hidden');
+    sidebarRight.setAttribute('aria-hidden', isExpanded === 'true' ? 'false' : 'true');
+    
+    sideBarActionButton.children[0].textContent = isExpanded === 'true' ? 'arrow_menu_open' : 'arrow_menu_close';
+
+  });
+}
