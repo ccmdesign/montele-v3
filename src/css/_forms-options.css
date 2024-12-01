@@ -17,6 +17,10 @@
     gap: var(--space-2xs);
   }
 
+  label {
+    cursor: pointer;
+  }
+
   input[type="checkbox"],
   input[type="radio"] {
     display: none;
