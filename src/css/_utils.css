@@ -85,3 +85,9 @@
     columns: 4;
   }
 }
+
+.selected-input__chip {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 2px;
+}

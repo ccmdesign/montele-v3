@@ -11,7 +11,7 @@ doca_hidden: "false"
       </header>
 
       <section class="form-panel__main | columns">
-        <div class="form-field">
+        {# <div class="form-field">
           <label class="form-field__label" for="id2">Text</label>
           <select class="form-field__input">
             <option value="1">Option 1</option>
@@ -30,70 +30,33 @@ doca_hidden: "false"
           <span class="form-field__info | icon" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quis quam sapiente quasi ipsum accusantium hic dolorem porro, qui accusamus libero a laudantium assumenda nostrum enim iusto esse cupiditate architecto.">info</span>
           <p class="form-field__message">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
         </div>
-        <div class="form-field">
+        <div class="form-field"> #}
           <label class="form-field__label" for="id1">Text</label>
           
-          <div class="form-field__input form-group" multiselect >
-            <input type="text">
+          <div id="select-field" class="form-field__input form-group" multiselect >
+            <div>
+              <input id="select-input" type="text">
+              <button popovertarget="form-multiselect-001" class="button" type="button">Select</button>
+              <div class="selected-input__chip" id="selected-items"></div>
+            </div>
 
             <div id="form-multiselect-001" class="form-field__options" data-visual="fancy" popover>
               <!-- We need to have this alternative implementation
                    with the .icon inside the label because 
                    a :before inside a label inside a popover doesn't work -->
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
-              <label><span class="icon"></span><input type="checkbox" name="" value="">Checkbox Label</label>
+              <label data-value=1><span class="icon"></span><input type="checkbox" name="" value="Val 01">Val 01</label>
+              <label data-value=2><span class="icon"></span><input type="checkbox" name="" value="Val 02">Val 02</label>
+              <label data-value=3><span class="icon"></span><input type="checkbox" name="" value="Val 03">Val 03</label>
+              <label data-value=4><span class="icon"></span><input type="checkbox" name="" value="Val 04">Val 04</label>
+              <label data-value=5><span class="icon"></span><input type="checkbox" name="" value="Val 05">Val 05</label>
+              <label data-value=6><span class="icon"></span><input type="checkbox" name="" value="Val 06">Val 06</label>
+              <label data-value=7><span class="icon"></span><input type="checkbox" name="" value="Val 07">Val 07</label>
+              <label data-value=8><span class="icon"></span><input type="checkbox" name="" value="Val 08">Val 08</label>
+              <label data-value=9><span class="icon"></span><input type="checkbox" name="" value="Val 09">Val 09</label>
+              <label data-value=10><span class="icon"></span><input type="checkbox" name="" value="Val 10">Val 10</label>
             </div>
             
-            <button popovertarget="form-multiselect-001" class="button" type="button">Select</button>
+            {# <button popovertarget="form-multiselect-001" class="button" type="button">Select</button> #}
             
           </div>
           
