@@ -169,38 +169,19 @@ if (sideBarActionRow) {
 
 const selectedItems = new Set();
 const multiboxSelect = document.getElementById("select-field");
-const selectInput = document.getElementById('selected-items');
+const selectBtn = document.getElementById('select-btn-custom');
 
 if(multiboxSelect) {
   multiboxSelect.addEventListener("change", (e) => {
     const selectedValue = e.target.value;
 
     if (selectedValue && !selectedItems.has(selectedValue)) {
-      // Create chip element
-      const chip = document.createElement('div');
-      chip.className = 'chip';
-      chip.innerHTML = `
-          ${selectedValue}
-          <span class="close-btn" data-value="${selectedValue}">×</span>
-      `;
-
-      // Add cursor pointer to close button
-      chip.querySelector('.close-btn').style.cursor = 'pointer';
-      
-      // Add to input
-      selectInput.appendChild(chip);
       selectedItems.add(selectedValue);
       
-      // Reset dropdown
-      multiboxSelect.value = '';
-      
-      // Add remove functionality
-      chip.querySelector('.close-btn').addEventListener('click', function() {
-          const value = this.dataset.value;
-          selectedItems.delete(value);
-          chip.remove();
-          multiboxSelect.value = '';
-      });
-  }
+    } else {
+      selectedItems.delete(selectedValue);
+    }
+
+    selectBtn.textContent = selectedItems.size ? `${selectedItems.size} Selected` : 'Select';
   });
 }
