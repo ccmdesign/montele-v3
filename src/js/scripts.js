@@ -1,9 +1,9 @@
-const selectedItems = new Set();
-const multiboxSelect = document.querySelector(".multibox");
-const selectBtn = document.querySelector(".form-field__options[popover]");
+const multiboxSelect = document.querySelectorAll(".form-field__options");
 
-if (multiboxSelect) {
-  multiboxSelect.addEventListener("change", (e) => {
+multiboxSelect.forEach((select) => {
+  const selectedItems = new Set();
+  select.addEventListener("change", (e) => {
+    const selectBtn = e.target.parentElement.parentElement.parentElement.querySelector(".multiselect__button");
     const selectedValue = e.target.value;
 
     if (selectedValue && !selectedItems.has(selectedValue)) {
@@ -12,6 +12,14 @@ if (multiboxSelect) {
       selectedItems.delete(selectedValue);
     }
 
-    selectBtn.textContent = selectedItems.size ? `${selectedItems.size} Selected` : "Select";
+    if(selectedItems.size === 1) {
+      selectBtn.textContent = selectedItems.values().next().value;
+    } else if(selectedItems.size > 1) {
+      selectBtn.textContent = `${selectedItems.size} Selecionados`
+
+    } else {
+      selectBtn.textContent = "Valor Selecionado"
+    }
+
   });
-}
+})
