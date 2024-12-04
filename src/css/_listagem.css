@@ -23,3 +23,12 @@
 .page-viewer {
   padding-inline: var(--space-2xs);
 }
+
+.listagem .chat-icon .icon {
+  opacity: 0.3;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+}

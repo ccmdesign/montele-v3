@@ -129,6 +129,11 @@ closeGemsSidebarElements.forEach((element) => {
   element.addEventListener("click", handleCloseGemsSidebarClick);
 });
 
+
+
+
+
+
 function activateMicrophone() {
   if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     navigator.mediaDevices
