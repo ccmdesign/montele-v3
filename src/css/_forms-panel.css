@@ -18,7 +18,6 @@
 }
 
 .form-panel {
-  --_stack-space: var(--space-m-l);
   padding-bottom: var(--space-m-l);
   padding-inline: 0;
   border: 0;
@@ -26,11 +25,7 @@
 }
 
 .form-panel > * {
-  --_stack-space: var(--space-s-m);
-}
-
-.form-tab * {
-  --_stack-space: var(--space-xs);
+  --_stack-space: var(--space-m-l);
 }
 
 .form .button {
