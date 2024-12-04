@@ -1,5 +1,4 @@
 .multiselect {
-  
   padding-block: var(--_input-padding-block);
   position: relative;
 }
@@ -13,8 +12,9 @@
 .form-field__options[popover],
 .multiselect__options[popover] {
   position: absolute;
+  inset: unset;
   left: anchor(left);
-  top: anchor(top);
+  top: anchor(bottom);
   right: anchor(right);
   width: auto;
   box-shadow: var(--box-shadow-l);
