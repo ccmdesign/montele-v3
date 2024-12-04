@@ -1,0 +1,130 @@
+---
+layout: "_layouts/app.njk"
+doca_hidden: "false"
+---
+
+<form class="form main-panel">
+  <div class="form-tab | stack">
+    <fieldset class="form-panel | stack">
+      {# Form Header #}
+      <header class="form-panel__header">
+        <h2 class="form-panel__title">Dev</h2>
+      </header>
+
+      {# Form Main #}
+      <section class="form-panel__main | columns" data-columns="2">
+        {% include "_form-fields/multibox.njk" %}
+      </section>
+      
+      {# Form Footer #}
+      <footer class="form-panel__footer | cluster">
+        <button class="button" data-color="primary" type="submit">Primary</button>
+        <button class="button" data-color="secondary" type="submit">Secondary</button>
+        <button class="button" data-color="accent" type="submit">Accent</button>
+        <!-- Exemplo de data-split - Veja _utils.css > cluster  -->
+        <button class="button" data-color="base" type="submit" data-split>Base</button>
+        <button class="button" data-color="base" type="submit" disabled>Base</button>
+      </footer>
+    </fieldset>
+    <fieldset class="form-panel | stack">
+      {# Form Header #}
+      <header class="form-panel__header">
+        <h2 class="form-panel__title">Text Based Inputs</h2>
+      </header>
+
+      {# Form Main #}
+      <section class="form-panel__main | columns" data-columns="2">
+        
+        {% include "_form-fields/text-based-inputs.njk" %}
+        
+      </section>
+      
+      {# Form Footer #}
+      <footer class="form-panel__footer | cluster">
+        <button class="button" data-color="primary" type="submit">Primary</button>
+        <button class="button" data-color="secondary" type="submit">Secondary</button>
+        <button class="button" data-color="accent" type="submit">Accent</button>
+        <!-- Exemplo de data-split - Veja _utils.css > cluster  -->
+        <button class="button" data-color="base" type="submit" data-split>Base</button>
+        <button class="button" data-color="base" type="submit" disabled>Base</button>
+      </footer>
+    </fieldset>
+
+    <fieldset class="form-panel | stack">
+      {# Form Header #}
+      <header class="form-panel__header">
+        <h2 class="form-panel__title">Date Based Inputs</h2>
+      </header>
+
+      {# Form Main #}
+      <section class="form-panel__main | columns" data-columns="2">
+        {% include "_form-fields/date-based-inputs.njk" %}
+        {% include "_form-fields/select.njk" %}
+      </section>
+      
+      {# Form Footer #}
+      <footer class="form-panel__footer | cluster">
+        <button class="button" data-color="primary" type="submit">Primary</button>
+        <button class="button" data-color="secondary" type="submit">Secondary</button>
+        <button class="button" data-color="accent" type="submit">Accent</button>
+        <!-- Exemplo de data-split - Veja _utils.css > cluster  -->
+        <button class="button" data-color="base" type="submit" data-split>Base</button>
+        <button class="button" data-color="base" type="submit" disabled>Base</button>
+      </footer>
+    </fieldset>
+
+    <fieldset class="form-panel | stack">
+      {# Form Header #}
+      <header class="form-panel__header">
+        <h2 class="form-panel__title">Options Based Inputs</h2>
+      </header>
+
+      {# Form Main #}
+      <section class="form-panel__main | columns" data-columns="4">
+        {% include "_form-fields/radio-button.njk" %}
+        {% include "_form-fields/checkbox-button.njk" %}
+        {% include "_form-fields/checkbox-button-fancy.njk" %}
+        {% include "_form-fields/radio-button-fancy.njk" %}
+        {% include "_form-fields/select.njk" %}
+      </section>
+      
+      {# Form Footer #}
+      <footer class="form-panel__footer | cluster">
+        <button class="button" data-color="primary" type="submit">Primary</button>
+        <button class="button" data-color="secondary" type="submit">Secondary</button>
+        <button class="button" data-color="accent" type="submit">Accent</button>
+        <!-- Exemplo de data-split - Veja _utils.css > cluster  -->
+        <button class="button" data-color="base" type="submit" data-split>Base</button>
+        <button class="button" data-color="base" type="submit" disabled>Base</button>
+      </footer>
+    </fieldset>
+
+    <fieldset class="form-panel | stack">
+      {# Form Header #}
+      <header class="form-panel__header">
+        <h2 class="form-panel__title">Groups and Special Form Components</h2>
+      </header>
+
+      {# Form Main #}
+      <section class="form-panel__main | columns" data-columns="2">
+        
+        {% include "_form-fields/button-group.njk" %}
+        {% include "_form-fields/input-group.njk" %}
+        {% include "_form-fields/input-group.njk" %}
+        {% include "_form-fields/textarea.njk" %}
+        
+        
+      </section>
+      
+      {# Form Footer #}
+      <footer class="form-panel__footer | cluster">
+        <button class="button" data-color="primary" type="submit">Primary</button>
+        <button class="button" data-color="secondary" type="submit">Secondary</button>
+        <button class="button" data-color="accent" type="submit">Accent</button>
+        <!-- Exemplo de data-split - Veja _utils.css > cluster  -->
+        <button class="button" data-color="base" type="submit" data-split>Base</button>
+        <button class="button" data-color="base" type="submit" disabled>Base</button>
+      </footer>
+    </fieldset>
+  </div>
+</form>  
