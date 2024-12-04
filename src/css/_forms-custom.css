@@ -1,17 +1,17 @@
-.multibox {
+.multiselect {
   
   padding-block: var(--_input-padding-block);
   position: relative;
 }
 
-.multibox__button {
+.multiselect__button {
   text-align: left;
   appearance: none;
   width: 100%;
 }
 
 .form-field__options[popover],
-.multibox__options[popover] {
+.multiselect__options[popover] {
   position: absolute;
   left: anchor(left);
   top: anchor(top);

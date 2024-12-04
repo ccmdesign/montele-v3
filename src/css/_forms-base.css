@@ -20,7 +20,7 @@
   input[type="search"],
   input[type="tel"],
   select,
-  .multibox__button,
+  .multiselect__button,
   textarea {
     display: inline-block;
     vertical-align: middle;
@@ -61,19 +61,19 @@
   input:user-invalid,
   input:invalid,
   select:invalid,
-  .multibox__button:invalid,
+  .multiselect__button:invalid,
   textarea:invalid {
     --_input-border-color: var(--fail-color);
   }
 
   select:user-valid,
-  .multibox__button:user-valid,
+  .multiselect__button:user-valid,
   input:user-valid,
   textarea:user-valid {
     --_input-border-color: var(--success-color);
   }
 
-  .multibox__button:focus,
+  .multiselect__button:focus,
   select:focus,
   input:focus,
   textarea:focus {
@@ -88,7 +88,7 @@
     --_input-background-color: transparent;
   }
 
-  .multibox__button[readonly],
+  .multiselect__button[readonly],
   select[readonly],
   input[readonly],
   textarea[readonly] {
@@ -102,7 +102,7 @@
 
   input[list],
   select,
-  .multibox__button {
+  .multiselect__button {
     appearance: none; /* Remove default styling */
     cursor: pointer; /* Set cursor to pointer */
     background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAtOTYwIDk2MCA5NjAiIHdpZHRoPSIyNHB4IiBmaWxsPSIjNWY2MzY4Ij48cGF0aCBkPSJNNDgwLTM0NCAyNDAtNTg0bDU2LTU2IDE4NCAxODQgMTg0LTE4NCA1NiA1Ni0yNDAgMjQwWiIvPjwvc3ZnPg=="); /* Custom arrow */
@@ -118,13 +118,13 @@
     display: none !important;
   }
 
-  .multibox__button:not(:focus),
+  .multiselect__button:not(:focus),
   select:not(:focus) {
     border-color: transparent;
   }
 
   input[list]:disabled,
-  .multibox__button:disabled,
+  .multiselect__button:disabled,
   select:disabled {
     background-color: var(--base-color-40-tint); /* Set background color for disabled state */
     color: var(--base-color-20-tint); /* Set text color for disabled state */
