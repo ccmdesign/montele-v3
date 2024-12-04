@@ -28,3 +28,12 @@
     display: block !important;
   }
 }
+
+.po-sidebar-left {
+  height: auto;
+  margin: 0;
+  left: 5rem;
+  background-color: color-mix(in srgb, var(--sidebar-left-color) 20%, white 80%);
+  box-shadow: var(--box-shadow-l);
+  border: none;
+}

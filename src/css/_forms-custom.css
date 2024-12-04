@@ -1,0 +1,31 @@
+.multibox {
+  text-align: left;
+  padding-block: var(--_input-padding-block);
+}
+
+.form-field__options[popover] {
+  position: absolute;
+  left: anchor(left);
+  top: anchor(bottom);
+  right: anchor(right);
+  width: auto;
+  box-shadow: var(--box-shadow-l);
+  border: 0;
+}
+
+
+
+/* .combo-mutiple-custom {
+  display: flex;
+  min-width: 250px;
+
+  & :first-child {
+    width: 100%;
+  }
+
+  & :last-child {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+} */
