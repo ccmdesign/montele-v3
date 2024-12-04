@@ -19,11 +19,11 @@
 .form-field {
   display: grid;
   /* o 36ch controla a largura máxima dos labels do .form-field */
-  grid-template-columns: minmax(30ch, 42ch) 1fr 3ch;
+  grid-template-columns: minmax(20ch, 1fr) 2fr;
   grid-template-rows: auto auto;
   grid-template-areas:
-    "label input info"
-    ". message .";
+    "label input"
+    ". message";
   align-items: center;
   break-inside: avoid;
 }
@@ -35,7 +35,7 @@
     grid-template-rows: auto auto auto;
     gap: var(--space-xs);
     grid-template-areas:
-      "label info"
+      "label label"
       "input input"
       "message message";
 
@@ -60,22 +60,17 @@
   grid-area: input;
 }
 
-.form-field__info {
-  padding-left: var(--space-xs);
-  grid-area: info;
-}
-
 .form-field__message {
   grid-area: message;
 }
 
 /* Sets the grid for the form-fields with the stack modifier  */
 .form-field[stacked] {
-  grid-template-columns: 1fr auto;
+  grid-template-columns: auto;
   grid-template-areas:
-    "label info"
-    "input input"
-    "message message";
+    "label"
+    "input"
+    "message";
 
   label {
     text-align: left;
