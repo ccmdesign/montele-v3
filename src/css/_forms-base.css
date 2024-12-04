@@ -20,6 +20,7 @@
   input[type="search"],
   input[type="tel"],
   select,
+  .multibox,
   textarea {
     display: inline-block;
     vertical-align: middle;
@@ -60,16 +61,19 @@
   input:user-invalid,
   input:invalid,
   select:invalid,
+  .multibox:invalid,
   textarea:invalid {
     --_input-border-color: var(--fail-color);
   }
 
   select:user-valid,
+  .multibox:user-valid,
   input:user-valid,
   textarea:user-valid {
     --_input-border-color: var(--success-color);
   }
 
+  .multibox:focus,
   select:focus,
   input:focus,
   textarea:focus {
@@ -84,6 +88,8 @@
     --_input-background-color: transparent;
   }
 
+  .multibox[readonly],
+  select[readonly],
   input[readonly],
   textarea[readonly] {
     background-color: transparent;
@@ -95,7 +101,8 @@
   }
 
   input[list],
-  select {
+  select,
+  .multibox {
     appearance: none; /* Remove default styling */
     cursor: pointer; /* Set cursor to pointer */
     background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAtOTYwIDk2MCA5NjAiIHdpZHRoPSIyNHB4IiBmaWxsPSIjNWY2MzY4Ij48cGF0aCBkPSJNNDgwLTM0NCAyNDAtNTg0bDU2LTU2IDE4NCAxODQgMTg0LTE4NCA1NiA1Ni0yNDAgMjQwWiIvPjwvc3ZnPg=="); /* Custom arrow */
@@ -111,11 +118,13 @@
     display: none !important;
   }
 
+  .multibox:not(:focus),
   select:not(:focus) {
     border-color: transparent;
   }
 
   input[list]:disabled,
+  .multibox:disabled,
   select:disabled {
     background-color: var(--base-color-40-tint); /* Set background color for disabled state */
     color: var(--base-color-20-tint); /* Set text color for disabled state */

@@ -25,10 +25,18 @@
 }
 
 /* Form Component - Multi Select  */
-[multiselect] {
+[popovertarget="form-multiselect-001"] {
   anchor-name: --form-multiselect-001;
 }
 
 #form-multiselect-001 {
   position-anchor: --form-multiselect-001;
+}
+
+[popovertarget="form-multiselect-002"] {
+  anchor-name: --form-multiselect-002;
+}
+
+#form-multiselect-002 {
+  position-anchor: --form-multiselect-002;
 }
