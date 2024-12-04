@@ -1,6 +1,6 @@
 {
-  "name": "montele-keen",
-  "version": "1.0.0",
+  "name": "montele-interface",
+  "version": "0.1",
   "main": "eleventy.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
