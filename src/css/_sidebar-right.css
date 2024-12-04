@@ -5,6 +5,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto 1fr;
+  /* gap: var(--space-m); */
   gap: var(--space-m);
   max-height: 100dvh;
 }
@@ -34,9 +35,10 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: var(--space-s);
+  gap: 0;
   border-top: var(--base-separator);
-  padding-top: var(--space-m);
+  /* padding-top: var(--space-m); */
+  padding-top: 0;
 }
 
 .tags {
