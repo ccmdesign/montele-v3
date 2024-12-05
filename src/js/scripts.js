@@ -25,7 +25,7 @@ multiboxSelect.forEach((select) => {
 })
 
 
-// sidebar right
+// sidebar right button on navbar
 const sideBarActionButton = document.getElementById("sidebar-action-button");
 if (sideBarActionButton) {
   sideBarActionButton.addEventListener("click", () => {
@@ -38,18 +38,27 @@ if (sideBarActionButton) {
   });
 }
 
-// sidebar right row
-const sideBarActionRow = document.getElementById("sidebar-action-row");
-if (sideBarActionRow) {
-  sideBarActionRow.addEventListener("click", () => {
+// sidebar right row on table
+const sideBarActionRow = document.querySelectorAll(".sidebar-action-row");
+sideBarActionRow.forEach((row) => {
+  row.addEventListener("click", () => {
     const sidebarRight = document.getElementById("sidebar-right");
     const isExpanded = sidebarRight.getAttribute('aria-hidden');
     sidebarRight.setAttribute('aria-hidden', isExpanded === 'true' ? 'false' : 'true');
     
-    sideBarActionButton.children[0].textContent = 'chat'
-
   });
-}
+});
+
+// if (sideBarActionRow) {
+//   sideBarActionRow.addEventListener("click", () => {
+//     const sidebarRight = document.getElementById("sidebar-right");
+//     const isExpanded = sidebarRight.getAttribute('aria-hidden');
+//     sidebarRight.setAttribute('aria-hidden', isExpanded === 'true' ? 'false' : 'true');
+    
+//     sideBarActionButton.children[0].textContent = 'chat'
+
+//   });
+// }
 
 
 /////////////////////////////////////
