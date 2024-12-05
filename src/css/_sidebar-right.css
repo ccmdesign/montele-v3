@@ -5,9 +5,9 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto 1fr;
-  /* gap: var(--space-m); */
   gap: var(--space-m);
   max-height: 100dvh;
+  width: var(--sidebar-right-width); /* This is the  */
 }
 
 .sidebar__header {

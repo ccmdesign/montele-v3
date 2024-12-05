@@ -6,6 +6,7 @@
   padding-inline: var(--base-padding-inline);
   height: fill-available;
   justify-content: center;
+  width: var(--sidebar-left-width);
 
   h4 {
     font-size: var(--size-0);

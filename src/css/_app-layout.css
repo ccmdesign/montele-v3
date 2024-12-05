@@ -13,15 +13,15 @@
 }
 
 .app-layout:has(.app-layout__sidebar-left[aria-hidden="false"]) {
-  grid-template-columns: auto 300px 1fr 0;
+  grid-template-columns: auto var(--sidebar-left-width) 1fr 0;
 }
 
 .app-layout:has(.app-layout__sidebar-right[aria-hidden="false"]) {
-  grid-template-columns: auto 0 1fr 400px;
+  grid-template-columns: auto 0 1fr var(--sidebar-right-width);
 }
 
 .app-layout:has(.app-layout__sidebar-right[aria-hidden="false"]):has(.app-layout__sidebar-left[aria-hidden="false"]) {
-  grid-template-columns: auto 300px 1fr 400px;
+  grid-template-columns: auto var(--sidebar-left-width) 1fr var(--sidebar-right-width);
 }
 
 .app-layout__sidebar-left {

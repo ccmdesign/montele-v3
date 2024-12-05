@@ -28,6 +28,9 @@
 
   --ui-padding-block: var(--space-s);
   --ui-padding-inline: var(--space-s);
+
+  --sidebar-right-width: 400px;
+  --sidebar-left-width: 300px;
 }
 
 /* Effects */
