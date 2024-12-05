@@ -1,6 +1,8 @@
 .main-nav {
   background-color: var(--white-color);
   border-bottom: var(--base-separator);
+  padding-inline: var(--space-s-m);
+  
 }
 
 .main-nav {
@@ -8,16 +10,16 @@
   justify-content: space-between;
   align-items: center;
   gap: var(--base-gutter);
-  padding-block: var(--space-2xs);
+  padding-block: 10px;
 }
 
-.main-nav__left * {
+/* .main-nav__left * {
   display: none;
-}
+} */
 
 /* This hides the logo on the smaller screens */
 @media screen and (min-width: 960px) {
-  .main-nav__left * {
+  .main-nav__left > * {
     display: block;
     padding-inline: var(--space-m-l);
     padding-block: 0;

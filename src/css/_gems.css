@@ -9,7 +9,8 @@
     background-color: transparent;
     border: 0;
     color: hsla(var(--white-hsl), 0.6);
-    padding: var(--space-m);
+    padding-inline: 22px;
+    padding-block: 21px;
     font-size: var(--size-5);
     line-height: 1;
   }
