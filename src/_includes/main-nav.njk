@@ -1,16 +1,31 @@
 <nav class="main-nav">
   <div class="main-nav__left">
-    {# @TODO - Isso é um breadcrumb #}
-    <h3>Manutenção > 11781</h3> 
+    
+    <h3 class="breadcrumbs">
+      <a href="#">Manutenção</a>
+      <span class="icon">keyboard_arrow_right</span>
+      <a href="#">11781</a>
+    </h3> 
+
   </div>
   <div class="main-nav__center">
     <a class="button" unstyled href="/">Feed</a>
     <a class="button" unstyled href="/listagem">Listagem</a>
     <a class="button" unstyled href="/form">Form</a>
     <a class="button" unstyled href="/colors">Colors</a>
-    <a class="button" unstyled href="/dev">Testing</a>
-    <button class="button" data-icon="bolt" unstyled ></button>
+    {# <a class="button" unstyled href="/dev">Testing</a> #}
+    <button class="button" data-icon="bolt" unstyled></button>
+
     <button popovertarget="submenu-example" class="button" unstyled >Dropdown</button>
+    {# A implementação dos dropdowns também utiliza a Popover API. 
+        https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/popover
+        Vale a pena dar uma lida nela, pois é muito simples e a implementação é bem simples também.
+        Nesse caso, utilizamos attr css bem novos chamados anchor-position.
+        https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_anchor_positioning
+        Esse tem uma implementação ligeiramente mais complicada, especialmente para que não é familiarizado com CSS.
+        Para simplificar, veja o arquivo _popover-mappings.css - nele eu separei a lista de mapeamento dos popovers.
+        Podemos ver se não conseguimos automatizar esse mapeamento com algum script. Provavelement usando o PostCSS
+    #}
     
   </div>
   <div class="main-nav__right">

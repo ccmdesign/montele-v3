@@ -1,0 +1,10 @@
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.breadcrumbs > :last-child {
+  font-weight: 500;
+  color: var(--primary-color);
+}
