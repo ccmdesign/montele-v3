@@ -11,7 +11,7 @@
     color: hsla(var(--white-hsl), 0.6);
     padding-inline: 22px;
     padding-block: 21px;
-    font-size: var(--size-5);
+    font-size: var(--size-4);
     line-height: 1;
   }
 
