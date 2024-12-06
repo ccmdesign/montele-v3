@@ -12,9 +12,9 @@
     "gems main main right";
 }
 
-.app-layout:has(.app-layout__sidebar-left[aria-hidden="false"]) {
+/* .app-layout:has(.app-layout__sidebar-left[aria-hidden="false"]) {
   grid-template-columns: auto var(--sidebar-left-width) 1fr 0;
-}
+} */
 
 .app-layout:has(.app-layout__sidebar-right[aria-hidden="false"]) {
   grid-template-columns: auto 0 1fr var(--sidebar-right-width);
@@ -83,11 +83,3 @@ Não sei se a atual estrutura do layout suporta bem essa ideia.
   box-shadow: var(--box-shadow-l);
 }
 
-.app-layout__sidebar-left-trigger {
-  position: absolute;
-  z-index: 1000;
-
-  :before {
-    color: yellow;
-  }
-}

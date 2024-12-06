@@ -45,12 +45,6 @@
   --_cluster-space: var(--space-3xs);
 }
 
-.chip {
-  padding: var(--space-3xs) var(--space-s);
-  background-color: var(--base-color-05-tint);
-  font-size: var(--size--1);
-  border-radius: 100px;
-}
 
 .sidebar-header {
 }
@@ -105,12 +99,3 @@
   resize: vertical;
 }
 
-.sidebar-right__trigger {
-  position: absolute;
-  left: 0;
-  background: red;
-  z-index: 1000000;
-  outline: 2px solid red;
-  color: red;
-  top: 100px;
-}
