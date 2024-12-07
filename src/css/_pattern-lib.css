@@ -1,0 +1,15 @@
+.color-grid {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-l);
+}
+
+.color-grid__row {
+  display: flex;
+
+  * {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+  }
+}
