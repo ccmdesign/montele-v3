@@ -18,7 +18,7 @@
   input[type="week"],
   input[type="number"],
   input[type="search"],
-  input[type="tel"],
+  input[type="tel"]
   select,
   .multiselect__button,
   textarea {
@@ -130,4 +130,15 @@
     color: var(--base-color-20-tint); /* Set text color for disabled state */
     cursor: not-allowed; /* Set cursor to not-allowed */
   }
+}
+
+/* This form component is also set by the .button styles. Look at _button.css file for the full styles */
+input[type="file"] {
+  background-color: var(--_input-background-color);
+  border-radius: var(--_input-border-radius);
+}
+
+input::file-selector-button {
+  margin-inline-end: var(--space-xs);
+  background-color: var(--white-color) !important;
 }
