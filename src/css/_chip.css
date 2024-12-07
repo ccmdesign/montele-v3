@@ -1,7 +1,24 @@
+/* Adiciona um espaçamento entre as chips, apenas quando temos múltiplas */
+.chip + .chip { margin-inline-start: var(--space-3xs); }
+
 
 .chip {
+  --_chip-color: var(--base-color);
+  --_chip-background-color-auto: color-mix(in srgb, var(--_chip-color) 15%, var(--white-color));
+  /* --_chip-background-color: ; */
   padding: var(--space-3xs) var(--space-s);
-  background-color: var(--base-color-05-tint);
+  background-color: var(--_chip-background-color, var(--_chip-background-color-auto));
+  color: var(--_chip-color);
   font-size: var(--size--1);
+  font-weight: 400;
   border-radius: 100px;
 }
+
+.chip[data-color="primary"]   { --_chip-color: var(--primary-color); }
+.chip[data-color="secondary"] { --_chip-color: var(--secondary-color); }
+.chip[data-color="accent"]    { --_chip-color: var(--accent-color); }
+.chip[data-color="red"]       { --_chip-color: var(--red-color); }
+.chip[data-color="yellow"]    { --_chip-color: var(--yellow-color-80-shade); }
+.chip[data-color="green"]     { --_chip-color: var(--green-color); }
+.chip[data-color="blue"]      { --_chip-color: var(--blue-color); }
+
