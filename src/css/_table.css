@@ -1,4 +1,4 @@
-.table {
+table {
   border-collapse: collapse;
   border-spacing: 0;
   empty-cells: show;
@@ -22,7 +22,8 @@
     padding-left: var(--space-xs-s);
   }
 
-  th {
+  th * {
+    font-weight: 400;
   }
 
   tr:nth-child(2n) {
@@ -56,7 +57,7 @@
   container-type: inline-size;
 }
 
-@container (max-width: 900px) {
+/* @container (max-width: 900px) {
   .table :nth-child(4) {
     display: none;
   }
@@ -80,4 +81,4 @@
   .table :nth-child(9) {
     display: none;
   }
-}
+} */

@@ -8,6 +8,28 @@ doca_hidden: "false"
     <fieldset class="form-panel | stack">
       {# Form Header #}
       <header class="form-panel__header">
+        <h2 class="form-panel__title">Table inside a form</h2>
+      </header>
+
+      {# Form Main #}
+      <section class="form-panel__main">
+        {% include "_form-fields/form-table.njk" %}
+      </section>
+      
+      {# Form Footer #}
+      <footer class="form-panel__footer | cluster">
+        <button class="button" data-color="primary" type="submit">Primary</button>
+        <button class="button" data-color="secondary" type="submit">Secondary</button>
+        <button class="button" data-color="accent" type="submit">Accent</button>
+        
+        <!-- Exemplo de data-split - Veja _utils.css > cluster  -->
+        <button class="button" data-color="base" type="submit" data-split>Base</button>
+        <button class="button" data-color="base" type="submit" disabled>Base</button>
+      </footer>
+    </fieldset>
+    <fieldset class="form-panel | stack">
+      {# Form Header #}
+      <header class="form-panel__header">
         <h2 class="form-panel__title">Dev</h2>
       </header>
 
