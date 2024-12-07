@@ -1,0 +1,62 @@
+.semaforo {
+  --_semaforo-background-color: color-mix(in srgb, var(--base-color) 20%, white);
+  --_semaforo-border-color: var(--_semaforo-background-color);
+  --_semaforo-color: var(--_semaforo-background-color);
+  display: inline-block;
+  width: 24px;
+  aspect-ratio: 1;
+  background-color: var(--_semaforo-background-color);
+  border-radius: 20px;
+  border: 1px solid var(--_semaforo-border-color);
+  position: absolute;
+  top: 0;
+  margin-block: 4px;
+
+  &[data-status="concluido"]:before,
+  &[data-status="atrasado"]:before,
+  &[data-status="urgente"]:before {
+    font-family: var(--icon-font);
+    font-weight: 400;
+    font-size: 1.6rem;
+    position: absolute;
+    padding: 0;
+    line-height: 1.1;
+    width: 100;
+    margin-left: 1px;
+    color: var(--_semaforo-color);
+  }
+
+  &[data-status="bom"] {
+    --_semaforo-background-color: var(--green-color);
+  }
+  &[data-status="medio"] {
+    --_semaforo-background-color: var(--yellow-color);
+  }
+  &[data-status="ruim"] {
+    --_semaforo-background-color: var(--red-color);
+  }
+  &[data-status="concluido"] {
+    --_semaforo-background-color: var(--green-color-30-tint);
+    --_semaforo-border-color: transparent;
+    --_semaforo-color: var(--green-color);
+
+    &:before { content: "check"; }
+  }
+  &[data-status="atrasado"] {
+    --_semaforo-background-color: var(--fail-color-30-tint);
+    --_semaforo-border-color: var(--fail-color-60-tint);
+    --_semaforo-color: var(--fail-color);
+    
+    &:before {
+      content: "priority_high";
+      font-size: 1.5rem;
+    }
+  }
+  &[data-status="urgente"] {
+    --_semaforo-background-color: var(--warning-color-30-tint);
+    --_semaforo-border-color: var(--warning-color-60-tint);
+    --_semaforo-color: var(--warning-color);
+
+    &:before { content: "schedule"; }
+  }
+}

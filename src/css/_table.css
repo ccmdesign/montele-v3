@@ -82,3 +82,9 @@ table {
     display: none;
   }
 } */
+
+/* Atualiza a td quando temos um .semaforo dentro */
+td:has(.semaforo) {
+  position: relative;
+}
+
