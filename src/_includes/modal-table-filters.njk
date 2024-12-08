@@ -10,7 +10,95 @@
 
   <section class="modal-window__main" >
     <!-- Essa seção só aparece se tivermos algum filtro ativo-->
-      <form id="active-filters" class="form | stack">
+      <form class="main-panel | form | tabbed">
+        {# O js para as tabs, precisa do role="tablist" #}
+        <h3 class="form__tabs" role="tablist">
+          {# As IDs nesses href precisam bater com as ids dos .form-tab para as tabs funcionarem #}  
+          <a href="#section-1">Form Tab 1</a>
+          <a href="#section-2">Form Tab 2</a>
+          <a href="#section-3">Form Tab 3</a>
+        </h3>
+
+        {# As IDs nessas divs precisam bater com os hrefs do role="tablist" (Linha 5) #}  
+        <div id="section1" class="form-tab | stack">
+          <fieldset class="form-panel | stack">
+            {# Form Header #}
+            <header class="form-panel__header">
+              <h2 class="form-panel__title">Tab 1</h2>
+            </header>
+
+            {# Form Main #}
+            <section class="form-panel__main | columns" data-columns="2">
+              {% include "_form-fields/multiselect.njk" %}
+            </section>
+            
+            {# Form Footer #}
+            <footer class="form-panel__footer | cluster">
+              <button class="button" data-color="primary" type="submit">Primary</button>
+              <button class="button" data-color="secondary" type="submit">Secondary</button>
+              <button class="button" data-color="accent" type="submit">Accent</button>
+              
+              <!-- Exemplo de data-split - Veja _utils.css > cluster  -->
+              <button class="button" data-color="base" type="submit" data-split>Base</button>
+              <button class="button" data-color="base" type="submit" disabled>Base</button>
+            </footer>
+          </fieldset>
+        </div>
+
+        <div id="section2" class="form-tab | stack">
+          <fieldset class="form-panel | stack">
+            {# Form Header #}
+            <header class="form-panel__header">
+              <h2 class="form-panel__title">Tab 2</h2>
+            </header>
+
+            {# Form Main #}
+            <section class="form-panel__main | columns" data-columns="2">
+              {% include "_form-fields/checkbox-button-fancy.njk" %}
+            </section>
+            
+            {# Form Footer #}
+            <footer class="form-panel__footer | cluster">
+              <button class="button" data-color="primary" type="submit">Primary</button>
+              <button class="button" data-color="secondary" type="submit">Secondary</button>
+              <button class="button" data-color="accent" type="submit">Accent</button>
+              
+              <!-- Exemplo de data-split - Veja _utils.css > cluster  -->
+              <button class="button" data-color="base" type="submit" data-split>Base</button>
+              <button class="button" data-color="base" type="submit" disabled>Base</button>
+            </footer>
+          </fieldset>
+        </div>
+
+        <div id="section3" class="form-tab | stack">
+          <fieldset class="form-panel | stack">
+            {# Form Header #}
+            <header class="form-panel__header">
+              <h2 class="form-panel__title">Tab 3</h2>
+            </header>
+
+            {# Form Main #}
+            <section class="form-panel__main | columns" data-columns="2">
+              {% include "_form-fields/text-based-inputs.njk" %}
+            </section>
+            
+            {# Form Footer #}
+            <footer class="form-panel__footer | cluster">
+              <button class="button" data-color="primary" type="submit">Primary</button>
+              <button class="button" data-color="secondary" type="submit">Secondary</button>
+              <button class="button" data-color="accent" type="submit">Accent</button>
+              
+              <!-- Exemplo de data-split - Veja _utils.css > cluster  -->
+              <button class="button" data-color="base" type="submit" data-split>Base</button>
+              <button class="button" data-color="base" type="submit" disabled>Base</button>
+            </footer>
+          </fieldset>
+        </div>
+      </form>
+      
+      
+      
+      <form class="form | stack">
         <fieldset class="form-panel | stack">
           <header class="form-panel__header">
             <h2 class="form-panel__title">Filtros Ativos</h2>

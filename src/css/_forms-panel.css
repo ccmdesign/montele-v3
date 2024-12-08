@@ -46,7 +46,7 @@
   font-size: var(--size-3);
   gap: var(--space-m-l);
   justify-content: center;
-  border-bottom: 1px solid var(--_tab-color);
+  border-bottom: 1px solid var(--_tab-border-color);
 }
 
 @media (max-width: 550px) {
