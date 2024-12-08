@@ -10,11 +10,13 @@ table {
     text-align: left;
     border-bottom: 1px solid var(--base-color-20-tint);
     font-size: var(--size-0);
+    padding-inline: var(--space-3xs-2xs);
   }
 
   td {
     padding-block: var(--space-3xs-2xs);
-    padding-inline: var(--space-3xs-2xs);
+    
+    color: var(--_row-color, var(--base-color));
   }
 
   td:first-child,
@@ -26,11 +28,8 @@ table {
     font-weight: 400;
   }
 
-  tr:nth-child(2n) {
-    background-color: var(--base-color-02-tint);
-  }
-
   a {
+    color: var(--_row-color, var(--primary-color));
     /* color: var(--primary-color); */
   }
 
@@ -86,5 +85,28 @@ table {
 /* Atualiza a td quando temos um .semaforo dentro */
 td:has(.semaforo) {
   position: relative;
+}
+
+.table {
+  tr[data-status] {
+    --_row-color: var(--_row-background-color);
+    --_row-background-color: var(--base-color);
+
+    background-color: color-mix(in srgb, var(--_row-background-color, var(--_row-color)) 10%, var(--white-color));
+  }
+
+
+  tr[data-status="bom"] {
+    --_row-background-color: var(--green-color);
+  }
+  
+  tr[data-status="ruim"] {
+    * {font-weight: 400;}
+    --_row-background-color: var(--red-color);
+  }
+  tr[data-status="atencao"] {
+    --_row-background-color: var(--yellow-color);
+    --_row-color: var(--yellow-color-70-shade);
+  }
 }
 
