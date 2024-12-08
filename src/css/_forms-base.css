@@ -136,6 +136,7 @@
 input[type="file"] {
   background-color: var(--_input-background-color);
   border-radius: var(--_input-border-radius);
+  width: 100%;
 }
 
 input::file-selector-button {
