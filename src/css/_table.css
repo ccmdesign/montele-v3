@@ -82,8 +82,9 @@ table {
   }
 } */
 
-/* Atualiza a td quando temos um .semaforo dentro */
-td:has(.semaforo) {
+/* Atualiza a td quando temos um .semaforo ou um .profile-pic dentro */
+td:has(.semaforo),
+td:has(.profile-pic) {
   position: relative;
 }
 
