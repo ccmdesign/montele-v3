@@ -18,9 +18,10 @@
 }
 
 .form-panel {
-  padding-bottom: var(--space-m-l);
+  padding-block: var(--space-m-l);
   padding-inline: 0;
   border: 0;
+  margin-inline: 0;
   border-bottom: 1px solid #000;
 }
 
@@ -28,6 +29,62 @@
   --_stack-space: var(--space-m-l);
 }
 
+.form-panel__title {
+  font-size: var(--size-4);
+}
+
+
+
 .form .button {
   --_button-padding-block: calc(var(--size--2));
 }
+
+
+.form__tabs {
+  --_tab-color: var(--base-color-60-tint);
+  --_tab-border-color: var(--accent-color);
+  font-size: var(--size-3);
+  gap: var(--space-m-l);
+  justify-content: center;
+  border-bottom: 1px solid var(--_tab-color);
+}
+
+@media (max-width: 550px) {
+  .form__tabs[role="tablist"] {
+    * {
+      text-decoration: none;
+      padding-block: var(--space-xs);
+      color: var(--_tab-color);
+    }
+  
+    [aria-selected] {
+      --_tab-color: var(--accent-color);
+      
+      font-weight: 400;
+      text-decoration: none;
+    }
+  }
+}
+@media (min-width: 550px) {
+  .form__tabs { display: flex; }
+  
+  .form__tabs[role="tablist"] {
+    * {
+      text-decoration: none;
+      padding-bottom: var(--space-s);
+      padding-inline: var(--space-xs);
+      color: var(--_tab-color);
+    }
+  
+    [aria-selected] {
+      --_tab-color: var(--accent-color) !important;
+      
+      font-weight: 400;
+      border-bottom: 5px solid var(--_tab-color);
+      text-decoration: none;
+    }
+  }
+ }
+
+/* Sets the styles for the selected tab handle  */
+

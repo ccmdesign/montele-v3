@@ -1,0 +1,50 @@
+/* https://codepen.io/heydon/pen/veeaEa/ */
+
+[role="tablist"] {
+  padding: 0;
+}
+
+[role="tablist"] li, 
+[role="tablist"] a {
+  display: inline-block;
+}
+
+[role="tablist"] [aria-selected] {
+  /* Modifies the active tab handle  */
+  position: relative;
+  text-decoration: underline;
+}
+
+[role="tabpanel"][hidden] { display: none; }
+
+
+*:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 4px lightBlue;
+}
+
+@media (max-width: 550px) {
+  
+  [role="tablist"] li, [role="tablist"] a {
+    display: block;
+    position: static;
+  }
+  
+  [role="tablist"] a {
+    /* border: 2px solid #222 !important; */
+  }
+  
+  [role="tablist"] [aria-selected] {
+    position: static;
+    font-weight: bold;
+  }
+  
+  /* [role="tablist"] [aria-selected]::after {
+    content: '\0020⬅';
+  }
+   */
+  [role="tabpanel"] {
+    border-top: 0;
+  }
+  
+}

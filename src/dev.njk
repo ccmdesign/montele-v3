@@ -1,138 +1,88 @@
 ---
 layout: "_layouts/app.njk"
-doca_hidden: "false"
 ---
+<form class="main-panel | form | tabbed">
+  {# O js para as tabs, precisa do role="tablist" #}
+  <h3 class="form__tabs" role="tablist">
+    {# As IDs nesses href precisam bater com as ids dos .form-tab para as tabs funcionarem #}  
+    <a href="#section-1">Form Tab 1</a>
+    <a href="#section-2">Form Tab 2</a>
+    <a href="#section-3">Form Tab 3</a>
+  </h3>
 
-<form class="form main-panel">
-  <div class="form-tab | stack">
+  {# As IDs nessas divs precisam bater com os hrefs do role="tablist" (Linha 5) #}  
+  <div id="section1" class="form-tab | stack">
     <fieldset class="form-panel | stack">
+      {# Form Header #}
       <header class="form-panel__header">
-        <h2 class="form-panel__title">Multibox</h2>
+        <h2 class="form-panel__title">Tab 1</h2>
       </header>
 
-      <section class="form-panel__main | columns">
-        {# <div class="form-field">
-          <label class="form-field__label" for="id2">Text</label>
-          <select class="form-field__input">
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
-          </select>
-          <span class="form-field__info | icon" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quis quam sapiente quasi ipsum accusantium hic dolorem porro, qui accusamus libero a laudantium assumenda nostrum enim iusto esse cupiditate architecto.">info</span>
-          <p class="form-field__message">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        </div>
-        <div class="form-field"> #}
-          
-          <div id="select-field" class="form-field__input form-group" multiselect >
-            <div class="combo-mutiple-custom">
-              <select></select>
-              <button popovertarget="form-multiselect-001" id="select-btn-custom" class="button" type="button">Select</button>
-            </div>
-
-            <div id="form-multiselect-001" class="form-field__options" data-visual="fancy" popover>
-              <!-- We need to have this alternative implementation
-                   with the .icon inside the label because 
-                   a :before inside a label inside a popover doesn't work -->
-              <label data-value=1><span class="icon"></span><input type="checkbox" name="" value="Val 01">Val 01</label>
-              <label data-value=2><span class="icon"></span><input type="checkbox" name="" value="Val 02">Val 02</label>
-              <label data-value=3><span class="icon"></span><input type="checkbox" name="" value="Val 03">Val 03</label>
-              <label data-value=4><span class="icon"></span><input type="checkbox" name="" value="Val 04">Val 04</label>
-              <label data-value=5><span class="icon"></span><input type="checkbox" name="" value="Val 05">Val 05</label>
-              <label data-value=6><span class="icon"></span><input type="checkbox" name="" value="Val 06">Val 06</label>
-              <label data-value=7><span class="icon"></span><input type="checkbox" name="" value="Val 07">Val 07</label>
-              <label data-value=8><span class="icon"></span><input type="checkbox" name="" value="Val 08">Val 08</label>
-              <label data-value=9><span class="icon"></span><input type="checkbox" name="" value="Val 09">Val 09</label>
-              <label data-value=10><span class="icon"></span><input type="checkbox" name="" value="Val 10">Val 10</label>
-            </div>
-          </div>
-          
-          {# <span class="form-field__info | icon" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quis quam sapiente quasi ipsum accusantium hic dolorem porro, qui accusamus libero a laudantium assumenda nostrum enim iusto esse cupiditate architecto.">info</span>
-          <p class="form-field__message">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> #}
-          
-          
-        </div>
-
-        <div class="form-field" stacked>
-          <!-- Exemplo de form field com o .form-field__info dentro do .form-field__label. Isso faz o ícone do info aparecer logo depois da label -->
-          <label class="form-field__label" for="">Fancy Checkbox
-            <span class="form-field__info | icon" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quis quam sapiente quasi ipsum accusantium hic dolorem porro, qui accusamus libero a laudantium assumenda nostrum enim iusto esse cupiditate architecto.">info</span>
-          </label>
-          <div class="form-field__options" data-visual="fancy">
-            <label><input type="checkbox" name="" value="">Checkbox Label</label>
-            <label><input type="checkbox" name="" value="">Checkbox Label</label>
-            <label><input type="checkbox" name="" value="">Checkbox Label</label>
-            <label><input type="checkbox" name="" value="">Checkbox Label</label>
-          </div>
-          <p class="form-field__message">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        </div>
-        
+      {# Form Main #}
+      <section class="form-panel__main | columns" data-columns="2">
+        {% include "_form-fields/multiselect.njk" %}
       </section>
       
+      {# Form Footer #}
       <footer class="form-panel__footer | cluster">
         <button class="button" data-color="primary" type="submit">Primary</button>
         <button class="button" data-color="secondary" type="submit">Secondary</button>
         <button class="button" data-color="accent" type="submit">Accent</button>
+        
         <!-- Exemplo de data-split - Veja _utils.css > cluster  -->
         <button class="button" data-color="base" type="submit" data-split>Base</button>
         <button class="button" data-color="base" type="submit" disabled>Base</button>
-        
       </footer>
     </fieldset>
   </div>
-</form>  
 
-
-{# Uma ideia que o Copilot deu #}
-{# <form class="form main-panel">
-  <div class="form-tab | stack">
+  <div id="section2" class="form-tab | stack">
     <fieldset class="form-panel | stack">
+      {# Form Header #}
       <header class="form-panel__header">
-        <h2 class="form-panel__title">Multibox</h2>
+        <h2 class="form-panel__title">Tab 2</h2>
       </header>
 
-      <section class="form-panel__main | columns">
-        <div class="form-field">
-          <label class="form-field__label" for="checkboxes">Checkboxes</label>
-          <div id="checkboxes" class="form-field__input" data-visual="fancy">
-            <label><input type="checkbox" value="Option 1">Option 1</label>
-            <label><input type="checkbox" value="Option 2">Option 2</label>
-            <label><input type="checkbox" value="Option 3">Option 3</label>
-            <label><input type="checkbox" value="Option 4">Option 4</label>
-          </div>
-        </div>
-        <div class="form-field">
-          <label class="form-field__label" for="select">Select</label>
-          <select id="select" class="form-field__input" multiple>
-            <option value="Option 1">Option 1</option>
-            <option value="Option 2">Option 2</option>
-            <option value="Option 3">Option 3</option>
-            <option value="Option 4">Option 4</option>
-          </select>
-        </div>
+      {# Form Main #}
+      <section class="form-panel__main | columns" data-columns="2">
+        {% include "_form-fields/checkbox-button-fancy.njk" %}
       </section>
+      
+      {# Form Footer #}
+      <footer class="form-panel__footer | cluster">
+        <button class="button" data-color="primary" type="submit">Primary</button>
+        <button class="button" data-color="secondary" type="submit">Secondary</button>
+        <button class="button" data-color="accent" type="submit">Accent</button>
+        
+        <!-- Exemplo de data-split - Veja _utils.css > cluster  -->
+        <button class="button" data-color="base" type="submit" data-split>Base</button>
+        <button class="button" data-color="base" type="submit" disabled>Base</button>
+      </footer>
+    </fieldset>
+  </div>
+
+  <div id="section3" class="form-tab | stack">
+    <fieldset class="form-panel | stack">
+      {# Form Header #}
+      <header class="form-panel__header">
+        <h2 class="form-panel__title">Tab 3</h2>
+      </header>
+
+      {# Form Main #}
+      <section class="form-panel__main | columns" data-columns="2">
+        {% include "_form-fields/text-based-inputs.njk" %}
+      </section>
+      
+      {# Form Footer #}
+      <footer class="form-panel__footer | cluster">
+        <button class="button" data-color="primary" type="submit">Primary</button>
+        <button class="button" data-color="secondary" type="submit">Secondary</button>
+        <button class="button" data-color="accent" type="submit">Accent</button>
+        
+        <!-- Exemplo de data-split - Veja _utils.css > cluster  -->
+        <button class="button" data-color="base" type="submit" data-split>Base</button>
+        <button class="button" data-color="base" type="submit" disabled>Base</button>
+      </footer>
     </fieldset>
   </div>
 </form>
-
-<script>
-  document.querySelectorAll('#checkboxes input[type="checkbox"]').forEach(checkbox => {
-    checkbox.addEventListener('change', function() {
-      const select = document.getElementById('select');
-      const option = Array.from(select.options).find(opt => opt.value === this.value);
-      if (this.checked) {
-        option.selected = true;
-      } else {
-        option.selected = false;
-      }
-    });
-  });
-</script> #}
