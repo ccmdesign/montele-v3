@@ -1,20 +1,48 @@
-.feed-message h2 { 
-  font-size: inherit; 
-  color: var(--base-color-40-tint);
-  font-weight: normal;
+.feed {
+  max-width: 150ch;
 }
 
-.feed-message h3 { 
-  font-size: var(--size-0); 
-  color: var(--primary-color);
+.feed-message {
+  font-size: var(--size-1);
+
+  h2 { 
+    font-size: inherit; 
+    color: var(--base-color-40-tint);
+    font-weight: normal;
+  }
+
+  h3 { 
+    font-size: var(--size-2); 
+    color: var(--primary-color);
+  }
+
+  .automation-logo { 
+    max-width: 16px; 
+    opacity: .5;
+    filter: grayscale();
+  }
+  
+  img[src=""] { display: none; }
+  
+  .profile-pic {
+    max-width: 24px; 
+    opacity: 1;
+  }
 }
-.feed-message img { max-width: 20px; }
+
 
 .feed-message__by-line {
   display: flex;
   align-items: center;
   gap: var(--space-xs);
-  font-size: var(--size--1);
-
-  img[src=""] { display: none; }
+  font-size: var(--size-0);
+  border-top: 1px solid var(--base-color-10-tint);
+  padding-top: var(--space-xs);
 }
+
+.feed-message__date {
+  color: var(--base-color-60-tint);
+  margin-left: auto;
+}
+
+
