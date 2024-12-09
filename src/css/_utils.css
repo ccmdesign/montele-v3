@@ -68,20 +68,22 @@
 
   .columns {
     --_column-gap: var(--space-xs);
-
     column-width: 24ch;
     column-gap: var(--_column-gap);
   }
 
+  .columns[data-columns] {
+    --_column-gap: var(--space-xl);
+    column-width: auto;
+  }
   .columns[data-columns="2"] {
     columns: 2;
-    column-width: auto;
-    --_column-gap: var(--space-xl);
   }
   .columns[data-columns="3"] {
     columns: 3;
   }
   .columns[data-columns="4"] {
     columns: 4;
+    
   }
 }

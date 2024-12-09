@@ -18,11 +18,6 @@
 [role="tabpanel"][hidden] { display: none; }
 
 
-*:focus {
-  outline: none;
-  box-shadow: inset 0 0 0 4px lightBlue;
-}
-
 @media (max-width: 550px) {
   
   [role="tablist"] li, [role="tablist"] a {
