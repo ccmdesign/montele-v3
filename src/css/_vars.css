@@ -35,6 +35,8 @@
 
 /* Effects */
 :root {
+  --border: 2px solid currentColor;
+
   --border-radius-s: 3px;
   --border-radius-m: 6px;
   --border-radius-l: 12px;

@@ -25,6 +25,16 @@
   padding: var(--space-m);
   overflow: hidden;
   position: relative;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.gems__item:hover {
+  background-color: color-mix(in srgb, var(--sidebar-left-color) 90%, white);
+}
+
+a.gems__item:hover {
+  background-color: var(--accent-color);
 }
 
 .gems__item {
