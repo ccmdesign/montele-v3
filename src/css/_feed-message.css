@@ -8,7 +8,8 @@
 }
 
 .feed-message {
-  font-size: var(--size-1);
+  /* adicionei esse calc aqui pois o size-2 estava ficando grande demais. */
+  font-size: calc(var(--size-1) * 1.1); 
 
   h2 { 
     font-size: inherit; 
