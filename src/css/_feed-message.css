@@ -9,6 +9,7 @@
 
 .feed-message {
   /* adicionei esse calc aqui pois o size-2 estava ficando grande demais. */
+  position: relative;
   font-size: calc(var(--size-1) * 1.1); 
 
   h2 { 
@@ -44,6 +45,27 @@
   font-size: var(--size-0);
   border-bottom: 1px solid var(--base-color-10-tint);
   padding-bottom: var(--space-xs);
+}
+
+@media screen and (min-width: 1280px) {
+  .feed-message__by-line {
+    position: absolute;
+    flex-direction: column;
+    padding-top: var(--space-xs);
+    width: 200px;
+    left: -220px;
+    align-items: flex-end;
+    text-align: right;
+    border-bottom: 0;
+
+    * {
+      display: block;
+    }
+  }
+
+  .feed-message__date { grid-area: date; }
+  .feed-message__by-line img { grid-area: pic; }
+  .feed-message__by-line h2 { grid-area: name; }
 }
 
 .feed-message__date {
