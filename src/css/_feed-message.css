@@ -1,5 +1,10 @@
 .feed {
   max-width: 150ch;
+  
+}
+
+.feed-message.card {
+  padding-top: var(--space-s);
 }
 
 .feed-message {
@@ -36,8 +41,8 @@
   align-items: center;
   gap: var(--space-xs);
   font-size: var(--size-0);
-  border-top: 1px solid var(--base-color-10-tint);
-  padding-top: var(--space-xs);
+  border-bottom: 1px solid var(--base-color-10-tint);
+  padding-bottom: var(--space-xs);
 }
 
 .feed-message__date {
