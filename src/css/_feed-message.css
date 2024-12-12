@@ -15,8 +15,9 @@
 
   h2 { 
     font-size: inherit; 
-    color: var(--base-color-40-tint);
+    color: var(--base-color-70-tint);
     font-weight: normal;
+    font-size: var(--size-1);
   }
 
   h3 { 
@@ -48,7 +49,7 @@
   padding-bottom: var(--space-xs);
 }
 
-@container main-panel (min-width: 1000px) {
+@container main-panel (min-width: 1080px) {
   .feed-message__by-line {
     position: absolute;
     flex-direction: column;
@@ -70,7 +71,8 @@
 }
 
 .feed-message__date {
-  color: var(--base-color-60-tint);
+  color: var(--base-color-70-tint);
+  font-size: var(--size-1);
   margin-left: auto;
 }
 
