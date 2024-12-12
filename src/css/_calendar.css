@@ -13,7 +13,6 @@
 
 .calendar__day {  
   aspect-ratio: 4/3;
-  
 }
 
 .calendar__day[data-month="past"],

@@ -1,3 +1,8 @@
+/* Sets the main-panel @container, so we can refference it for child components. */
+.main-panel {
+  container: main-panel / inline-size;
+}
+
 .main-panel {
   --_stack-space: var(--space-xs);
   padding-inline: var(--space-s-m);
@@ -8,3 +13,4 @@
 .main-panel__controls {
   --_stack-space: var(--space-xs);
 }
+

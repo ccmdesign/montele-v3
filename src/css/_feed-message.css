@@ -1,6 +1,7 @@
+
+
 .feed {
   max-width: 150ch;
-  
 }
 
 .feed-message.card {
@@ -47,7 +48,7 @@
   padding-bottom: var(--space-xs);
 }
 
-@media screen and (min-width: 1280px) {
+@container main-panel (min-width: 1000px) {
   .feed-message__by-line {
     position: absolute;
     flex-direction: column;
