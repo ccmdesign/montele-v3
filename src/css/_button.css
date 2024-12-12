@@ -244,23 +244,27 @@ input::file-selector-button:active,
 
   &:before,
   &:after {
-    line-height: 0.686; /* this tweaks the line-height of buttons with icons the button height consistent with the other buttons  */
+    line-height: 1; /* this tweaks the line-height of buttons with icons the button height consistent with the other buttons  */
   }
 }
 
-.button[data-icon-before]:before {
-  content: attr(icon-before);
-}
-.button[data-icon-after]:after {
-  content: attr(icon-after);
+.button[data-icon]:before {
+  content: attr(data-icon);
 }
 
+.button[data-icon-before]:before {
+  content: attr(data-icon-before);
+}
+.button[data-icon-after]:after {
+  content: attr(data-icon-after);
+}
+
+.button[data-icon]:before,
 .button[data-icon-before]:before,
 .button[data-icon-after]:after {
   font-family: var(--icon-font);
   font-weight: normal;
   font-style: normal;
-  font-size: 24px; /* Preferred icon size */
   font-size: calc(var(--_button-font-size) * 1.5);
   display: inline-block;
   text-transform: none;

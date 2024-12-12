@@ -55,8 +55,12 @@
 
 .icon,
 [data-icon]:before {
-  content: attr(data-icon);
   font-size: var(--size-3);
+}
+
+.icon,
+[data-icon] {
+  content: attr(data-icon);
 }
 
 @container form (min-width: 800px) {
