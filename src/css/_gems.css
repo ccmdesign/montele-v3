@@ -9,7 +9,7 @@
     background-color: transparent;
     border: 0;
     color: hsla(var(--white-hsl), 0.6);
-    padding-inline: 22px;
+    padding-inline: 18px;
     padding-block: 21px;
     font-size: var(--size-4);
     line-height: 1;
