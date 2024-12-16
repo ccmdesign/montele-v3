@@ -22,7 +22,7 @@
   
   &::after {
     content: "";
-    border-left: 36px solid var(--primary-color-30-tint);
+    border-left: 36px solid var(--primary-color-20-tint);
     border-block: 36px solid transparent;
     transform: translate(36px);
   }
