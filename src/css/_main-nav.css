@@ -1,29 +1,32 @@
 .main-nav {
   background-color: var(--white-color);
   border-bottom: var(--base-separator);
-  padding-inline: var(--space-s-m);
-  
 }
 
 .main-nav {
   display: flex;
+  height: 100%;
   justify-content: space-between;
   align-items: center;
   gap: var(--base-gutter);
-  padding-block: 10px;
 }
 
-/* .main-nav__left * {
-  display: none;
-} */
+.main-nav > * {
+  padding-inline: var(--space-s-m);
+}
 
-/* This hides the logo on the smaller screens */
-@media screen and (min-width: 960px) {
-  .main-nav__left > * {
-    display: block;
-    padding-inline: var(--space-m-l);
-    padding-block: 0;
+.main-nav__left {
+  align-self: stretch;
+  display: flex;
+  padding-inline-end: 0;
+  
+  &::after {
+    content: "";
+    border-left: 36px solid var(--primary-color-30-tint);
+    border-block: 36px solid transparent;
+    transform: translate(36px);
   }
+
 }
 
 .main-nav a {

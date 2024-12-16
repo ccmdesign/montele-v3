@@ -1,10 +1,24 @@
 .breadcrumbs {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0;
+  
+  background-color: var(--primary-color-30-tint);
 }
 
-.breadcrumbs > :last-child {
+.breadcrumbs-icon {
+  background-color: var(--primary-color-70-shade);
+  color: var(--white-color);
+  pointer-events: none;
+  
+}
+
+.breadcrumbs__title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  color: var(--base-color);
+
+}
+
+.breadcrumbs__title > :last-child {
   font-weight: 500;
   color: var(--primary-color);
 }

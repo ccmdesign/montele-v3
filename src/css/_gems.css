@@ -5,16 +5,6 @@
   flex-direction: column;
   height: 100%;
 
-  .icon {
-    background-color: transparent;
-    border: 0;
-    color: hsla(var(--white-hsl), 0.6);
-    padding-inline: 18px;
-    padding-block: 21px;
-    font-size: var(--size-4);
-    line-height: 1;
-  }
-
   .icon[aria-active="true"] {
     background-color: color-mix(in srgb, var(--sidebar-left-color) 80%, white);
     color: hsla(var(--white-hsl), 1);
@@ -22,7 +12,16 @@
 }
 
 .gems__item {
-  padding: var(--space-m);
+  background-color: transparent;
+  border: 0;
+  color: hsla(var(--white-hsl), 0.6);
+  padding-inline: 22px; /* magic number */
+  padding-block: 22px; /* magic number */
+  font-size: var(--size-4);
+  line-height: 1;
+}
+
+.gems__item {
   overflow: hidden;
   position: relative;
   text-decoration: none;
