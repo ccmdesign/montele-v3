@@ -1,24 +1,21 @@
-.breadcrumbs {
-
-  background-color: var(--primary-color-20-tint);
-}
+/* @ToDo: Transformar o breadcrumbs num dropdown em telas < 1480px */
 
 .breadcrumbs-icon {
   background-color: var(--primary-color-70-shade);
   color: var(--white-color);
   pointer-events: none;
-  
 }
 
-.breadcrumbs__title {
+.breadcrumbs {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   color: var(--base-color);
-
+  font-size: 1.25rem;
+  background-color: var(--primary-color-20-tint);
 }
 
-.breadcrumbs__title > :last-child {
+.breadcrumbs > :last-child {
   font-weight: 500;
   color: var(--primary-color);
 }

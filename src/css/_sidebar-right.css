@@ -68,10 +68,14 @@
 
 .sidebar-form {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: auto auto 1fr;
   grid-template-rows: 1fr auto;
   grid-template-areas: "textarea textarea textarea" "mic transcribe submit";
   gap: var(--space-s);
+
+  .button[data-icon] {
+    font-size: 2.2rem;
+  }
 }
 
 .sidebar-form__textarea {
@@ -85,9 +89,15 @@
 }
 
 .sidebar-form__mic,
+.sidebar-form__transcribe {
+  font-weight: 200;
+}
+
+.sidebar-form__mic,
 .sidebar-form__transcribe,
 .sidebar-form__submit {
   width: 100%;
+  height: 100%;
 }
 
 .sidebar-form__submit {

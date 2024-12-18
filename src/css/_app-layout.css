@@ -6,8 +6,8 @@
 .app-layout {
   display: grid;
   height: 100dvh;
-  grid-template-columns: 72px var(--sidebar-left-width) 1fr var(--sidebar-right-width);
-  grid-template-rows: 72px 1fr;
+  grid-template-columns: 64px var(--sidebar-left-width) 1fr var(--sidebar-right-width);
+  grid-template-rows: 64px 1fr;
   transition: all 0.3s ease;
   grid-template-areas:
     "gems cdm cdm right"
