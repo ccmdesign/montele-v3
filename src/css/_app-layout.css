@@ -20,6 +20,7 @@
   transition: all 0.3s ease;
   grid-row: 2/3;
   grid-column: 1/1;
+  /* background-color: var(--base-color-20-tint); */
 }
 
 .app-layout__sidebar-left[aria-hidden="true"] { 

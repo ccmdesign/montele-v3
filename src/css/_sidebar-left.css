@@ -1,8 +1,10 @@
 /* TODO: Need to find a way to vertically center align the submenu with the gem  */
 
 .sidebar-left {
+  --sidebar-left-color: var(--base-color);
+
   padding-block: var(--space-l);
-  background-color: color-mix(in srgb, var(--sidebar-left-color) 20%, white 80%);
+  background-color: color-mix(in srgb, var(--sidebar-left-color) 30%, white 70%);
   padding-inline: var(--base-padding-inline);
   height: fill-available;
   justify-content: center;
