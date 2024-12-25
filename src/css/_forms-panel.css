@@ -11,8 +11,9 @@
   --_input-border-radius: var(--border-radius-s);
 }
 
+
 /* Container Query for the Form width */
-.form {
+.form-panel {
   container-type: inline-size;
   container-name: form;
 }
