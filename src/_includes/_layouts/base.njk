@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" as="style" onload="this.rel='stylesheet'">
+  <link rel="preload" href="https://fonts.gstatic.com/s/materialsymbolsoutlined/v75/kJEjB3kzUI05NezyXoqDr2-qQroY4uERItE_.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"></noscript>
   <link rel="stylesheet" href="/css/styles.css">
   {# polyfill for popover and anchor positioning #}
   <script src="/js/popover.min.js" type="module"></script>
+  
   <script type="module">
     if (!("anchorName" in document.documentElement.style)) {
       import("https://unpkg.com/@oddbird/css-anchor-positioning");
