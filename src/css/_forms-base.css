@@ -1,4 +1,8 @@
 @layer form-base {
+  /* @ToDo: Testar isso
+     textarea, select, input { field-sizing: content; }
+  */
+
   input[type="hidden"],
   .ui-helper-hidden-accessible {
     /* Provavelmente posso deletar isso */

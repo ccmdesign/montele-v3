@@ -1,11 +1,15 @@
 <nav class="main-nav">
   <div class="main-nav__left | breadcrumbs">
     <h3 class="breadcrumbs">
-      <a href="#">Manutenção</a>
+      <a href="#">Menutenção</a>
+      {% if region %}
       <span class="icon">keyboard_arrow_right</span>
-      <a href="#">São Paulo</a>
+      <a href="#">{{ region }}</a>
+      {% endif %}
+      {% if title %}
       <span class="icon">keyboard_arrow_right</span>
-      <a href="#">11781</a>
+      <a href="#" class="numero-equipamento">{{title}}</a>
+      {% endif %}
     </h3> 
   </div>
   <div class="main-nav__center">
