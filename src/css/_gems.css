@@ -1,4 +1,5 @@
 .gems {
+  view-transition-name: --persist-gems;
   display: flex;
   align-items: center;
   justify-content: center;
