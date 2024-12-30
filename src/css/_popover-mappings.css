@@ -1,11 +1,9 @@
-/* Main Nav - Not working */
-[popovertarget="submenu-example"] {
-  anchor-name: --submenu-example;
-}
+/* Main Nav - Listas */
+[popovertarget="submenu-listas"] { anchor-name: --submenu-listas; }
+#submenu-listas { position-anchor: --submenu-listas; }
 
-#submenu-example {
-  position-anchor: --submenu-example;
-}
+[popovertarget="submenu-forms"] { anchor-name: --submenu-forms; }
+#submenu-forms { position-anchor: --submenu-forms; }
 
 /* Listagem */
 [popovertarget="menu-ferramentas"] {

@@ -12,16 +12,9 @@
       {% endif %}
     </h3> 
   </div>
-  <div class="main-nav__center">
-    <a class="button" unstyled href="/">Feed</a>
-    <a class="button" unstyled href="/listagem">Listagem</a>
-    <a class="button" unstyled href="/form">Form</a>
-    <a class="button" unstyled href="/form-special">Form Special</a>
-    <a class="button" unstyled href="/colors">Colors</a>
-    <a class="button" unstyled href="/dev">Testing</a>
-    <button class="button" data-icon="bolt" unstyled></button>
-
-    <button popovertarget="submenu-example" class="button" unstyled >Dropdown</button>
+  <div class="main-nav__center">  
+    <button popovertarget="submenu-forms" class="button" unstyled >Forms</button>
+    <button popovertarget="submenu-listas" class="button" unstyled >Listas</button>
     {# A implementação dos dropdowns também utiliza a Popover API. 
         https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/popover
         Vale a pena dar uma lida nela, pois é muito simples e a implementação é bem simples também.
@@ -31,11 +24,24 @@
         Para simplificar, veja o arquivo _popover-mappings.css - nele eu separei a lista de mapeamento dos popovers.
         Podemos ver se não conseguimos automatizar esse mapeamento com algum script. Provavelement usando o PostCSS
     #}
-    
+    <a class="button" unstyled href="/colors">Colors</a>
+    <a class="button" unstyled href="/dev">Testing</a>
   </div>
   <div class="main-nav__right">
     <button id="sidebar-action-button" class="button" unstyled><span class="icon" trigger-target="sidebar-right">chat</span></button>
   </div>
 </nav>
+
+{# Exemplo de Submenu Popover ativado por um menu-item (Main Nav) - Listas #}
+<div id="submenu-listas" class="popover-menu" popover >
+  <a class="popover-menu__item" unstyled href="/listagem">Listagem Basica</a>
+  <a class="popover-menu__item" unstyled href="/planilha">Planilha</a>
+</div>
+
+{# Exemplo de Submenu Popover ativado por um menu-item (Main Nav) - Forms #}
+<div id="submenu-forms" class="popover-menu" popover >
+  <a class="popover-menu__item" unstyled href="/form">Form</a>
+  <a class="popover-menu__item" unstyled href="/form-special">Form Special</a>
+</div>
 
 
