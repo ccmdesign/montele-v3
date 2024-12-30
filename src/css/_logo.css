@@ -1,0 +1,11 @@
+.logo {
+  padding: var(--space-s);
+
+  svg { width: 100%; }
+
+  polygon,
+  path { fill: #fff; }
+
+  .st1 { opacity: .5; }
+}
+
