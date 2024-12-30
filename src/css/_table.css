@@ -92,7 +92,6 @@ td:has(.profile-pic) {
   tr[data-status] {
     --_row-color: var(--_row-background-color);
     --_row-background-color: var(--base-color);
-
     background-color: color-mix(in srgb, var(--_row-background-color, var(--_row-color)) 10%, var(--white-color));
   }
 
@@ -111,3 +110,7 @@ td:has(.profile-pic) {
   }
 }
 
+td:has(.profile-pic),
+td:has(.semaforo) {
+  padding: 0;
+}

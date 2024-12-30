@@ -6,7 +6,5 @@
 
 /* Sets the styels for the .profile-pic inside a td */
 td .profile-pic {
-  position: absolute;
-  top: 2px;
-  width: 28px;
+  width: var(--size-4);
 }

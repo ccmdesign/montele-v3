@@ -2,28 +2,26 @@
   --_semaforo-background-color: color-mix(in srgb, var(--base-color) 20%, white);
   --_semaforo-border-color: var(--_semaforo-background-color);
   --_semaforo-color: var(--_semaforo-background-color);
-  display: inline-block;
-  width: 24px;
+  display: block;
+  width: var(--size-4);
   aspect-ratio: 1;
   background-color: var(--_semaforo-background-color);
-  border-radius: 20px;
+  border-radius: 100px;
   border: 1px solid var(--_semaforo-border-color);
-  position: absolute;
-  top: 0;
-  margin-block: 4px;
 
   &[data-status="concluido"]:before,
   &[data-status="atrasado"]:before,
   &[data-status="urgente"]:before {
     font-family: var(--icon-font);
     font-weight: 400;
-    font-size: 1.6rem;
+    font-size: calc(var(--size-0) * 2);
     position: absolute;
     padding: 0;
-    line-height: 1.1;
-    width: 100;
-    margin-left: 1px;
+    text-align: center;
+    line-height: 1;
+    aspect-ratio: 1;
     color: var(--_semaforo-color);
+    transform: translate(1px, 1px); /* Fix for alignment */
   }
 
   &[data-status="bom"] {
@@ -49,7 +47,6 @@
     
     &:before {
       content: "priority_high";
-      font-size: 1.5rem;
     }
   }
   &[data-status="urgente"] {
