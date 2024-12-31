@@ -1,5 +1,13 @@
 
 module.exports = function (eleventyConfig) {
+
+  const filters = require('./src/js/filters');
+
+  // Add each filter to Eleventy
+  Object.keys(filters).forEach((filterName) => {
+    eleventyConfig.addFilter(filterName, filters[filterName]);
+  });
+
   eleventyConfig.addPassthroughCopy("./src/css/*.*");
   eleventyConfig.addPassthroughCopy("./src/js/*.js");
   eleventyConfig.addPassthroughCopy("./src/images/*.*");
