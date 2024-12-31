@@ -1,0 +1,111 @@
+---
+layout: "_layouts/app.njk"
+doca_hidden: "true"
+
+---
+
+<div id="listing-panel" class="main-panel listagem planilha">
+  
+  <header class="listagem__header stack">
+    <div class="cluster">
+      <h2>{{ garantia.list_title }}</h2>
+      <button data-split class="button" popovertarget="menu-colunas">Colunas</button>
+      {% include "src/_includes/_popovers/colunas.njk" %}
+      <button class="button" popovertarget="modal-table-filter">Filtros(2)</button>
+    </div>
+
+    <div class="listagem__summary | repel">
+      <div class="h4">Exibindo <strong>31</strong> negócios</div>
+      <div class="h4">Preço de tabela: total <strong>R$ 4.201.194,76</strong></div>
+      <div class="h4">Preço final: total: <strong>R$ 4.159.066,97</strong></div>
+    </div>
+  </header>
+  
+  <div class="table-wrapper">
+    
+
+  <table id="listing" class="table">
+    <thead>
+      <tr>
+        <th class="table-th id-negocio" data-coluna="serie-desde">
+          <a href="#" title="Número do negócio. Clique para ordenar pela coluna.">Número</a>
+          <a href="#" title="Data da criação do negócio. Clique para ordenar pela coluna.">Desde</a>
+        </th>
+
+        <th class="table-th" data-coluna="cliente-negocio">
+          <a href="#" title="Cliente. Clique para ordenar pela coluna.">Cliente</a>
+          <a href="#" title="Nome do negócio. Clique para ordenar pela coluna.">Negócio</a>
+        </th>
+        
+        <th class="table-th" data-coluna="linha-segmento">
+          <span title="Linha.">Linha</span>
+          <span title="Segmento.">Segmento</span>
+        </th>
+        
+        <th class="table-th" data-coluna="cidade-uf">
+          <a href="#" title="Cidade do negócio. Clique para ordenar pela coluna.">Cidade</a>
+          <span title="Unidade federativa da cidade do negócio.">UF</span>
+        </th>
+        
+        <th class="table-th" data-coluna="fase-alteracao">
+          <a href="#" title="Fase">Fase</a>
+          <span title="Última Alteração">Última Alteração</span>
+        </th>
+
+        <th data-coluna="garantia-assinatura">
+          <span>Garantia Expedido</span>
+          <span>Assinatura</span>
+        </th>
+        
+        <th data-coluna="te-tgf">
+          <span>TE</span>
+          <span>TGF</span>
+        </th>
+
+        <th data-coluna="controle">
+          
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in garantia.items %}
+      
+
+      <tr>
+        <td class="id-negocio" data-coluna="serie-desde">
+          <a href="#" class="numero-equipamento">{{ i.controlevenda.numero_serie | cleanId }}</a>
+          <span>{{i.controlevenda.data_da_venda | formatDate}}</span>
+        </td>  
+        <td data-coluna="cliente-negocio">
+          <a href="#" title="{{i.cliente.nome}}" >{{i.cliente.nome}}</a>
+          <a href="#" title="{{ i.nome_do_estabelecimento }}">{{ i.nome_do_estabelecimento }}</a>
+        </td>
+        <td data-coluna="linha-segmento">
+          <a title="{{i.linha}}">{{i.linha}}</a>
+          <a title="{{i.segmento}}">{{i.segmento}}</a>
+        </td>
+        <td data-coluna="cidade-uf">
+          <a title="{{ i.localinstalacao.cidade.nome }}">{{ i.localinstalacao.cidade.nome }}</a>
+          <a title="{{ i.localinstalacao.cidade.uf }}">{{ i.localinstalacao.cidade.uf }}</a>
+        </td>
+        <td data-coluna="fase-alteracao">
+          <span title="{{ i.fase }}">{{ i.fase }}</span>
+          <span title="{{ i.modificacao | formatDate }}">{{ i.modificacao | formatDate }}</span>
+        </td>
+
+        <td data-coluna="garantia-assinatura">
+          <span>{{ i.controlevenda.expedicao | formatDate }}</span>
+          <span>{{ i.controlevenda.funcionamento | formatDate }}</span>
+        </td>
+        
+        <td data-coluna="te-tgf">
+          <span>{{ i.controle_manutencao }}</span>
+          <span>{{ i.controlevenda.tgf }}</span>
+        </td>
+        <td class="chat-icon"><span class="sidebar-action-row | icon">chat</span></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  </div>
+</div>

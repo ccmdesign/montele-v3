@@ -1,0 +1,6 @@
+.planilha {
+  [data-coluna][aria-visible="false"] { display: none; }
+}
+
+[data-coluna="fase-alteracao"] { min-width: 120px; }
+[data-coluna="garantia-assinatura"] { min-width: 120px; }

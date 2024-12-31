@@ -5,36 +5,20 @@
 [popovertarget="submenu-forms"] { anchor-name: --submenu-forms; }
 #submenu-forms { position-anchor: --submenu-forms; }
 
+
 /* Listagem */
-[popovertarget="menu-ferramentas"] {
-  anchor-name: --menu-ferramentas;
-}
+[popovertarget="menu-ferramentas"] { anchor-name: --menu-ferramentas; }
+#menu-ferramentas { position-anchor: --menu-ferramentas; }
 
-#menu-ferramentas {
-  position-anchor: --menu-ferramentas;
-}
+[popovertarget="menu-colunas"] { anchor-name: --menu-colunas; }
+#menu-colunas { position-anchor: --menu-colunas; }
 
-[popovertarget="modal-table-filter"] {
-  anchor-name: --modal-table-filter;
-}
-
-#modal-table-filter {
-  position-anchor: --modal-table-filter;
-}
+[popovertarget="modal-table-filter"] { anchor-name: --modal-table-filter; }
+#modal-table-filter { position-anchor: --modal-table-filter; }
 
 /* Form Component - Multi Select  */
-[popovertarget="form-multiselect-001"] {
-  anchor-name: --form-multiselect-001;
-}
+[popovertarget="form-multiselect-001"] { anchor-name: --form-multiselect-001; }
+#form-multiselect-001 { position-anchor: --form-multiselect-001; }
 
-#form-multiselect-001 {
-  position-anchor: --form-multiselect-001;
-}
-
-[popovertarget="form-multiselect-002"] {
-  anchor-name: --form-multiselect-002;
-}
-
-#form-multiselect-002 {
-  position-anchor: --form-multiselect-002;
-}
+[popovertarget="form-multiselect-002"] { anchor-name: --form-multiselect-002; }
+#form-multiselect-002 { position-anchor: --form-multiselect-002; }

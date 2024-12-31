@@ -213,3 +213,15 @@ closeGemsSidebarElements.forEach((element) => {
   tabs[0].setAttribute('aria-selected', 'true');
   panels[0].hidden = false;
 })();
+
+
+
+function toggleVisibility(elementName) {
+  const targetElements = document.querySelectorAll(`[data-coluna="${elementName}"]`);
+  targetElements.forEach(targetElement => {
+    const isVisible = targetElement.getAttribute('aria-visible') === 'true';
+    targetElement.setAttribute('aria-visible', !isVisible);
+  });
+}
+
+

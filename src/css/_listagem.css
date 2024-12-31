@@ -45,6 +45,8 @@
 .listagem .chat-icon .icon {
   opacity: 0.3;
   cursor: pointer;
+  width: fit-content;
+  margin-inline: auto;
 
   &:hover {
     opacity: 1;

@@ -19,10 +19,10 @@ table {
     color: var(--_row-color, var(--base-color));
   }
 
-  td:first-child,
+  /* td:first-child,
   td:last-child {
     padding-left: var(--space-xs-s);
-  }
+  } */
 
   th * {
     font-weight: 400;
@@ -86,7 +86,9 @@ table {
 td:has(.semaforo),
 td:has(.profile-pic) {
   position: relative;
+  padding: 0;
 }
+
 
 .table {
   tr[data-status] {
@@ -110,7 +112,3 @@ td:has(.profile-pic) {
   }
 }
 
-td:has(.profile-pic),
-td:has(.semaforo) {
-  padding: 0;
-}
