@@ -22,8 +22,7 @@ multiboxSelect.forEach((select) => {
     }
 
   });
-})
-
+});
 
 // sidebar right button on navbar
 const sideBarActionButton = document.getElementById("sidebar-action-button");
@@ -215,13 +214,31 @@ closeGemsSidebarElements.forEach((element) => {
 })();
 
 
-
-function toggleVisibility(elementName) {
-  const targetElements = document.querySelectorAll(`[data-coluna="${elementName}"]`);
+// Essa função é uma abstração para mostrar escolhermos quais elementos vamos mostrar ou esconder.
+function toggleVisibility(attrName, elementName) {
+  const targetElements = document.querySelectorAll(`[${attrName}="${elementName}"]`);
   targetElements.forEach(targetElement => {
-    const isVisible = targetElement.getAttribute('aria-visible') === 'true';
-    targetElement.setAttribute('aria-visible', !isVisible);
+    targetElement.toggleAttribute('aria-visible');
   });
 }
+
+function toggleActive(attrName, elementName) {
+  const targetElements = document.querySelectorAll(`[${attrName}="${elementName}"]`);
+  targetElements.forEach(targetElement => {
+    targetElement.toggleAttribute('aria-active');
+  });
+}
+
+function handleElementClick(event) {
+  const element = event.currentTarget;
+  element.toggleAttribute('aria-active');
+}
+
+// Aqui aplicamos a função de toggleVisibility para mostrar ou esconder as colunas da planilha
+// Ao mesmo tempo, ativamos e desativamos o botão que foi clicado
+function toggleColumnVisibility(elementName) {
+  handleElementClick(event);
+  toggleVisibility('data-column', elementName);
+};
 
 

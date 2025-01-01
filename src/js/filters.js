@@ -13,8 +13,16 @@ function formatDate(dateTime) {
   return `${day}/${month}/${year}`;
 }
 
+function truncate(str, length) {
+  if (str.length > length) {
+    return str.substring(0, length) + '...';
+  }
+  return str;
+}
+
 // Export the filters
 module.exports = {
   cleanId,
   formatDate,
+  truncate
 };

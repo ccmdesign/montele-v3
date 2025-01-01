@@ -15,79 +15,17 @@ table {
 
   td {
     padding-block: var(--space-3xs-2xs);
-    
     color: var(--_row-color, var(--base-color));
   }
 
-  /* td:first-child,
-  td:last-child {
-    padding-left: var(--space-xs-s);
-  } */
-
-  th * {
-    font-weight: 400;
-  }
-
-  a {
-    color: var(--_row-color, var(--primary-color));
-    /* color: var(--primary-color); */
-  }
+  th * { font-weight: 400; }
+  a { color: var(--_row-color, var(--primary-color)); }
 
   a:empty ~ br,
-  a:empty {
-    display: none;
-  }
+  a:empty { display: none; }
 }
-
-/* Esse é um PoC dos container queries */
-/* Estamos usando o .table-wrapper pq o comportamento da tabela é de manter a largura fixa,
-   e gerar um scroll horizontal. 
-   Estou usando os nth-child por enquanto. A ideia é criar um sistema de prioridades para as colunas
-   onde os developers poderão ter um controle granular de quais colunas serão exibidas em determinados
-   tamanhos da tabela. 
-   [data-priority="1"] { display: none; }
-   [data-priority="2"] { display: none; }
-   [data-priority="3"] { display: none; }
-   [data-priority="4"] { display: none; }
-   [data-priority="5"] { display: none; }
    
-*/
-.table-wrapper {
-  container-type: inline-size;
-}
-
-/* @container (max-width: 900px) {
-  .table :nth-child(4) {
-    display: none;
-  }
-}
-@container (max-width: 800px) {
-  .table :nth-child(5) {
-    display: none;
-  }
-}
-@container (max-width: 700px) {
-  .table :nth-child(7) {
-    display: none;
-  }
-}
-@container (max-width: 600px) {
-  .table :nth-child(8) {
-    display: none;
-  }
-}
-@container (max-width: 500px) {
-  .table :nth-child(9) {
-    display: none;
-  }
-} */
-
-/* Atualiza a td quando temos um .semaforo ou um .profile-pic dentro */
-td:has(.semaforo),
-td:has(.profile-pic) {
-  position: relative;
-  padding: 0;
-}
+.table-wrapper { container-type: inline-size; }
 
 
 .table {

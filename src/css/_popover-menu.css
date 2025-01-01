@@ -35,8 +35,15 @@
   border: unset;
   color: currentColor;
   transition: all 0.2s ease;
+  text-align: left;
 
   &:hover {
     background-color: var(--base-color-90-tint);
   }
 }
+
+/* Initial Styling */
+.popover-menu__item[aria-active] {
+  text-decoration: line-through;
+}
+

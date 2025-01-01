@@ -1,6 +1,16 @@
 .planilha {
-  [data-coluna][aria-visible="false"] { display: none; }
-}
+  th, td { white-space: nowrap; }
 
-[data-coluna="fase-alteracao"] { min-width: 120px; }
-[data-coluna="garantia-assinatura"] { min-width: 120px; }
+  
+  [data-column][aria-visible] {
+    opacity: 1;
+    display: table-cell;
+    transition: all 0.3s;
+  }
+  
+  [data-column]:not([aria-visible]) { 
+    opacity: 0;
+    display: none;
+    transition: all 0.3s;
+  }
+}

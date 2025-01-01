@@ -4,7 +4,7 @@ doca_hidden: "true"
 
 ---
 
-<div id="listing-panel" class="main-panel listagem planilha">
+<div id="listing-panel" class="main-panel listagem ">
   
   <header class="listagem__header stack">
     <div class="cluster">
@@ -24,84 +24,97 @@ doca_hidden: "true"
   <div class="table-wrapper">
     
 
-  <table id="listing" class="table">
+  <table id="listing" class="table planilha">
     <thead>
       <tr>
-        <th class="table-th id-negocio" data-coluna="serie-desde">
+        <th class="table-th id-negocio" data-column="serie-desde" aria-visible>
           <a href="#" title="Número do negócio. Clique para ordenar pela coluna.">Número</a>
           <a href="#" title="Data da criação do negócio. Clique para ordenar pela coluna.">Desde</a>
         </th>
 
-        <th class="table-th" data-coluna="cliente-negocio">
+        <th class="table-th" data-column="cliente-negocio" aria-visible>
           <a href="#" title="Cliente. Clique para ordenar pela coluna.">Cliente</a>
           <a href="#" title="Nome do negócio. Clique para ordenar pela coluna.">Negócio</a>
         </th>
         
-        <th class="table-th" data-coluna="linha-segmento">
+        <th class="table-th" data-column="linha-segmento" aria-visible>
           <span title="Linha.">Linha</span>
           <span title="Segmento.">Segmento</span>
         </th>
         
-        <th class="table-th" data-coluna="cidade-uf">
+        <th class="table-th" data-column="cidade-uf" aria-visible>
           <a href="#" title="Cidade do negócio. Clique para ordenar pela coluna.">Cidade</a>
           <span title="Unidade federativa da cidade do negócio.">UF</span>
         </th>
         
-        <th class="table-th" data-coluna="fase-alteracao">
+        <th class="table-th" data-column="fase-alteracao" aria-visible>
           <a href="#" title="Fase">Fase</a>
           <span title="Última Alteração">Última Alteração</span>
         </th>
 
-        <th data-coluna="garantia-assinatura">
+        <th data-column="garantia-assinatura" aria-visible>
           <span>Garantia Expedido</span>
           <span>Assinatura</span>
         </th>
         
-        <th data-coluna="te-tgf">
+        <th data-column="te-tgf" aria-visible>
           <span>TE</span>
           <span>TGF</span>
         </th>
+        
+        <th data-column="manutencao-valor-mensal" aria-visible>
+          <span>Manutenção</span>
+          <span>Valor Mensal</span>
+        </th>
 
-        <th data-coluna="controle">
+        <th data-column="controle" aria-visible>
           
         </th>
       </tr>
     </thead>
     <tbody>
       {% for i in garantia.items %}
-      
-
       <tr>
-        <td class="id-negocio" data-coluna="serie-desde">
+        <td class="id-negocio" data-column="serie-desde" aria-visible>
           <a href="#" class="numero-equipamento">{{ i.controlevenda.numero_serie | cleanId }}</a>
-          <span>{{i.controlevenda.data_da_venda | formatDate}}</span>
+          <span class="data-venda">{{i.controlevenda.data_da_venda | formatDate}}</span>
         </td>  
-        <td data-coluna="cliente-negocio">
+        <td data-column="cliente-negocio" aria-visible>
           <a href="#" title="{{i.cliente.nome}}" >{{i.cliente.nome}}</a>
           <a href="#" title="{{ i.nome_do_estabelecimento }}">{{ i.nome_do_estabelecimento }}</a>
         </td>
-        <td data-coluna="linha-segmento">
-          <a title="{{i.linha}}">{{i.linha}}</a>
-          <a title="{{i.segmento}}">{{i.segmento}}</a>
+        <td data-column="linha-segmento" aria-visible>
+          <a class="linha" title="{{i.linha}}">{{i.linha}}</a>
+          <a class="segmento" title="{{i.segmento}}">{{i.segmento}}</a>
         </td>
-        <td data-coluna="cidade-uf">
+        <td data-column="cidade-uf" aria-visible>
           <a title="{{ i.localinstalacao.cidade.nome }}">{{ i.localinstalacao.cidade.nome }}</a>
           <a title="{{ i.localinstalacao.cidade.uf }}">{{ i.localinstalacao.cidade.uf }}</a>
         </td>
-        <td data-coluna="fase-alteracao">
+        <td data-column="fase-alteracao" aria-visible>
           <span title="{{ i.fase }}">{{ i.fase }}</span>
           <span title="{{ i.modificacao | formatDate }}">{{ i.modificacao | formatDate }}</span>
         </td>
 
-        <td data-coluna="garantia-assinatura">
+        <td data-column="garantia-assinatura" aria-visible>
           <span>{{ i.controlevenda.expedicao | formatDate }}</span>
           <span>{{ i.controlevenda.funcionamento | formatDate }}</span>
         </td>
         
-        <td data-coluna="te-tgf">
-          <span>{{ i.controle_manutencao }}</span>
+        <td data-column="te-tgf" aria-visible>
+          <span title="{{ i.controle_manutencao }}">{{ i.controle_manutencao | truncate(20) }}</span>
           <span>{{ i.controlevenda.tgf }}</span>
         </td>
+        
+        <td data-column="manutencao-valor-mensal" aria-visible>
+          <span class="icon 
+            {% if i.manutencao.gera_contrato %}color:success-70-tint{% else %}color:fail-color{% endif %}">
+            {% if i.manutencao.gera_contrato %}check{% else %}close{% endif %}
+          </span>
+          
+          <span>{{ i.manutencao.valor_mensal }}</span>
+        </td>
+        
         <td class="chat-icon"><span class="sidebar-action-row | icon">chat</span></td>
       </tr>
       {% endfor %}
