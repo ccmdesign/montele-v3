@@ -1,10 +1,219 @@
 ---
 layout: "_layouts/app.njk"
+title: "EL 11781"
+doca_hidden: "false"
+doca_header_hidden: "true"
+
 ---
 
-<article class="main-panel">
-  <header class="main-panel__header">
-    <h1 class="main-panel__title">Equipamentos</h1>
-  </header>
-</article>
+<form class="main-panel | form | tabbed">
+  {# O js para as tabs, precisa do role="tablist" #}
+  <h3 class="form__tabs" role="tablist">
+    {# As IDs nesses href precisam bater com as ids dos .form-tab para as tabs funcionarem #}  
+    <a href="#section-9">Log</a>
+    <a href="#section-1">Identificação</a>
+    <a href="#section-2">Follow-ups</a>
+    <a href="#section-3">Equipamento</a>
+    <a href="#section-4">Contratos</a>
+    <a href="#section-5">Tickets</a>
+    <a href="#section-6">Cases</a>
+    <a href="#section-7">Anexos</a>
+    <a href="#section-8">Controle</a>
+    
+  </h3>
+
+  <div id="section9" class="form-tab | stack">
+    <fieldset class="form-panel | stack">
+      {# Form Header #}
+      <header class="form-panel__header">
+        <h2 class="form-panel__title">Log</h2>
+      </header>
+
+      {# Form Main #}
+      <section class="form-panel__main" data-columns="2">
+        {% include "_form-fields/log.njk" %}
+      </section>
+      
+      {# Form Footer #}
+      <footer class="form-panel__footer | cluster">
+        <button class="button" data-visual="primary" data-color="primary" type="submit">Primary</button>
+        <button class="button" data-visual="primary" data-color="secondary" type="submit">Secondary</button>
+        <button class="button" data-visual="primary" data-color="accent" type="submit">Accent</button>
+      </footer>
+    </fieldset>
+  </div>
+  
+  
+  <div id="section1" class="form-tab | stack">
+    <fieldset class="form-panel | stack">
+      {# Form Header #}
+      <header class="form-panel__header">
+        <h2 class="form-panel__title">Identificação</h2>
+      </header>
+
+      {# Form Main #}
+      <section class="form-panel__main | columns" data-columns="2">
+        {% include "_form-fields/text-based-inputs.njk" %}
+      </section>
+      
+      {# Form Footer #}
+      <footer class="form-panel__footer | cluster">
+        <button class="button" data-visual="primary" data-color="primary" type="submit">Primary</button>
+        <button class="button" data-visual="primary" data-color="secondary" type="submit">Secondary</button>
+        <button class="button" data-visual="primary" data-color="accent" type="submit">Accent</button>
+      </footer>
+    </fieldset>
+  </div>
+
+  <div id="section2" class="form-tab | stack">
+    <fieldset class="form-panel | stack">
+      {# Form Header #}
+      <header class="form-panel__header">
+        <h2 class="form-panel__title">Follow-ups</h2>
+      </header>
+
+      {# Form Main #}
+      <section class="form-panel__main" data-columns="2">
+        {% include "_form-fields/form-table.njk" %}
+      </section>
+      
+      {# Form Footer #}
+      <footer class="form-panel__footer | cluster">
+        <button class="button" data-visual="primary" data-color="primary" type="submit">Primary</button>
+        <button class="button" data-visual="primary" data-color="secondary" type="submit">Secondary</button>
+        <button class="button" data-visual="primary" data-color="accent" type="submit">Accent</button>
+      </footer>
+    </fieldset>
+  </div>
+
+  <div id="section3" class="form-tab | stack">
+    <fieldset class="form-panel | stack">
+      {# Form Header #}
+      <header class="form-panel__header">
+        <h2 class="form-panel__title">Equipamento</h2>
+      </header>
+
+      {# Form Main #}
+      <section class="form-panel__main" data-columns="2">
+        {% include "_form-fields/form-table.njk" %}
+      </section>
+      
+      {# Form Footer #}
+      <footer class="form-panel__footer | cluster">
+        <button class="button" data-visual="primary" data-color="primary" type="submit">Primary</button>
+        <button class="button" data-visual="primary" data-color="secondary" type="submit">Secondary</button>
+        <button class="button" data-visual="primary" data-color="accent" type="submit">Accent</button>
+      </footer>
+    </fieldset>
+  </div>
+
+  <div id="section4" class="form-tab | stack">
+    <fieldset class="form-panel | stack">
+      {# Form Header #}
+      <header class="form-panel__header">
+        <h2 class="form-panel__title">Contratos</h2>
+      </header>
+
+      {# Form Main #}
+      <section class="form-panel__main" data-columns="2">
+        {% include "_form-fields/form-table.njk" %}
+      </section>
+      
+      {# Form Footer #}
+      <footer class="form-panel__footer | cluster">
+        <button class="button" data-visual="primary" data-color="primary" type="submit">Primary</button>
+        <button class="button" data-visual="primary" data-color="secondary" type="submit">Secondary</button>
+        <button class="button" data-visual="primary" data-color="accent" type="submit">Accent</button>
+      </footer>
+    </fieldset>
+  </div>
+
+  <div id="section5" class="form-tab | stack">
+    <fieldset class="form-panel | stack">
+      {# Form Header #}
+      <header class="form-panel__header">
+        <h2 class="form-panel__title">Tickets</h2>
+      </header>
+
+      {# Form Main #}
+      <section class="form-panel__main" data-columns="2">
+        {% include "_form-fields/form-table.njk" %}
+      </section>
+      
+      {# Form Footer #}
+      <footer class="form-panel__footer | cluster">
+        <button class="button" data-visual="primary" data-color="primary" type="submit">Primary</button>
+        <button class="button" data-visual="primary" data-color="secondary" type="submit">Secondary</button>
+        <button class="button" data-visual="primary" data-color="accent" type="submit">Accent</button>
+      </footer>
+    </fieldset>
+  </div>
+
+  <div id="section6" class="form-tab | stack">
+    <fieldset class="form-panel | stack">
+      {# Form Header #}
+      <header class="form-panel__header">
+        <h2 class="form-panel__title">Cases</h2>
+      </header>
+
+      {# Form Main #}
+      <section class="form-panel__main" data-columns="2">
+        {% include "_form-fields/form-table.njk" %}
+      </section>
+      
+      {# Form Footer #}
+      <footer class="form-panel__footer | cluster">
+        <button class="button" data-visual="primary" data-color="primary" type="submit">Primary</button>
+        <button class="button" data-visual="primary" data-color="secondary" type="submit">Secondary</button>
+        <button class="button" data-visual="primary" data-color="accent" type="submit">Accent</button>
+      </footer>
+    </fieldset>
+  </div>
+
+  <div id="section7" class="form-tab | stack">
+    <fieldset class="form-panel | stack">
+      {# Form Header #}
+      <header class="form-panel__header">
+        <h2 class="form-panel__title">Anexos</h2>
+      </header>
+
+      {# Form Main #}
+      <section class="form-panel__main" data-columns="2">
+        {% include "_form-fields/form-table.njk" %}
+      </section>
+      
+      {# Form Footer #}
+      <footer class="form-panel__footer | cluster">
+        <button class="button" data-visual="primary" data-color="primary" type="submit">Primary</button>
+        <button class="button" data-visual="primary" data-color="secondary" type="submit">Secondary</button>
+        <button class="button" data-visual="primary" data-color="accent" type="submit">Accent</button>
+      </footer>
+    </fieldset>
+  </div>
+
+  <div id="section8" class="form-tab | stack">
+    <fieldset class="form-panel | stack">
+      {# Form Header #}
+      <header class="form-panel__header">
+        <h2 class="form-panel__title">Controle</h2>
+      </header>
+
+      {# Form Main #}
+      <section class="form-panel__main" data-columns="2">
+        {% include "_form-fields/form-table.njk" %}
+      </section>
+      
+      {# Form Footer #}
+      <footer class="form-panel__footer | cluster">
+        <button class="button" data-visual="primary" data-color="primary" type="submit">Primary</button>
+        <button class="button" data-visual="primary" data-color="secondary" type="submit">Secondary</button>
+        <button class="button" data-visual="primary" data-color="accent" type="submit">Accent</button>
+      </footer>
+    </fieldset>
+  </div>
+
+  
+  
+</form>  
+
   

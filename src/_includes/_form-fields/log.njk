@@ -1,0 +1,51 @@
+<table class="logs">
+  {% for i in log %}
+  <tr class="log-entry">
+    <td class="log-entry__ai-badge" aria-label="AI assisted">
+      {% if i.ai %}
+        <img class="" src="../images/ai.svg" />
+      {% endif %}
+    </td>
+
+    <td class="log-entry__user">{{ i.user }}</td>
+
+    <td class="log-entry__change">
+      {% if i.action == "criou" %}
+        <span class="icon | color:success-color">add</span>
+      {% elseif i.action == "atualizou" %}
+        <span class="icon | color:base-30-tint">arrow_forward</span>
+      {% elseif i.action == "desfez" %}
+        <span class="icon | color:warning-color">undo</span>
+      {% elseif i.action == "removeu" %}
+        <span class="icon | color:fail-color">close</span>
+      {% endif %}
+    </td>
+
+    <td>
+      <code class="log-entry__field">{{ i.campo }}</code>
+    </td>
+    
+    <td>
+      <span class="cluster">
+        {% if i.valor.antigo != null %}
+          <code class="log-entry__old-value">{{ i.valor.antigo }}</code>
+        {% endif %}
+        
+        {% if i.action == "atualizou" %}
+          <span class="icon">arrow_forward</span>
+        {% endif %}
+
+        {% if i.valor.novo != null %}
+          <code class="log-entry__new-value">{{ i.valor.novo }}</code>
+        {% endif %}
+      </span>
+    </td>
+
+    <td class="log-entry__date">
+      <time datetime="{{ i.date }}">{{ i.date }}</time>
+    </td>
+    <td class="log-entry__action">
+      <button class="button" data-size="s" data-visual="unstyled" data-icon="undo" data-color="red"></button>
+  </tr>
+  {% endfor %}
+</table>

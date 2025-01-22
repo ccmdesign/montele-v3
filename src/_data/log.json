@@ -1,0 +1,112 @@
+[
+  {
+    "user": "André Lambert",
+    "ai": false,
+    "date": "2024-03-20T14:30:00.000Z",
+    "action": "atualizou",
+    "campo": "status",
+    "valor": {
+      "antigo": "Em andamento",
+      "novo": "Concluído"
+    }
+  },
+  {
+    "user": "Maria Silva",
+    "ai": false,
+    "date": "2024-03-19T10:15:00.000Z", 
+    "action": "criou",
+    "campo": "ticket",
+    "valor": {
+      "antigo": null,
+      "novo": "#12345"
+    }
+  },
+  {
+    "user": "João Santos",
+    "ai": true,
+    "date": "2024-03-18T16:45:00.000Z",
+    "action": "atualizou",
+    "campo": "prioridade",
+    "valor": {
+      "antigo": "Baixa",
+      "novo": "Alta"
+    }
+  },
+  {
+    "user": "Ana Costa",
+    "ai": true,
+    "date": "2024-03-17T09:20:00.000Z",
+    "action": "criou",
+    "campo": "comentário",
+    "valor": {
+      "antigo": "",
+      "novo": "Cliente solicitou urgência"
+    }
+  },
+  {
+    "user": "Pedro Oliveira",
+    "ai": true,
+    "date": "2024-03-16T11:30:00.000Z",
+    "action": "atualizou",
+    "campo": "responsável",
+    "valor": {
+      "antigo": "Maria Silva",
+      "novo": "João Santos"
+    }
+  },
+  {
+    "user": "Carla Souza",
+    "ai": false,
+    "date": "2024-03-15T15:00:00.000Z",
+    "action": "removeu",
+    "campo": "anexo",
+    "valor": {
+      "antigo": "relatorio.pdf",
+      "novo": null
+    }
+  },
+  {
+    "user": "Roberto Almeida",
+    "ai": false,
+    "date": "2024-03-14T13:25:00.000Z",
+    "action": "atualizou",
+    "campo": "data_limite",
+    "valor": {
+      "antigo": "2024-03-20",
+      "novo": "2024-03-25"
+    }
+  },
+  {
+    "user": "Lucia Ferreira",
+    "ai": false,
+    "date": "2024-03-13T17:40:00.000Z",
+    "action": "atualizou",
+    "campo": "descrição",
+    "valor": {
+      "antigo": "Here's a brief explanation of how these might",
+      "novo": "These classes are likely defined in an external CSS file or a <style> block elsewhere in your project. Here's a brief explanation of how these might be used"
+    }
+  },
+  {
+    "user": "Fernando Lima",
+    "ai": true,
+    "date": "2024-03-12T08:50:00.000Z",
+    "action": "criou",
+    "campo": "projeto",
+    "valor": {
+      "antigo": null,
+      "novo": "Projeto Alpha"
+    }
+  },
+  {
+    "user": "Amanda Dias",
+    "ai": false,
+    "date": "2024-03-11T14:15:00.000Z",
+    "action": "desfez",
+    "campo": "chamado",
+    "valor": {
+      "antigo": "Aberto",
+      "novo": "Fechado"
+    }
+  }
+]

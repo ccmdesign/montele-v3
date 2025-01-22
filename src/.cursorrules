@@ -1,0 +1,226 @@
+# 11ty & WebC Development Best Practices
+## Static Site Generation with Modern Components
+
+### Core Architecture
+
+#### Project Structure
+- Use clear directory organization:
+  ```
+  .
+  ├── src/
+  │   ├── _data/        # Global data files
+  │   ├── _includes/    # Layouts and partials
+  │   ├── assets/       # Static assets
+  │   ├── components/   # WebC components
+  │   └── content/      # Content pages
+  ├── .eleventy.js      # Configuration file
+  └── package.json
+  ```
+- Keep related files close to their components
+- Separate concerns between content, components, and configuration
+
+#### WebC Components
+- Use `.webc` extension for component files
+- Keep components small and focused
+- Follow web component best practices
+- Use script/style blocks only when necessary
+- Leverage WebC's scoped styling capabilities
+
+#### Templating
+- Use Liquid as the primary template engine
+- Create consistent layouts for different content types
+- Implement partial templates for reusable sections
+- Use template inheritance effectively
+
+### Content Management
+
+#### Data Structure
+- Organize data files by purpose in `_data` directory
+- Use JSON for structured data
+- Implement computed data when needed
+- Leverage front matter for page-specific data
+
+#### Collections
+- Group related content using tags
+- Create custom collections in `.eleventy.js`
+- Use pagination for large datasets
+- Implement proper sorting and filtering
+
+### Performance Optimization
+
+#### Asset Management
+- Image Optimization:
+  - Use 11ty Image plugin for responsive images
+  - Generate WebP format automatically
+  - Implement lazy loading with proper attributes
+  - Include width/height to prevent layout shifts
+
+- CSS Management:
+  - Use kebab-case for class names
+  - Implement CSS bundling and minification
+  - Follow mobile-first responsive design
+  - Use logical property ordering
+  - Minimize CSS-in-JS usage
+
+- JavaScript:
+  - Keep JavaScript minimal and purpose-driven
+  - Bundle and minify JavaScript
+  - Use async/defer attributes appropriately
+  - Implement code splitting where beneficial
+
+#### Build Configuration
+```javascript
+module.exports = function(eleventyConfig) {
+  // Asset Passthrough
+  eleventyConfig.addPassthroughCopy("src/assets");
+  
+  // WebC Configuration
+  eleventyConfig.addPlugin(pluginWebC, {
+    components: "src/components/**/*.webc",
+    useTransforms: true
+  });
+  
+  // Image Optimization
+  eleventyConfig.addPlugin(EleventyImage, {
+    formats: ["webp", "jpeg"],
+    urlPath: "/images/",
+    outputDir: "_site/images/"
+  });
+  
+  // Watch Targets
+  eleventyConfig.addWatchTarget("./src/assets/");
+  
+  return {
+    dir: {
+      input: "src",
+      output: "_site",
+      includes: "_includes",
+      data: "_data"
+    }
+  };
+};
+```
+
+### WebC Component Patterns
+
+#### Basic Component Structure
+```html
+<template webc:type="11ty" webc:is="layout">
+  <style webc:scoped>
+    :host {
+      display: block;
+      margin: 1rem 0;
+    }
+  </style>
+  
+  <div class="component">
+    <slot></slot>
+  </div>
+  
+  <script webc:type="js">
+    // Only add JavaScript if absolutely necessary
+  </script>
+</template>
+```
+
+#### Component Best Practices
+- Use `webc:scoped` for component-specific styles
+- Implement slots for content projection
+- Use `webc:type="js"` sparingly
+- Follow web components naming conventions
+- Leverage WebC's virtual components when appropriate
+
+### Accessibility & SEO
+
+#### Semantic HTML
+- Use appropriate HTML elements
+- Implement proper heading hierarchy
+- Add ARIA labels where necessary
+- Ensure keyboard navigation support
+
+#### SEO Optimization
+- Implement meta tags consistently
+- Use descriptive URLs
+- Generate sitemaps automatically
+- Implement structured data when relevant
+
+### Development Workflow
+
+#### Build Process
+- Use npm scripts for common tasks
+- Implement proper development server
+- Configure hot reloading
+- Set up production builds
+
+#### Testing & Quality
+- Implement automated accessibility testing
+- Use Lighthouse for performance monitoring
+- Set performance budgets
+- Monitor Core Web Vitals
+
+#### Deployment
+- Configure proper caching strategies
+- Implement CDN integration
+- Use automated deployment pipelines
+- Monitor build sizes
+
+### Environment-Specific Configuration
+
+#### Development
+```javascript
+// .eleventy.dev.js
+module.exports = {
+  dev: true,
+  quiet: false,
+  watch: true
+};
+```
+
+#### Production
+```javascript
+// .eleventy.prod.js
+module.exports = {
+  dev: false,
+  quiet: true,
+  pathPrefix: '/your-site/'
+};
+```
+
+### Performance Monitoring
+
+#### Tools Setup
+- Implement Lighthouse CI
+- Use WebPageTest for detailed analysis
+- Monitor Core Web Vitals
+- Set up error tracking
+
+#### Performance Budgets
+```javascript
+// performance-budget.json
+{
+  "resourceSizes": [
+    {
+      "resourceType": "document",
+      "budget": 50
+    },
+    {
+      "resourceType": "script",
+      "budget": 150
+    },
+    {
+      "resourceType": "total",
+      "budget": 300
+    }
+  ],
+  "timings": [
+    {
+      "metric": "interactive",
+      "budget": 3000
+    },
+    {
+      "metric": "first-contentful-paint",
+      "budget": 1500
+    }
+  ]
+}
+```

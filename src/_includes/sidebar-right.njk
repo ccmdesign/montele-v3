@@ -1,7 +1,11 @@
 <article id="dock" class="sidebar"> 
-  {% include "sidebar-header.njk" %}
-  
-  {% include "sidebar-form.njk" %}
+  {% if not doca_header_hidden %}
+    {% include "sidebar-header.njk" %}
+  {% endif %}
+
+  {% if not doca_actions_hidden %}
+    {% include "sidebar-form.njk" %}
+  {% endif %}
 
   <div class="sidebar__messages" id="dock-messages" data-url="/anotacao/72321/">
     <article class="dock-message incidental" data-checkin="133">

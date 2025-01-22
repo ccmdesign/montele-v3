@@ -14,7 +14,7 @@ layout: _layouts/base.njk
     {% include "sidebar-left.njk" %}
   </aside>
 
-  <aside class="app-layout__sidebar-right" id="sidebar-right">
+  <aside class="app-layout__sidebar-right" id="sidebar-right" aria-hidden="{{doca_hidden}}">
     {% include "src/_includes/sidebar-right.njk" %}
   </aside>
   <aside class="app-layout__gems" id="gems">
