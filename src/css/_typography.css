@@ -2,7 +2,7 @@
   :root {
     font-family: var(--body-font);
     font-optical-sizing: auto;
-    font-weight: 100;
+    font-weight: 300;
     font-style: normal;
     font-size: var(--size-0);
     line-height: 1.5;
@@ -31,32 +31,32 @@
   h1,
   .h1 {
     font-size: var(--size-4);
-    font-weight: 100;
+    font-weight: 300;
   }
   h2,
   .h2 {
     font-size: var(--size-3);
-    font-weight: 100;
+    font-weight: 300;
   }
   h3,
   .h3 {
     font-size: var(--size-2);
-    font-weight: 400;
+    font-weight: 500;
   }
   h4,
   .h4 {
     font-size: var(--size-1);
-    font-weight: 400;
+    font-weight: 500;
   }
   h5,
   .h5 {
     font-size: var(--size-0);
-    font-weight: 400;
+    font-weight: 500;
   }
   h6,
   .h6 {
     font-size: var(--size-0);
-    font-weight: 400;
+    font-weight: 500;
   }
 
   p {

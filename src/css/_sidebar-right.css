@@ -1,5 +1,5 @@
 .sidebar {
-  padding-top: var(--base-padding-block);
+  padding-top: var(--space-xl);
   padding-inline: var(--sidebar-padding-inline);
 
   display: grid;
@@ -12,10 +12,13 @@
 
 .sidebar__header {
   h1 {
-    font-size: var(--size--1);
-  }
-  h2 {
     font-size: var(--size-0);
+  }
+  h2, 
+  h2 a {
+    font-size: var(--size-1);
+    font-weight: 500;
+    color: var(--primary-color);
   }
   h3 {
     font-size: var(--size--1);
