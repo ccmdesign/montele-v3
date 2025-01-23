@@ -3,9 +3,9 @@
   <header class="listagem__header stack">
     <div class="cluster">
       <h2>{{ title }}</h2>
-      <button data-split class="button" popovertarget="menu-colunas">Colunas</button>
-      {% include "src/_includes/_popovers/colunas.njk" %}
-      <button class="button" popovertarget="modal-table-filter">Filtros(2)</button>
+      
+      
+      <button data-split class="button" popovertarget="modal-table-filter">Filtros(2)</button>
     </div>
 
     <div class="listagem__summary | repel">
@@ -62,7 +62,7 @@
         </th>
 
         <th data-column="controle" aria-visible>
-          
+          <button class="botao-colunas button" popovertarget="menu-colunas" data-icon="add" data-visual="unstyled"></button>
         </th>
       </tr>
     </thead>
@@ -114,5 +114,6 @@
       {% endfor %}
     </tbody>
   </table>
+  {% include "src/_includes/_popovers/colunas.njk" %}
   </div>
 </div>

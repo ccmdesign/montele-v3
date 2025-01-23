@@ -13,4 +13,9 @@
     display: none;
     transition: all 0.3s;
   }
+
+  .botao-colunas {
+    font-size: 2rem;
+    font-weight: 500 !important;
+  }
 }
