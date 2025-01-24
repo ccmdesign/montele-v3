@@ -92,3 +92,8 @@
 }
 
 .float/:left { float: left; }
+
+.aux {
+  outline: 2px solid red;
+  background-color: rgba(255, 0, 0, 0.1);
+}

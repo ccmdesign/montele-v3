@@ -1,0 +1,46 @@
+/* Dashboard Grid Component
+ * A flexible grid system for dashboard layouts using CSS Grid
+ * 
+ * The grid is divided into 6 columns, allowing for various width combinations
+ * through the data-size attribute on grid items.
+ *
+ * Usage:
+ * <div class="dashboard-grid">
+ *   <div class="dashboard-grid__item" data-size="third">...</div>
+ * </div>
+ */
+
+.dashboard-grid {
+/* Variables:
+ * --_dashboard-grid-gap: Controls spacing between grid items (default: var(--space-s-m))
+ * --_dashboard-grid-padding: Controls padding around the entire grid (default: var(--space-l-xl))
+ */
+
+  --_dashboard-grid-gap: var(--space-s-m);
+  --_dashboard-grid-padding: var(--space-l-xl);
+  
+
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--_dashboard-grid-gap);
+  padding: var(--_dashboard-grid-padding);
+
+}
+
+
+/* Available data-size options:
+ * - "1" or "sixth": Takes up 1/6 of the grid width (1 column)
+ * - "2" or "third": Takes up 1/3 of the grid width (2 columns)
+ * - "3" or "half": Takes up 1/2 of the grid width (3 columns) 
+ * - "4" or "two-thirds": Takes up 2/3 of the grid width (4 columns)
+ */
+ 
+.dashboard-grid__item[data-size="1"],
+.dashboard-grid__item[data-size="sixth"] { grid-column: span 1; }
+.dashboard-grid__item[data-size="2"],
+.dashboard-grid__item[data-size="third"] { grid-column: span 2; }
+.dashboard-grid__item[data-size="3"],
+.dashboard-grid__item[data-size="half"] { grid-column: span 3; }
+.dashboard-grid__item[data-size="4"],
+.dashboard-grid__item[data-size="two-thirds"] { grid-column: span 4; }
+

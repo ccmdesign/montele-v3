@@ -32,6 +32,8 @@
 @import "_listagem-planilha.css";
 @import "_listagem-config.css";
 
+@import "_dashboard-grid.css";
+
 @import "_button.css";
 
 @import "_app-layout.css";
