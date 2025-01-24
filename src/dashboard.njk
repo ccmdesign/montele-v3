@@ -42,11 +42,10 @@ title: "Dashboard"
     </section>
   </article>
   <div class="dashboard-grid__item | card | stack" data-size="half">
-    <h2>Half</h2>
-    
+    <div id="bar-chart"></div> 
   </div>
   <div class="dashboard-grid__item | card" data-size="half">
-    <h2>Half</h2>
+    <div id="pie-chart"></div> 
   </div>
   
   <div class="dashboard-grid__item | card" data-size="third"><h2>One Third</h2></div>
@@ -56,4 +55,64 @@ title: "Dashboard"
     {% include "src/_includes/planilha.njk" %}
   </div>
 </div>
+
+  
+  
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  
+  <script>
+  Highcharts.chart('pie-chart', {
+    chart: {
+        type: 'pie'
+    },
+    title: {
+        text: 'Dummy Donut Chart'
+    },
+    plotOptions: {
+        pie: {
+            innerSize: '50%', // Creates a donut chart
+            dataLabels: {
+                enabled: true,
+                format: '{point.name}: {point.y}'
+            }
+        }
+    },
+    series: [{
+        name: 'Values',
+        data: [
+            { name: 'Value 1', y: 30 },
+            { name: 'Value 2', y: 50 },
+            { name: 'Value 3', y: 20 }
+        ]
+    }]
+});
+
+
+
+  Highcharts.chart('bar-chart', {
+    chart: {
+        type: 'bar'
+    },
+    title: {
+        text: 'Dummy Bar Chart'
+    },
+    xAxis: {
+        categories: ['Category 1', 'Category 2', 'Category 3', 'Category 4', 'Category 5'],
+        title: {
+            text: null
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Values',
+            align: 'high'
+        }
+    },
+    series: [{
+        name: 'Sample Data',
+        data: [5, 3, 4, 7, 2]
+    }]
+});
+</script>
 
