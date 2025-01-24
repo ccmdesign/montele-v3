@@ -47,50 +47,6 @@
   gap: var(--base-gutter);
 }
 
-[data-icon]:before,
-.icon {
-  font-family: "Material Symbols Outlined";
-  font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24;
-}
-
-.icon,
-[data-icon]:before {
-  font-size: 2.2rem;
-}
-
-.icon,
-[data-icon] {
-  content: attr(data-icon);
-}
-
-@container form (min-width: 800px) {
-  .columns {
-    columns: 2;
-    column-gap: var(--space-xl);
-  }
-
-  .columns {
-    --_column-gap: var(--space-xs);
-    column-width: 24ch;
-    column-gap: var(--_column-gap);
-  }
-
-  .columns[data-columns] {
-    --_column-gap: var(--space-xl);
-    column-width: auto;
-  }
-  .columns[data-columns="2"] {
-    columns: 2;
-  }
-  .columns[data-columns="3"] {
-    columns: 3;
-  }
-  .columns[data-columns="4"] {
-    columns: 4;
-    
-  }
-}
-
 .float/:left { float: left; }
 
 .aux {

@@ -8,12 +8,12 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter(filterName, filters[filterName]);
   });
 
-  eleventyConfig.addPassthroughCopy("./src/css/*.*");
+  eleventyConfig.addPassthroughCopy("./src/css/**/*.*");
   eleventyConfig.addPassthroughCopy("./src/js/*.js");
   eleventyConfig.addPassthroughCopy("./src/images/*.*");
   eleventyConfig.addWatchTarget("./src/**/*.njk");
   eleventyConfig.addWatchTarget("./src/**/js/*.js");
-  eleventyConfig.addWatchTarget("./src/css/*.css");
+  eleventyConfig.addWatchTarget("./src/css/**/*.css");
   
   return {
     dir: {

@@ -1,63 +1,74 @@
 /* Syntax for ordering layers */
-/* @layer reset, defaults, patterns, components, utilities, overrides; */
-
-@import "_reset.css";
-
-@import "_space-vars.css";
-@import "_vars.css";
-@import "_colors.css";
-
-@import "_color-utils-background-color.css";
-@import "_color-utils-color.css";
-@import "_color-utils-border-color.css";
-
-@import "_space-utils.css";
-@import "_utils.css";
-
-@import "_typography.css";
-
-@import "_forms-base.css";
-@import "_forms-panel.css";
-@import "_forms-field.css";
-@import "_forms-group.css";
-@import "_forms-custom.css";
-@import "_forms-options.css";
-@import "_table.css";
-@import "_tabs.css";
-@import "_calendar.css";
-@import "_log.css";
+@layer reset, defaults, pattern-lib, grids, sections, modules, components, utils, overrides;
 
 
-@import "_listagem.css";
-@import "_listagem-planilha.css";
-@import "_listagem-config.css";
 
-@import "_dashboard-grid.css";
+/* Reset Layer */
+@import "base/_reset.css" layer(reset);
 
-@import "_button.css";
+/* Defaults Layer */
+@import "vars/_space-vars.css" layer(defaults);
+@import "vars/_vars.css" layer(defaults);
+@import "vars/_colors.css" layer(defaults);
+@import "base/_typography.css" layer(defaults);
 
-@import "_app-layout.css";
-@import "_popover-menu.css";
-@import "_modal-window.css";
-@import "_main-nav.css";
-@import "_main-panel.css";
-@import "_gems.css";
+/* Grids Layer */
+@import "grids/_app-layout.css" layer(grids);
+@import "grids/_columns.css" layer(grids);
+@import "grids/_dashboard-grid.css" layer(grids);
+@import "grids/_everylayout.css" layer(grids);
 
-@import "_breadcrumbs.css";
-@import "_chip.css";
-@import "_semaforo.css";
-@import "_profile-pic.css";
-@import "_logo.css";
+/* Components Layer - Forms */
+@import "components/forms/_forms-base.css" layer(components);
+@import "components/forms/_forms-panel.css" layer(components);
+@import "components/forms/_forms-field.css" layer(components);
+@import "components/forms/_forms-group.css" layer(components);
+@import "components/forms/_forms-custom.css" layer(components);
+@import "components/forms/_forms-options.css" layer(components);
 
-@import "_collapse.css";
-@import "_card.css";
-@import "_dock-message.css";
-@import "_feed-message.css";
+/* Components Layer */
+@import "components/_breadcrumbs.css" layer(components);
+@import "components/_button.css" layer(components);
+@import "components/_card.css" layer(components);
+@import "components/_chip.css" layer(components);
+@import "components/_collapse.css" layer(components);
+@import "components/_logo.css" layer(components);
+@import "components/_main-panel.css" layer(components);
+@import "components/_profile-pic.css" layer(components);
 
-@import "_sidebar-left.css";
-@import "_sidebar-right.css";
+/* Modules Layer - Tables */
+@import "modules/tables/_table.css" layer(modules);
+@import "modules/tables/_listagem.css" layer(modules);
+@import "modules/tables/_listagem-planilha.css" layer(modules);
+@import "modules/tables/_listagem-config.css" layer(modules);
+@import "modules/tables/_log.css" layer(modules);
+@import "modules/tables/_semaforo.css" layer(modules);
 
-@import "_popover-mappings.css";
+/* Modules Layer */
+@import "modules/_calendar.css" layer(modules);
+@import "modules/_dock-message.css" layer(modules);
+@import "modules/_feed-message.css" layer(modules);
+@import "modules/_modal-window.css" layer(modules);
+@import "modules/_popover-menu.css" layer(modules);
+@import "modules/_tabs.css" layer(modules);
 
+/* Sections Layer */
+@import "sections/_gems.css" layer(sections);
+@import "sections/_main-nav.css" layer(sections);
+@import "sections/_sidebar-left.css" layer(sections);
+@import "sections/_sidebar-right.css" layer(sections);
+
+/* Utils Layer */
+@import "utils/_color-utils-background-color.css" layer(utils);
+@import "utils/_color-utils-color.css" layer(utils);
+@import "utils/_color-utils-border-color.css" layer(utils);
+@import "utils/_popover-mappings.css" layer(utils);
+@import "utils/_space-utils.css" layer(utils);
+
+@import "utils/_utils.css" layer(utils);
+
+/* Pattern Library Layer */
+@import "_pattern-lib.css" layer(pattern-lib);
+
+/* Development Styles */
 @import "_dev.css";
-@import "_pattern-lib.css";

@@ -34,13 +34,26 @@
  * - "3" or "half": Takes up 1/2 of the grid width (3 columns) 
  * - "4" or "two-thirds": Takes up 2/3 of the grid width (4 columns)
  */
- 
+
 .dashboard-grid__item[data-size="1"],
-.dashboard-grid__item[data-size="sixth"] { grid-column: span 1; }
+.dashboard-grid__item[data-size="1/6"] { grid-column: span 1; }
+
 .dashboard-grid__item[data-size="2"],
-.dashboard-grid__item[data-size="third"] { grid-column: span 2; }
+.dashboard-grid__item[data-size="third"],
+.dashboard-grid__item[data-size="one-third"],
+.dashboard-grid__item[data-size="1/3"] { grid-column: span 2; }
+
 .dashboard-grid__item[data-size="3"],
-.dashboard-grid__item[data-size="half"] { grid-column: span 3; }
+.dashboard-grid__item[data-size="1/2"],
+.dashboard-grid__item[data-size="half"],
+.dashboard-grid__item[data-size="one-half"] { grid-column: span 3; }
+
 .dashboard-grid__item[data-size="4"],
+.dashboard-grid__item[data-size="2/3"],
 .dashboard-grid__item[data-size="two-thirds"] { grid-column: span 4; }
+
+.dashboard-grid__item[data-size="5"] { grid-column: span 5; }
+
+.dashboard-grid__item[data-size="6"],
+.dashboard-grid__item[data-size="full"] { grid-column: span 6; }
 
