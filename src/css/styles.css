@@ -39,10 +39,10 @@
 /* Modules Layer - Tables */
 @import "modules/tables/_table.css" layer(modules);
 @import "modules/tables/_listagem.css" layer(modules);
-@import "modules/tables/_listagem-planilha.css" layer(modules);
-@import "modules/tables/_listagem-config.css" layer(modules);
+@import "modules/tables/_planilha.css" layer(modules);
 @import "modules/tables/_log.css" layer(modules);
 @import "modules/tables/_semaforo.css" layer(modules);
+@import "modules/tables/_table-overrides.css" layer(modules);
 
 /* Modules Layer */
 @import "modules/_calendar.css" layer(modules);
@@ -51,6 +51,7 @@
 @import "modules/_modal-window.css" layer(modules);
 @import "modules/_popover-menu.css" layer(modules);
 @import "modules/_tabs.css" layer(modules);
+@import "modules/dashboards/_dash-1.css" layer(modules);
 
 /* Sections Layer */
 @import "sections/_gems.css" layer(sections);
@@ -64,6 +65,7 @@
 @import "utils/_color-utils-border-color.css" layer(utils);
 @import "utils/_popover-mappings.css" layer(utils);
 @import "utils/_space-utils.css" layer(utils);
+@import "utils/_divider.css" layer(utils);
 
 @import "utils/_utils.css" layer(utils);
 

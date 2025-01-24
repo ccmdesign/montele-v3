@@ -1,0 +1,10 @@
+[class*="divider:"] {
+  --_divider-color: var(--base-color-20-tint);
+  --_divider-type: solid;
+  --_divider-width: 1px;
+}
+
+.divider\:top { border-top: var(--_divider-width) var(--_divider-type) var(--_divider-color); }
+.divider\:right { border-right: var(--_divider-width) var(--_divider-type) var(--_divider-color); }
+.divider\:bottom { border-bottom: var(--_divider-width) var(--_divider-type) var(--_divider-color); }
+.divider\:left { border-left: var(--_divider-width) var(--_divider-type) var(--_divider-color); }
