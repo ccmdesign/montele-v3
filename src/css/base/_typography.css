@@ -63,12 +63,12 @@
     font-size: var(--size-0);
   }
 
-  a {
+  a:not([class]) {
     color: var(--link-color, #007bff);
     text-decoration: none;
   }
 
-  a:hover {
+  a:not([class]):hover {
     text-decoration: underline;
   }
 
