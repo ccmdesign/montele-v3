@@ -1,0 +1,37 @@
+---
+layout: "_layouts/base.njk"
+---
+
+
+<section class="anexos-page | stack">
+  <h1>Anexos</h1>
+
+  <div class="grid">
+    {% for item in anexos.items %}
+    <div class="card card-anexo">
+      <button popovertarget="modal-change-{{ loop.index }}">
+        <img src="{{ item.image }}" alt="{{ item.description }}" loading="lazy">
+        
+        <div class="card-anexo__content">
+          
+          <h3>{{ item.name }}</h3>
+          <time datetime="{{ item.date }}">{{ item.date }}</time>
+        </div>
+      </button>
+
+    </div>
+
+    <dialog id="modal-change-{{ loop.index }}" class="modal-window modal-window--anexo" popover>
+      <img src="{{ item.image }}" alt="{{ item.description }}" loading="lazy">
+      <div class="modal-window__info | stack">
+        <h2>{{ item.name }}</h2>
+        <h4 class="repel">
+          <time datetime="{{ item.date }}">{{ item.date }}</time>
+          <span>{{ item.filesize }}</span>
+        </h4>
+        <p>{{ item.description }}</p>
+      </div>
+    </dialog>
+    {% endfor %}
+  </div>
+
