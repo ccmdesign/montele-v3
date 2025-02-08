@@ -1,37 +1,159 @@
 ---
-layout: "_layouts/app.njk"
+layout: "_layouts/base.njk"
 ---
 
-
 <section class="anexos-page | stack">
-  <h1>Anexos</h1>
+  <div class="form-panel | stack">
+    <header class="form-panel__header">
+      <h2 class="form-panel__title">Anexos</h2>
+    </header>
 
-  <div class="grid">
-    {% for item in anexos.items %}
-    <div class="card card-anexo">
-      <button popovertarget="modal-change-{{ loop.index }}">
-        <img src="{{ item.image }}" alt="{{ item.description }}" loading="lazy">
-        
-        <div class="card-anexo__content">
-          
-          <h3>{{ item.name }}</h3>
-          <time datetime="{{ item.date }}">{{ item.date }}</time>
+    <div id="anexos-list">
+      <section class="form-panel__main | stack">
+        <form class="search-container | form | cluster">
+          <input 
+            class="search" 
+            type="text" 
+            placeholder="Search anexos..."
+            aria-label="Search anexos"
+          >
+          <button class="button sort" data-color="base" data-sort="name" data-split>
+            Sort by name
+          </button>
+          <button class="button sort" data-color="base" data-sort="date" >
+            Sort by date
+          </button>
+        </form>
+
+        <div class="grid list">
+          {% for item in anexos.items %}
+          <div class="card card-anexo list-item">
+            <button popovertarget="modal-change-{{ loop.index }}">
+              <img src="{{ item.image }}" alt="{{ item.description }}" loading="lazy">
+              
+              <div class="card-anexo__content">
+                <h3><span class="name">{{ item.name }}</span></h3>
+                <time><span class="date">{{ item.date }}</span></time>
+                <p class="description" style="display: none;">{{ item.description }}</p>
+              </div>
+            </button>
+          </div>
+
+          <dialog id="modal-change-{{ loop.index }}" class="modal-window modal-window--anexo" popover>
+            <div class="modal-window__img">
+              <img src="{{ item.image }}" alt="{{ item.description }}" loading="lazy">
+            </div>
+            <div class="modal-window__info | stack">
+              <h2>{{ item.name }}</h2>
+              <h4 class="repel">
+                <time datetime="{{ item.date }}">{{ item.date }}</time>
+                <span>{{ item.filesize }}</span>
+              </h4>
+              <p>{{ item.description }}</p>
+              <div class="modal-window__actions">
+                <button class="button" data-color="base" data-visual="unstyled"><div class="icon">arrow_back</div></button>
+                <button class="button" data-color="base" data-visual="unstyled"><div class="icon">arrow_forward</div></button>
+              </div>
+            </div>
+          </dialog>
+          {% endfor %}
         </div>
-      </button>
-
+      </section>
     </div>
-
-    <dialog id="modal-change-{{ loop.index }}" class="modal-window modal-window--anexo" popover>
-      <img src="{{ item.image }}" alt="{{ item.description }}" loading="lazy">
-      <div class="modal-window__info | stack">
-        <h2>{{ item.name }}</h2>
-        <h4 class="repel">
-          <time datetime="{{ item.date }}">{{ item.date }}</time>
-          <span>{{ item.filesize }}</span>
-        </h4>
-        <p>{{ item.description }}</p>
-      </div>
-    </dialog>
-    {% endfor %}
   </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var options = {
+      valueNames: ['name', 'date', 'description'],
+      listClass: 'list',
+      searchClass: 'search'
+    };
+
+    var anexosList = new List('anexos-list', options);
+
+    // Add sort event listeners
+    document.querySelectorAll('.sort').forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent form submission
+        const isAsc = !this.classList.contains('asc');
+        
+        // Reset all buttons to base state
+        document.querySelectorAll('.sort').forEach(btn => {
+          btn.classList.remove('asc', 'desc');
+          btn.setAttribute('data-visual', '');
+          btn.setAttribute('data-color', 'base');
+          btn.setAttribute('data-icon-after', '');
+          btn.querySelector('.sort-icon').textContent = '';
+        });
+
+        // Update active sort button
+        this.classList.add(isAsc ? 'asc' : 'desc');
+        this.setAttribute('data-visual', 'primary');
+        this.setAttribute('data-color', 'primary');
+        this.setAttribute('data-icon-after', isAsc ? 'arrow_upward' : 'arrow_downward');
+        
+        const sortName = this.getAttribute('data-sort');
+        anexosList.sort(sortName, { order: isAsc ? 'asc' : 'desc' });
+      });
+    });
+
+    // Add navigation functionality
+    function setupModalNavigation() {
+      const listItems = document.querySelectorAll('.list-item');
+      
+      listItems.forEach((item, index) => {
+        const modal = document.getElementById(`modal-change-${index + 1}`);
+        const prevButton = modal.querySelector('.modal-window__actions button:first-child');
+        const nextButton = modal.querySelector('.modal-window__actions button:last-child');
+
+        // Previous button
+        prevButton.addEventListener('click', (e) => {
+          e.preventDefault();
+          const prevIndex = index === 0 ? listItems.length - 1 : index - 1;
+          modal.hidePopover();
+          const prevModal = document.getElementById(`modal-change-${prevIndex + 1}`);
+          prevModal.showPopover();
+        });
+
+        // Next button
+        nextButton.addEventListener('click', (e) => {
+          e.preventDefault();
+          const nextIndex = index === listItems.length - 1 ? 0 : index + 1;
+          modal.hidePopover();
+          const nextModal = document.getElementById(`modal-change-${nextIndex + 1}`);
+          nextModal.showPopover();
+        });
+
+        // Update button states based on filtered items
+        anexosList.on('searchComplete', function() {
+          const visibleItems = anexosList.visibleItems;
+          const currentItemIndex = visibleItems.findIndex(item => 
+            item.elm === document.querySelector(`[popovertarget="modal-change-${index + 1}"]`).parentElement
+          );
+
+          // Disable navigation buttons if there's only one visible item
+          if (visibleItems.length <= 1) {
+            prevButton.disabled = true;
+            nextButton.disabled = true;
+            return;
+          }
+
+          // Enable buttons if item is in visible list
+          const isVisible = currentItemIndex !== -1;
+          prevButton.disabled = !isVisible;
+          nextButton.disabled = !isVisible;
+        });
+      });
+    }
+
+    setupModalNavigation();
+  });
+</script>
+
+<style>
+  
+</style>
 

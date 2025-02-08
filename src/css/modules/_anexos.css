@@ -1,0 +1,78 @@
+.anexos-page {
+  padding: var(--space-m-l);
+}
+
+.grid {
+  --_grid-gap: var(--space-s);
+}
+
+.card-anexo {
+  padding: 0 !important;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+
+  img {
+    object-fit: cover;
+    aspect-ratio: 1;
+  }
+
+  button {
+    all: unset;
+  }
+}
+
+.card-anexo__content {
+  position: absolute;
+  padding: var(--space-m-l);
+  background: linear-gradient(to top, rgba(0,0,0,.35), rgba(0,0,0,0));
+  color: white;
+  vertical-align: bottom;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.modal-window--anexo {
+  padding: 0;
+  max-width: 80svw;
+  max-height: 80svh;
+
+
+  &:popover-open {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    
+
+    @media (min-width: 768px) {
+      grid-template-columns: 3fr 1fr;
+      grid-template-rows: 1fr auto;
+    }
+  }
+
+  .modal-window__img {
+    /* overflow: hidden; */
+    img { 
+      object-fit: cover; 
+      object-position: center;
+    }
+  }
+
+  .modal-window__info {
+    background-color: #fff;
+    padding: var(--space-l-xl) var(--space-m-l);
+  }
+
+  .modal-window__actions {
+    display: flex;
+    width: 100%;
+    gap: var(--space-s);
+    justify-content: center;
+  }
+}

@@ -2,54 +2,37 @@
   view-transition-name: --numero-equipamento;
 }
 
-.anexos-page {
-  padding: var(--space-m-l);
+
+
+/* .search-container {
+  width: 100%;
+  margin-block: var(--space-m);
+} */
+
+.search {
+  max-width: 50cqb;
 }
 
-.grid {
-  --_grid-gap: var(--space-s);
+.sort.asc::after {
+  content: "arrow_upward";
 }
 
-.card-anexo {
-  padding: 0;
-  margin: 0;
-  position: relative;
-  overflow: hidden;
-
-  button {
-    all: unset;
-  }
+.sort.desc::after {
+  content: "arrow_downward";
 }
 
-.card-anexo__content {
+/* Hide empty message when no results */
+.list:empty::before {
+  content: 'No results found';
+  grid-column: 1 / -1;
+  padding: var(--space-l);
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+/* Hide description but keep it searchable */
+.description {
   position: absolute;
-  padding: var(--space-m-l);
-  background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
-  color: white;
-  vertical-align: bottom;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-}
-
-.modal-window--anexo {
-  padding: 0;
-  max-width: 80svw;
-  max-height: 80svh;
-
-  &:popover-open {
-    display: grid;
-    grid-template-columns: 1fr 300px;
-  }
-
-  img { object-fit: cover; }
-
-  .modal-window__info {
-    background-color: #fff;
-    padding: var(--space-l-xl) var(--space-m-l);
-  }
+  opacity: 0;
+  pointer-events: none;
 }

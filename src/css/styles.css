@@ -52,6 +52,7 @@
 @import "modules/_popover-menu.css" layer(modules);
 @import "modules/_tabs.css" layer(modules);
 @import "modules/dashboards/_dash-1.css" layer(modules);
+@import "modules/_anexos.css" layer(modules);
 
 /* Sections Layer */
 @import "sections/_gems.css" layer(sections);
