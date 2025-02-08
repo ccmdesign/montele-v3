@@ -100,31 +100,81 @@ layout: "_layouts/base.njk"
       });
     });
 
-    // Add navigation functionality
     function setupModalNavigation() {
       const listItems = document.querySelectorAll('.list-item');
+      let touchStartX = 0;
+      let touchEndX = 0;
       
       listItems.forEach((item, index) => {
         const modal = document.getElementById(`modal-change-${index + 1}`);
         const prevButton = modal.querySelector('.modal-window__actions button:first-child');
         const nextButton = modal.querySelector('.modal-window__actions button:last-child');
 
-        // Previous button
+        function navigateToModal(direction) {
+          const currentIndex = index;
+          let targetIndex;
+
+          if (direction === 'prev') {
+            targetIndex = currentIndex === 0 ? listItems.length - 1 : currentIndex - 1;
+          } else {
+            targetIndex = currentIndex === listItems.length - 1 ? 0 : currentIndex + 1;
+          }
+
+          modal.hidePopover();
+          const targetModal = document.getElementById(`modal-change-${targetIndex + 1}`);
+          targetModal.showPopover();
+        }
+
+        // Touch event handlers
+        modal.addEventListener('touchstart', (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        modal.addEventListener('touchend', (e) => {
+          touchEndX = e.changedTouches[0].screenX;
+          handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+          const swipeThreshold = 50; // minimum distance for a swipe
+          const swipeDistance = touchEndX - touchStartX;
+
+          if (Math.abs(swipeDistance) > swipeThreshold) {
+            // Check if the modal is visible before handling swipe
+            if (!modal.matches(':popover-open')) return;
+
+            if (swipeDistance > 0) {
+              // Swipe right - go to previous
+              navigateToModal('prev');
+            } else {
+              // Swipe left - go to next
+              navigateToModal('next');
+            }
+          }
+        }
+
+        // Button click handlers
         prevButton.addEventListener('click', (e) => {
           e.preventDefault();
-          const prevIndex = index === 0 ? listItems.length - 1 : index - 1;
-          modal.hidePopover();
-          const prevModal = document.getElementById(`modal-change-${prevIndex + 1}`);
-          prevModal.showPopover();
+          navigateToModal('prev');
         });
 
-        // Next button
         nextButton.addEventListener('click', (e) => {
           e.preventDefault();
-          const nextIndex = index === listItems.length - 1 ? 0 : index + 1;
-          modal.hidePopover();
-          const nextModal = document.getElementById(`modal-change-${nextIndex + 1}`);
-          nextModal.showPopover();
+          navigateToModal('next');
+        });
+
+        // Keyboard navigation
+        modal.addEventListener('keydown', (e) => {
+          if (!modal.matches(':popover-open')) return;
+
+          if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            navigateToModal('prev');
+          } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            navigateToModal('next');
+          }
         });
 
         // Update button states based on filtered items
@@ -154,6 +204,14 @@ layout: "_layouts/base.njk"
 </script>
 
 <style>
-  
+  .modal-window--anexo {
+    touch-action: pan-y pinch-zoom;
+    user-select: none;
+  }
+
+  /* Optional: Add visual feedback for touch */
+  .modal-window--anexo.swiping {
+    transition: transform 0.2s ease-out;
+  }
 </style>
 
