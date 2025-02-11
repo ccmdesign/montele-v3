@@ -7,7 +7,9 @@ layout: _layouts/base.njk
   </div>
 
   <main class="app-layout__main">
-    {{ content | safe }}
+    <article class="main-panel">
+      {{ content | safe }}
+    </article>
   </main>
 
   <aside id="sidebar-left" class="app-layout__sidebar-left">
