@@ -6,31 +6,41 @@
 .app-layout {
   display: grid;
   height: 100dvh;
-  grid-template-columns: 64px var(--sidebar-left-width) 1fr var(--sidebar-right-width);
-  grid-template-rows: 64px 1fr;
-  transition: all 0.3s ease;
+
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr 64px;
   grid-template-areas:
+    "cdm"  
+    "main"
+    "gems";
+  
+  
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 64px var(--sidebar-left-width) 1fr var(--sidebar-right-width);
+    grid-template-rows: 64px 1fr;
+    grid-template-areas:
     "gems cdm cdm right"
     "gems main main right";
     /* Temos a cdm e a main repetidas em 2 colunas, pois usamos as colunas 2/3 
        para mostrar a sidebar__left por cima dessa coluna */
+  }
+  transition: all 0.3s ease;  
 }
 
-.app-layout__sidebar-left { 
+/* .app-layout__sidebar-left { 
   transition: all 0.3s ease;
   grid-row: 2/3;
   grid-column: 1/1;
-  /* background-color: var(--base-color-20-tint); */
-}
+} */
 
-.app-layout__sidebar-left[aria-hidden="true"] { 
+/* .app-layout__sidebar-left[aria-hidden="true"] { 
   transform: translateX(-100%);
-  
-}
-.app-layout__sidebar-left[aria-hidden="false"] { 
+} */
+/* .app-layout__sidebar-left[aria-hidden="false"] { 
   grid-column: 2/3; 
   transform: translateX(0);
-}
+} */
 
 .app-layout:has(.app-layout__sidebar-right[aria-hidden="true"]) {
   --sidebar-right-width: 0;
@@ -68,12 +78,12 @@ Não sei se a atual estrutura do layout suporta bem essa ideia.
   background-color: var(--base-color);
   z-index: 1001;
 }
-
+/* 
 .app-layout__sidebar-left {
   max-height: 100dvh;
   overflow-y: auto;
   z-index: 1000;
-}
+} */
 
 .app-layout__main {
   background-color: var(--base-color-02-tint);
@@ -94,3 +104,11 @@ Não sei se a atual estrutura do layout suporta bem essa ideia.
   box-shadow: var(--box-shadow-l);
 }
 
+
+/* Esses elementos são exibidos apenas no desktop */
+.app-layout__cdm,
+.app-layout__sidebar-right {
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
