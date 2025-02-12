@@ -3,9 +3,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  height: 100%;
+  
+  @media (max-width: 1024px) {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 100svw;
+    overflow-x: auto;
+  }
 
+  @media (min-width: 1024px) {
+    flex-direction: column;
+    height: 100%;
+  }
+  
   .icon[aria-active="true"] {
     background-color: color-mix(in srgb, var(--sidebar-left-color) 80%, white);
     color: hsla(var(--white-hsl), 1);
@@ -25,13 +35,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.gems__item {
   overflow: hidden;
   position: relative;
   text-decoration: none;
   cursor: pointer;
+  min-width: 64px;
 }
 
 .gems__item:hover {
@@ -46,13 +54,13 @@ a.gems__item:hover {
   overflow: visible;
 }
 
-.gems__submenu {
+/* .gems__submenu {
   position: absolute;
   width: max-content;
   height: 100dvh;
   top: 0;
   left: 100%;
-}
+} */
 
 .gems--split-bottom {
   margin-bottom: auto;
@@ -60,4 +68,10 @@ a.gems__item:hover {
 
 .gems--split-top {
   margin-top: auto;
+}
+
+.montele-logo {
+  @media (max-width: 1024px) {
+    display: none;
+  }
 }
