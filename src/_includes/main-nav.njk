@@ -8,10 +8,12 @@
       {% endif %}
     </h3> 
   </div>
-  <div class="main-nav__center">  
-    <button popovertarget="submenu-forms" class="button" unstyled >Detalhe</button>
-    <button popovertarget="submenu-listas" class="button" unstyled >Listagem</button>
-    {# A implementação dos dropdowns também utiliza a Popover API. 
+  <div class="main-nav__center">
+    <button class="main-nav__menu-trigger | icon" popovertarget="main-nav-menu">menu</button>
+    <div id="main-nav-menu" class="main-nav__menu" popover>
+      <button popovertarget="submenu-forms" class="button" unstyled >Detalhe</button>
+      <button popovertarget="submenu-listas" class="button" unstyled >Listagem</button>
+      {# A implementação dos dropdowns também utiliza a Popover API. 
         https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/popover
         Vale a pena dar uma lida nela, pois é muito simples e a implementação é bem simples também.
         Nesse caso, utilizamos attr css bem novos chamados anchor-position.
@@ -19,9 +21,13 @@
         Esse tem uma implementação ligeiramente mais complicada, especialmente para que não é familiarizado com CSS.
         Para simplificar, veja o arquivo _popover-mappings.css - nele eu separei a lista de mapeamento dos popovers.
         Podemos ver se não conseguimos automatizar esse mapeamento com algum script. Provavelement usando o PostCSS
-    #}
-    <a class="button" unstyled href="/colors">Colors</a>
-    <a class="button" unstyled href="/dev">Testing</a>
+      #}  
+      <a class="button" unstyled href="/colors">Colors</a>
+      <a class="button" unstyled href="/dev">Testing</a>
+    </div>
+
+    
+    
   </div>
   <div class="main-nav__right">
     <button id="sidebar-action-button" class="button" unstyled><span class="icon" trigger-target="sidebar-right">chat</span></button>
