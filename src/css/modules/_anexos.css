@@ -42,12 +42,14 @@
   padding: 0;
   max-width: 80svw;
   max-height: 80svh;
+  height: 80svh;
+  overflow: hidden;
 
 
   &:popover-open {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr auto;
+    grid-template-rows: 50svh 30svh;
     
 
     @media (min-width: 768px) {
@@ -58,9 +60,19 @@
 
   .modal-window__img {
     /* overflow: hidden; */
+    height: 50svh;
+    width: 100%;
+    @media (min-width: 768px) {
+      height: 80svh;
+    }
     img { 
       object-fit: cover; 
       object-position: center;
+      height: 50svh;
+      width: 100%;
+      @media (min-width: 768px) {
+        height: 80svh;
+      }
     }
   }
 
@@ -68,6 +80,23 @@
     background-color: #fff;
     padding: var(--space-l-xl) var(--space-m-l);
   }
+
+    .modal-window__info > p {
+      flex-grow: 1;
+      flex-shrink: 1;
+      overflow-y: auto;
+      font-size: var(--size-2);
+      @media (min-width: 768px) {
+        font-size: var(--size-0);
+      }
+    }
+
+    .modal-window__info > h2,
+    .modal-window__info > h4,
+    .modal-window__info > div
+     {
+      flex-shrink: 0;
+    }
 
   .modal-window__actions {
     display: flex;
