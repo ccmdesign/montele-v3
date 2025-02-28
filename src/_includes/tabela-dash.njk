@@ -1,0 +1,43 @@
+  <header class="listagem__header stack">
+    <div class="cluster">
+      <h2>{{ title }}</h2>
+      <button data-split class="button" popovertarget="modal-table-filter">Filtros(2)</button>
+    </div>
+
+    <div class="listagem__summary | repel">
+      <div class="h4">Exibindo <strong>31</strong> negócios</div>
+      <div class="h4">Preço de tabela: total <strong>R$ 4.201.194,76</strong></div>
+      <div class="h4">Preço final: total: <strong>R$ 4.159.066,97</strong></div>
+    </div>
+  </header>
+  
+  <div class="table-wrapper">
+
+  <table id="listing" class="table planilha">
+    <tbody>
+      {% for i in garantia.items %}
+      <tr>
+        <td class="id-negocio" data-column="serie-desde" aria-visible>
+          <a href="#" class="numero-equipamento">{{ i.controlevenda.numero_serie | cleanId }}</a>
+        </td>  
+        <td data-column="cliente-negocio" aria-visible>
+          <a href="#" title="{{i.cliente.nome}}" >{{i.cliente.nome}}</a>
+          <a href="#" title="{{ i.nome_do_estabelecimento }}">{{ i.nome_do_estabelecimento | truncate(20)}}</a>
+        </td>
+        <td data-column="fase-alteracao" aria-visible>
+          <span title="{{ i.fase }}">{{ i.fase }}</span>
+          <span title="{{ i.modificacao | formatDate }}">{{ i.modificacao | formatDate }}</span>
+        </td>
+
+        <td data-column="garantia-assinatura" aria-visible>
+          <span>{{ i.controlevenda.expedicao | formatDate }}</span>
+          <span>{{ i.controlevenda.funcionamento | formatDate }}</span>
+        </td>
+        
+        <td class="chat-icon"><span class="sidebar-action-row | icon">chat</span></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% include "src/_includes/_popovers/colunas.njk" %}
+  </div>

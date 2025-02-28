@@ -19,6 +19,9 @@
 .listagem__summary {
   border-block: 1px solid var(--primary-color);
   padding-block: var(--space-s);
+
+  /* Stacks the summary on mobile */
+  @container (max-width: 400px) { display: block; }
 }
 
 .listagem td > *,

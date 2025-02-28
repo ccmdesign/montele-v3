@@ -59,10 +59,18 @@
 }
 
 .stacked-cards {
-  display: flex;
+  display: grid;
+  gap: var(--space-s-m);
+  grid-template-columns: 1fr;
 
-  > * { flex: 1; }
-  > * + * { margin-inline-start: -10px }
+  @container (min-width: 420px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @container (min-width: 768px) {
+    gap: 0;
+    grid-template-columns: repeat(4, 1fr);
+  }
 
   .card {
     isolation: isolate;
@@ -84,11 +92,16 @@
     background-color: var(--fail-color) !important; 
     z-index: 0;
   }
-  
 }
 
 .summary-card {
-  padding-inline-start: calc(var(--base-padding-inline) + 10px) !important; 
+  @container (min-width: 768px) {
+    &:not(:first-child) { 
+      margin-inline-start: calc(-1 * var(--base-padding-inline) - 10px); 
+      padding-inline-start: calc(var(--base-padding-inline) + 28px) !important;
+    }
+  }
+
   color: var(--white-color);
   --_stack-space: var(--space-l) !important;
   
@@ -127,58 +140,52 @@
   }
 }
 
-
-
-
-
 #pie-chart,
 #bar-chart {
   * { font-family: var(--body-font) !important; }
-/* Style for the chart title */
-.highcharts-title {
-  font-size: var(--size-3) !important;
   
-  font-weight: 200 !important;
-  text-align: left !important;
-}
+  /* Style for the chart title */
+  .highcharts-title {
+    font-size: var(--size-3) !important;
+    font-weight: 200 !important;
+    text-align: left !important;
+  }
 
-.highcharts-axis-line {
-  stroke: var(--base-color-20-tint) !important;
-}
+  .highcharts-axis-line {
+    stroke: var(--base-color-20-tint) !important;
+  }
 
-/* Style for the axis labels */
-.highcharts-axis-labels text {
-  font-size: var(--size-0) !important; /* Set the font size for axis labels */
-  /* color: #666; Set the color for axis labels */
-}
+  /* Style for the axis labels */
+  .highcharts-axis-labels text {
+    font-size: var(--size-0) !important; /* Set the font size for axis labels */
+    /* color: #666; Set the color for axis labels */
+  }
 
-/* Style for the tooltip */
-.highcharts-tooltip {
-  /* background-color: #fff; Set background color for tooltip */
-  /* border: 1px solid #ccc; Set border for tooltip */
-  /* padding: 10px; Set padding for tooltip */
-  /* border-radius: 100px; Round the corners of the tooltip */
-}
+  /* Style for the tooltip */
+  .highcharts-tooltip {
+    /* background-color: #fff; Set background color for tooltip */
+    /* border: 1px solid #ccc; Set border for tooltip */
+    /* padding: 10px; Set padding for tooltip */
+    /* border-radius: 100px; Round the corners of the tooltip */
+  }
 
-.highcharts-point {
-  /* stroke-width: 0 !important; */
-}
+  .highcharts-point {
+    /* stroke-width: 0 !important; */
+  }
 
-/* @TODO: Vou implementar um esquema com variaveis pra controlar isso melhor */
+  /* @TODO: Vou implementar um esquema com variaveis pra controlar isso melhor */
 
-.highcharts-color-0 { 
-  fill: var(--success-color) !important; 
-  stroke: var(--success-color) !important;
+  .highcharts-color-0 { 
+    fill: var(--success-color) !important; 
+    stroke: var(--success-color) !important;
+  }
+  .highcharts-color-1 { 
+    fill: var(--warning-color) !important;
+    stroke: var(--warning-color) !important; 
+  }
+  .highcharts-color-2 { 
+    fill: var(--fail-color) !important;
+    stroke: var(--fail-color) !important;
+  }
+  /* Removed duplicate selectors */
 }
-.highcharts-color-1 { 
-  fill: var(--warning-color) !important;
-  stroke: var(--warning-color) !important; 
-}
-.highcharts-color-2 { 
-  fill: var(--fail-color) !important;
-  stroke: var(--fail-color) !important;
-}
-.highcharts-color-1 { fill: var(--warning-color) !important; }
-.highcharts-color-2 { fill: var(--fail-color) !important; }
-}
-
