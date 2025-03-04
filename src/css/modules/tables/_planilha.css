@@ -1,21 +1,28 @@
 .planilha {
-  th, td { white-space: nowrap; }
-
+  .botao-colunas {
+    font-size: 2rem;
+    font-weight: 500 !important;
+  }
   
+  th, td { white-space: nowrap; }
+  
+  /* Hides columsn with Priority 2 when screen reachs 550px */
+  [data-column]:not([aria-visible])[data-priority="2"] {
+    @media screen and (max-width: 550px) { display: none; }
+    @media screen and (min-width: 550px) { display: table-cell; }
+  }
+
+  /* Hides columsn with Priority 3 when screen reachs 850px */
+  [data-column]:not([aria-visible])[data-priority="3"] {
+    @media screen and (max-width: 850px) { display: none; }
+    @media screen and (min-width: 850px) { display: table-cell; }
+  }
+
+  /* Shows columsn with [aria-visible] set to true. This overrides the data-priority attribute */
   [data-column][aria-visible] {
     opacity: 1;
     display: table-cell;
     transition: all 0.3s;
   }
-  
-  [data-column]:not([aria-visible]) { 
-    opacity: 0;
-    display: none;
-    transition: all 0.3s;
-  }
-
-  .botao-colunas {
-    font-size: 2rem;
-    font-weight: 500 !important;
-  }
 }
+
