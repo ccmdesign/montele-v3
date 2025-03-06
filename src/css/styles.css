@@ -35,6 +35,7 @@
 @import "components/_logo.css" layer(components);
 @import "components/_main-panel.css" layer(components);
 @import "components/_profile-pic.css" layer(components);
+@import "components/_callout.css" layer(components);
 
 /* Modules Layer - Tables */
 @import "modules/tables/_table.css" layer(modules);
