@@ -1,18 +1,52 @@
 .card {
   --_card-box-shadow: var(--box-shadow-m);
   --_card-border-radius: var(--border-radius-m);
-
-  /* border-radius: var(--base-border-radius); */
-  /* box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); */
-  padding: var(--space-m-l) var(--base-padding-inline);
+  --_card-padding-block: var(--space-m-l);
+  --_card-padding-inline: var(--base-padding-inline);
+  --_card-separator-size: var(--space-m);
+  
   --_stack-space: var(--space-s);
+
+  padding: var(--_card-padding-block) var(--_card-padding-inline);
+
   border-bottom: 1px solid #ddd;
   box-shadow: var(--_card-box-shadow);
   border-radius: var(--_card-border-radius);
   background-color: white;
+
+  hr {
+    margin-block: var(--_card-separator-size);
+    border: 0;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+  }
 }
 
 a.card {
   text-decoration: none;
   color: inherit;
+}
+
+details.card {
+  position: relative;
+
+  summary { 
+    list-style: none; 
+    padding-inline-end: 2rem;
+  }
+  
+  &:after {
+    content: "+";
+    font-size: 2rem;
+    line-height: 1rem;
+    color: var(--primary-color-60-tint);
+    position: absolute;
+    right: var(--_card-padding-inline);
+    top: var(--_card-padding-block);
+  }
+
+  &[open]:after {
+    content: "-";
+  }
+  
 }
