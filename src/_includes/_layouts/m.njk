@@ -1,0 +1,27 @@
+---
+layout: _layouts/base.njk
+---
+<div class="app-layout">  
+  <div class="app-layout__cdm">
+    <h1 class="h1 padding-block:m text-align:center">
+      <a href="#">{{title}}</a>
+    </h1> 
+  </div>
+
+  <main class="app-layout__main">
+    <article class="main-panel">
+      {{ content | safe }}
+    </article>
+  </main>
+
+  <aside class="app-layout__sidebar-right" id="sidebar-right" aria-hidden="{{doca_hidden}}">
+    {% include "sidebar-right.njk" %}
+  </aside>
+  <aside class="app-layout__gems" id="gems">
+    {% include "m-gems.njk" %}
+  </aside>
+
+</div>
+
+{% include "popovers-and-modals.njk" %}
+

@@ -1,5 +1,5 @@
 ---
-layout: "_layouts/app.njk"
+layout: "_layouts/m.njk"
 title: "EL 11781"
 doca_hidden: "false"
 doca_header_hidden: "true"
@@ -9,7 +9,6 @@ doca_header_hidden: "true"
   {# O js para as tabs, precisa do role="tablist" #}
   <h3 class="form__tabs" role="tablist">
     {# As IDs nesses href precisam bater com as ids dos .form-tab para as tabs funcionarem #}  
-    <a href="#section-9">Log</a>
     <a href="#section-1">Identificação</a>
     <a href="#section-2">Follow-ups</a>
     <a href="#section-3">Equipamento</a>
@@ -18,31 +17,9 @@ doca_header_hidden: "true"
     <a href="#section-6">Cases</a>
     <a href="#section-7">Anexos</a>
     <a href="#section-8">Controle</a>
-    
+    <a href="#section-9">Log</a>
   </h3>
 
-  <div id="section9" class="form-tab | stack">
-    <fieldset class="form-panel | stack">
-      {# Form Header #}
-      <header class="form-panel__header">
-        <h2 class="form-panel__title">Log</h2>
-      </header>
-
-      {# Form Main #}
-      <section class="form-panel__main" data-columns="2">
-        {% include "_form-fields/log.njk" %}
-      </section>
-      
-      {# Form Footer #}
-      <footer class="form-panel__footer | cluster">
-        <button class="button" data-visual="primary" data-color="primary" type="submit">Primary</button>
-        <button class="button" data-visual="primary" data-color="secondary" type="submit">Secondary</button>
-        <button class="button" data-visual="primary" data-color="accent" type="submit">Accent</button>
-      </footer>
-    </fieldset>
-  </div>
-  
-  
   <div id="section1" class="form-tab | stack">
     <fieldset class="form-panel | stack">
       {# Form Header #}
@@ -211,7 +188,26 @@ doca_header_hidden: "true"
     </fieldset>
   </div>
 
-  
+  <div id="section9" class="form-tab | stack">
+    <fieldset class="form-panel | stack">
+      {# Form Header #}
+      <header class="form-panel__header">
+        <h2 class="form-panel__title">Log</h2>
+      </header>
+
+      {# Form Main #}
+      <section class="form-panel__main" data-columns="2">
+        {% include "_form-fields/log.njk" %}
+      </section>
+      
+      {# Form Footer #}
+      <footer class="form-panel__footer | cluster">
+        <button class="button" data-visual="primary" data-color="primary" type="submit">Primary</button>
+        <button class="button" data-visual="primary" data-color="secondary" type="submit">Secondary</button>
+        <button class="button" data-visual="primary" data-color="accent" type="submit">Accent</button>
+      </footer>
+    </fieldset>
+  </div>  
   
 </form>  
 
