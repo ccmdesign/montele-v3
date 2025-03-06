@@ -4,6 +4,7 @@
     <div class="cluster">
       <h2>{{ title }}</h2>
       
+      {% include "paginator.njk" %}
       
       <button data-split class="button" popovertarget="modal-table-filter">Filtros(2)</button>
     </div>
@@ -17,7 +18,6 @@
   
   <div class="table-wrapper">
     
-
   <table id="listing" class="table planilha">
     <thead>
       <tr>

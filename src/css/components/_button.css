@@ -24,8 +24,8 @@ input::file-selector-button,
 
   /* Optional Values */
   --_button-border-radius: var(--border-radius-s); /* Fallback to 0 */
-  --_button-border-color: var(--_button-color); /* Fallback to 1px */
-  --_button-border-width: 2px; /* Fallback to 1px */
+  --_button-border-color: color-mix(in srgb, var(--_button-color) 20%, white);
+  --_button-border-width: 1px; /* Fallback to 1px */
   --_button-border-style: var(--base-border-style, solid); /* Fallback to solid */
   --_button-font-weight: var(--font-weight, 400); /* Fallback to 400 */
   --_button-font-size: var(--ui-font-size);

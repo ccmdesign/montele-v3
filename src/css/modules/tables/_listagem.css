@@ -3,6 +3,8 @@
   .table-wrapper {
     padding-top: var(--space-xl);
   }
+
+  a { color: var(--base-color);}
 }
 
 .listagem__header {
@@ -14,6 +16,8 @@
     font-weight: 400;
     color: var(--accent-color);
   }
+
+  
 }
 
 .listagem__summary {
@@ -55,4 +59,9 @@
   &:hover {
     opacity: 1;
   }
+}
+
+.listagem td.id-negocio a { 
+    text-decoration: none;
+    color: var(--primary-color);
 }
