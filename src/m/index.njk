@@ -6,13 +6,12 @@ title: "Chamados Abertos"
 
 <div class="stack padding-block:l">
 {% for i in garantia.items %}
-  <a class="card" href="/equipamentos/">
+  <a class="card" href="/m/equipamento/">
     <header class="repel">
       <hgroup class="stack" style="--_stack-space: var(--space-2xs);">
         <h2><strong>{{i.controlevenda.numero_serie | cleanId}}</strong>{% if i.cliente.nome %}<br>{{i.cliente.nome}} {% endif %}</h2>
         <h3 class="font-weight:300">{{i.localinstalacao.logradouro}} {{i.localinstalacao.numero}} | {{i.localinstalacao.complemento}}, {{i.localinstalacao.bairro}}</h3>
         <h3 class="h4 text-transform:uppercase">{{i.linha}}</h3>
-
       </hgroup>
       <div>
         <span class="chip" data-size="l" data-color="{% if i.status_operante == 'Funcionando' %}green{% else %}red{% endif %}">{{i.status_operante}}</span>

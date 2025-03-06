@@ -1,0 +1,136 @@
+---
+layout: "_layouts/m.njk"
+title: "EL 11781 - Checkin"
+doca_hidden: "true"
+doca_header_hidden: "true"
+---
+
+<form class="form">
+  <header class="callout" data-color="success">
+    <h2><strong>Checkin Aberto - Claudio Mendonca</strong></h2>
+  </header>
+
+  <div class="stack padding-block:l">
+    <details class="card">
+      <summary>
+        <h2 class="h3"><strong>RESIDENCIA PAULA LAMBERT</strong></h2>
+        <p>Rua Ipê Roxo, 94.<br>
+        Condomínio Retiro das Pedras, Brumadinho, MG.</p>
+        <p class="cluster">
+          <span class="chip" data-color="green">Elevador</span>
+          <span class="chip" data-color="green">Ativado - Normal</span>
+        </p>
+      </summary>
+      
+      <hr>
+
+      <h3>Informações do Equipamento</h3>
+      <dl class="stack" style="--_stack-space: var(--space-2xs);">
+        <div class="repel">
+          <dt>Necessidade de peças:</dt>
+          <dd>OK - não precisa identificar peças</dd>
+        </div>
+        <div class="repel">
+          <dt>Status operante:</dt>
+          <dd><span class="chip" data-color="green">Funcionando</span></dd>
+        </div>
+        <div class="repel">
+          <dt>Cobertura de peças:</dt>
+          <dd>Com peça</dd>
+        </div>
+        <div class="repel">
+          <dt>Freq. do atendimento:</dt>
+          <dd>Bimestral</dd>
+        </div>
+        <div class="repel">
+          <dt>Últ. preventiva:</dt>
+          <dd>6 de Março de 2025 às 13:59</dd>
+        </div>
+        <div class="repel">
+          <dt>Últ. corretiva:</dt>
+          <dd>22 de Março de 2024 às 14:56</dd>
+        </div>
+      </dl>
+
+      <hr>
+
+      <h3>Monitoramento online</h3>
+      <dl class="stack" style="--_stack-space: var(--space-2xs);">
+        <div class="repel">
+          <dt>Última viagem:</dt>
+          <dd>06:26 - 06/03/25 - 1 → 2</dd>
+        </div>
+        <div class="repel">
+          <dt>Viagens hoje:</dt>
+          <dd>1</dd>
+        </div>
+        <div class="repel">
+          <dt>Último report:</dt>
+          <dd>13:00 - 06/03/25 - Modo ECO ativado</dd>
+        </div>
+        <div class="repel">
+          <dt>Última emergência:</dt>
+          <dd><span class="chip" data-color="red">18:52 - 24/02/25 - Detecção de zona de porta (ZP)</span></dd>
+        </div>
+      </dl>
+    </details>
+
+    <details class="card stack" name="checkin">
+      <summary class="repel">
+        <h3>Equipamentos de Segurança</h3>
+        <span>(0/15)</span>
+      </summary>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+      <div class=" form-field__options" data-visual="fancy">
+        {% for i in range(1, 15) %}
+        <label class="form-field__option">
+          <input type="checkbox" name="check{{ i }}">
+          <span>Item de verificação {{ i }}</span>
+        </label>
+        {% endfor %}
+      </div>
+      <hr>
+    </details>
+
+    <details class="card stack" name="checkin">
+      <summary class="repel">
+        <h3>Checklist de Verificação 1</h3>
+        <span>(0/15)</span>
+      </summary>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+      <div class=" form-field__options" data-visual="fancy">
+        {% for i in range(1, 15) %}
+        <label class="form-field__option">
+          <input type="checkbox" name="check{{ i }}">
+          <span>Item de verificação {{ i }}</span>
+        </label>
+        {% endfor %}
+      </div>
+      <hr>
+    </details>
+
+    <details class="card stack" name="checkin">
+      <summary class="repel">
+        <h3>Checklist de Verificação 2</h3>
+        <span>(0/15)</span>
+      </summary>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+      <div class=" form-field__options" data-visual="fancy">
+        {% for i in range(1, 15) %}
+        <label class="form-field__option">
+          <input type="checkbox" name="check{{ i }}">
+          <span>Item de verificação {{ i }}</span>
+        </label>
+        {% endfor %}
+      </div>
+      <hr>
+    </details>
+  </div>
+  
+
+
+
+
+</form>  
+
+  
