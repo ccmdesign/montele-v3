@@ -38,7 +38,7 @@
   border-top: var(--base-separator);
 }
 
-.modal-window[open] {
+.modal-window:popover-open {
   display: grid;
 }
 

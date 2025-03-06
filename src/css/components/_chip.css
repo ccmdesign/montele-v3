@@ -4,7 +4,7 @@
 
 .chip {
   --_chip-border-radius: 100px;
-  --_chip-font-size: var(--size-0);
+  --_chip-font-size: var(--size--1);
   --_chip-color: var(--base-color);
   --_chip-background-color-auto: color-mix(in srgb, var(--_chip-color) 15%, var(--white-color));
   /* --_chip-background-color: ; */
@@ -26,6 +26,6 @@
 .chip[data-color="green"]     { --_chip-color: var(--green-color); }
 .chip[data-color="blue"]      { --_chip-color: var(--blue-color); }
 
-.chip[data-size="s"] { --_chip-font-size: var(--size--1); }
+.chip[data-size="s"] { --_chip-font-size: var(--size--2); }
 .chip[data-size="l"] { --_chip-font-size: var(--size-1); }
 

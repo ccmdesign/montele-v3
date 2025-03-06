@@ -9,12 +9,14 @@ title: "Chamados Abertos"
   <a class="card" href="/m/equipamento/">
     <header class="repel">
       <hgroup class="stack" style="--_stack-space: var(--space-2xs);">
-        <h2><strong>{{i.controlevenda.numero_serie | cleanId}}</strong>{% if i.cliente.nome %}<br>{{i.cliente.nome}} {% endif %}</h2>
-        <h3 class="font-weight:300">{{i.localinstalacao.logradouro}} {{i.localinstalacao.numero}} | {{i.localinstalacao.complemento}}, {{i.localinstalacao.bairro}}</h3>
-        <h3 class="h4 text-transform:uppercase">{{i.linha}}</h3>
+        <h2 class="h5"><strong>{{i.controlevenda.numero_serie | cleanId}}</strong></h2>
+        <p>{% if i.cliente.nome %}<br>{{i.cliente.nome}}{% endif %}</p>
+        <p class="h5 font-weight:300">{{i.localinstalacao.logradouro}} {{i.localinstalacao.numero}}{% if i.localinstalacao.complemento %} | {{i.localinstalacao.complemento}}{% endif %}
+          <br>{{i.localinstalacao.bairro}}</p>
+        <p class="h5 text-transform:uppercase">{{i.linha}}</p>
       </hgroup>
       <div>
-        <span class="chip" data-size="l" data-color="{% if i.status_operante == 'Funcionando' %}green{% else %}red{% endif %}">{{i.status_operante}}</span>
+        <span class="chip" data-color="{% if i.status_operante == 'Funcionando' %}green{% else %}red{% endif %}">{{i.status_operante}}</span>
       </div>
     </header>
   </a>

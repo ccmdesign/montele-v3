@@ -30,10 +30,6 @@
   --_stack-space: var(--space-m-l);
 }
 
-.form-panel__title {
-  font-size: var(--size-4);
-}
-
 .form .button {
   --_button-padding-block: calc(var(--size--2));
 }
@@ -42,7 +38,6 @@
 .form__tabs {
   --_tab-color: var(--base-color-60-tint);
   --_tab-border-color: var(--accent-color);
-  font-size: var(--size-3);
   gap: var(--space-m-l);
   justify-content: center;
   border-bottom: 1px solid var(--_tab-border-color);
