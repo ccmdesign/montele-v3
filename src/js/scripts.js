@@ -43,8 +43,22 @@ sideBarActionRow.forEach((row) => {
   row.addEventListener("click", () => {
     const sidebarRight = document.getElementById("sidebar-right");
     const isExpanded = sidebarRight.getAttribute('aria-hidden');
-    sidebarRight.setAttribute('aria-hidden', isExpanded === 'true' ? 'false' : 'true');
+    const willBeExpanded = isExpanded === 'true';
+    sidebarRight.setAttribute('aria-hidden', willBeExpanded ? 'false' : 'true');
     
+    // Add data-status="active" to the clicked element only when sidebar is shown
+    if (willBeExpanded) {
+      row.setAttribute('data-status', 'active');
+    } else {
+      row.removeAttribute('data-status');
+    }
+    
+    // Remove data-status from all rows when sidebar is hidden
+    if (!willBeExpanded) {
+      document.querySelectorAll(".sidebar-action-row").forEach(item => {
+        item.removeAttribute('data-status');
+      });
+    }
   });
 });
 

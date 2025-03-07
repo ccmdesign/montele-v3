@@ -117,13 +117,13 @@
   }
 
   .summary-card__main-number {
-    font-size: calc(var(--size-5) * 1.5);
+    font-size: var(--size-4);
     font-weight: 100;
     text-align: right;
   }
 
   .summary-card__secondary-number {
-    font-size: var(--size-2);
+    font-size: var(--size-1);
     text-align: right;
     grid-column: 2/3;
   }
@@ -146,7 +146,7 @@
   
   /* Style for the chart title */
   .highcharts-title {
-    font-size: var(--size-3) !important;
+    font-size: var(--size-2) !important;
     font-weight: 200 !important;
     text-align: left !important;
   }

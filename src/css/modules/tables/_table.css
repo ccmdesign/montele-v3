@@ -48,5 +48,15 @@ table {
     --_row-background-color: var(--yellow-color);
     --_row-color: var(--yellow-color-70-shade);
   }
-}
+
+  .chat-icon * { 
+    opacity: .25; 
+    transition: opacity .2s ease-in-out;
+    cursor: pointer;
+  }
+  .chat-icon:hover * { opacity: .5; }
+  .chat-icon [data-status="active"] { 
+    opacity: 1; 
+    color: var(--secondary-color);
+  }
 
