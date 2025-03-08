@@ -1,0 +1,21 @@
+.dash-card[data-type="1"] {
+
+  & > * {
+    --_stack-space: var(--space-2xl);
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto auto;
+  }
+
+  .dash-card__summary-quantity,
+  .dash-card__summary-amount,
+  .dash-card__title {
+    grid-column: span 2;
+  }
+}
+
+.dash-card__summary-quantity,
+.dash-card__summary-amount { font-weight: 500; }

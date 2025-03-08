@@ -16,8 +16,8 @@
  * --_dashboard-grid-padding: Controls padding around the entire grid (default: var(--space-l-xl))
  */
 
-  --_dashboard-grid-gap: var(--space-s-m);
-  --_dashboard-grid-padding: var(--space-l-xl);
+  --_dashboard-grid-gap: var(--space-2xs);
+  --_dashboard-grid-padding: var(--space-3xs);
   
   display: grid;
   grid-template-columns: 100%;
