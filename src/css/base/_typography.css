@@ -59,7 +59,7 @@
     font-weight: 500;
   }
 
-  p, dl {
+  p, dl, li {
     font-size: var(--size-0);
   }
 

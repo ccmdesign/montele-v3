@@ -9,20 +9,22 @@
 }
 
 .feed-message {
-  /* adicionei esse calc aqui pois o size-2 estava ficando grande demais. */
   position: relative;
-  font-size: calc(var(--size-1) * 1.1); 
+  
+  
+  /* Ajusta o tamanho do markdown */
+  &, .markdown { font-size: var(--size-0); }
 
   h2 { 
     font-size: inherit; 
     color: var(--base-color-70-tint);
     font-weight: normal;
-    font-size: var(--size-1);
+    font-size: var(--size-0);
   }
 
   h3 { 
-    font-size: var(--size-2); 
-    color: var(--primary-color);
+    font-size: var(--size-0); 
+    color: var(--primary-color);    
   }
 
   .automation-logo { 
@@ -44,7 +46,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-xs);
-  font-size: var(--size-0);
+  font-size: var(--size--1);
   border-bottom: 1px solid var(--base-color-10-tint);
   padding-bottom: var(--space-xs);
 }
@@ -72,7 +74,7 @@
 
 .feed-message__date {
   color: var(--base-color-70-tint);
-  font-size: var(--size-1);
+  font-size: var(--size-0);
   margin-left: auto;
 }
 

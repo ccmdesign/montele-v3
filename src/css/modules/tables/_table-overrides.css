@@ -21,3 +21,7 @@ table {
     .linha { text-transform: uppercase; }
   }
 }
+
+td[data-wrap="true"] { white-space: normal; }
+td[data-wrap="false"] { white-space: nowrap; }
+

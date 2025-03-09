@@ -63,11 +63,11 @@ a.gems__item:hover {
 } */
 
 .gems--split-bottom {
-  margin-bottom: auto;
+  margin-bottom: auto !important;
 }
 
 .gems--split-top {
-  margin-top: auto;
+  margin-top: auto !important;
 }
 
 .montele-logo {

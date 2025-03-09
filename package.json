@@ -20,6 +20,9 @@
   },
   "devDependencies": {
     "postcss": "^8.4.47",
-    "postcss-import": "^16.1.0"
+    "postcss-custom-properties": "^14.0.4",
+    "postcss-extend-rule": "^4.0.0",
+    "postcss-import": "^16.1.0",
+    "postcss-nested": "^7.0.2"
   }
 }
