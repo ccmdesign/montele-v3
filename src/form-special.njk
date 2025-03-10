@@ -13,7 +13,9 @@ doca_hidden: "false"
 
       {# Form Main #}
       <section class="form-panel__main">
-        {% include "_form-fields/form-table.njk" %}
+        <div class="table-wrapper">
+          {% include "_form-fields/form-table.njk" %}
+        </div>
       </section>
       
       {# Form Footer #}
@@ -36,7 +38,9 @@ doca_hidden: "false"
 
       {# Form Main #}
       <section class="form-panel__main">
-        {% include "_form-fields/form-table-status.njk" %}
+        <div class="table-wrapper">
+          {% include "_form-fields/form-table-status.njk" %}
+        </div>
       </section>
       
       {# Form Footer #}

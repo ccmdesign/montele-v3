@@ -3,7 +3,10 @@ table {
   border-spacing: 0;
   empty-cells: show;
   border: 0;
-  width: 100%;
+  /* width: 100%; */
+  max-width: 100vw;
+  overflow-x: auto;
+  
 
   th,
   td {
@@ -59,4 +62,4 @@ table {
     opacity: 1; 
     color: var(--secondary-color);
   }
-
+}
