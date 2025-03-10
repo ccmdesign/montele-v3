@@ -82,33 +82,7 @@
 
 /* Sets the styles for the selected tab handle  */
 
-/* Base table styles that apply to all screen sizes */
-.form-panel__main .table-wrapper {
-  width: 100%;
-}
+/* Base table styles that apply to all screen sizes - removed as they're now in _table.css */
 
-/* Mobile-specific table scrolling */
-@media (max-width: 550px) {
-  .form-panel table {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    min-width: 800px; /* Ensures table has enough width for all columns */
-    table-layout: fixed; /* Helps maintain column widths */
-  }
-  
-  .form-panel__main {
-    overflow-x: visible; /* Allow overflow to be visible */
-    max-width: 100%;
-  }
-  
-  .form-panel__main .table-wrapper {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-}
+/* Mobile-specific table scrolling - removed as they're now in _table.css */
 

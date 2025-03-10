@@ -1,11 +1,12 @@
 .listagem {
-
   .table-wrapper {
     padding-top: var(--space-xl);
   }
 
   a { color: var(--base-color);}
 }
+
+/* Mobile-specific styles are now in _table.css */
 
 .listagem__header {
   .h4 {

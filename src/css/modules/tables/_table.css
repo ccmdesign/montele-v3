@@ -28,8 +28,36 @@ table {
   a:empty { display: none; }
 }
    
-.table-wrapper { container-type: inline-size; }
+/* Base styles for all table wrappers */
+.table-wrapper { 
+  container-type: inline-size; 
+  width: 100%;
+  max-width: 100%;
+}
 
+/* Mobile-specific table scrolling for all tables */
+@media (max-width: 550px) {
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0;
+    padding: 0;
+  }
+  
+  table {
+    min-width: 900px; /* Ensures all columns are visible */
+    table-layout: auto;
+    display: block;
+    width: 100%;
+  }
+  
+  /* Allow parent containers to show overflow */
+  .form-panel__main,
+  .listagem {
+    overflow-x: visible;
+    max-width: 100%;
+  }
+}
 
 .table {
   tr[data-status] {
