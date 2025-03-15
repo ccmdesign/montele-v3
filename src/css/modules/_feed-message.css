@@ -22,9 +22,10 @@
     font-size: var(--size-0);
   }
 
-  h3 { 
+  .feed-message__title { 
     font-size: var(--size-0); 
-    color: var(--primary-color);    
+    color: var(--primary-color); 
+    
   }
 
   .automation-logo { 
@@ -52,6 +53,10 @@
 }
 
 @container main-panel (min-width: 1080px) {
+  .feed-message__title {
+    margin-top: 0;
+  }
+  
   .feed-message__by-line {
     position: absolute;
     flex-direction: column;
