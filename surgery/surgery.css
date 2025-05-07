@@ -1,0 +1,15 @@
+#domain,
+#document { width: 100%; }
+
+#listing { width: fit-content; }
+
+#dock {
+  left: unset;
+  margin-left: unset;
+  right: 10px;
+}
+
+.detail-panel { width: calc(100% - 335px); }
+
+#listing-panel {
+    width: calc(100% - 297px);
