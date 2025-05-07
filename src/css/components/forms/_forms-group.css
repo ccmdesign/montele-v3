@@ -17,7 +17,7 @@
   align-self: stretch;
 }
 
-.form-group :first-child {
+.form-group:not(:has(.multiselect)) :first-child {
   border-radius: var(--_input-border-radius) 0 0 var(--_input-border-radius) !important;
 }
 

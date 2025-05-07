@@ -14,11 +14,8 @@
     --_column-gap: var(--space-xl);
     column-width: auto;
   }
-  .columns[data-columns="2"] {
+  .columns[data-columns="2"] { 
     columns: 2;
-  }
-  .columns[data-columns="3"] {
-    columns: 3;
   }
   .columns[data-columns="4"] {
     columns: 4;

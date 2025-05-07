@@ -1,15 +1,7 @@
-:root {
-  
-}
-
 @layer form-base {
   /* @ToDo: Testar isso
      textarea, select, input { field-sizing: content; }
   */
-
-  
-
-
 
   input[type="hidden"],
   .ui-helper-hidden-accessible {
@@ -34,8 +26,6 @@
   select,
   .multiselect__button,
   textarea {
-    --_input-font-size: var(--size-0);
-    
     display: inline-block;
     vertical-align: middle;
     box-sizing: border-box;
@@ -131,11 +121,6 @@
   input[list]:focus::-webkit-calendar-picker-indicator,
   input[list]:active::-webkit-calendar-picker-indicator {
     display: none !important;
-  }
-
-  .multiselect__button:not(:focus),
-  select:not(:focus) {
-    border-color: transparent;
   }
 
   input[list]:disabled,

@@ -1,14 +1,5 @@
 .form {
   --_form-field-margin-inline: var(--space-xs);
-
-  --_input-border-width: 2px;
-  --_input-border-style: solid;
-  --_input-border-color: var(--_input-background-color);
-  --_input-color: var(--base-color);
-  --_input-background-color: var(--base-color-07-tint);
-  --_input-padding-block: calc(var(--space-xs) + var(--_input-border-width));
-  --_input-padding-inline: var(--space-s);
-  --_input-border-radius: var(--border-radius-s);
 }
 
 

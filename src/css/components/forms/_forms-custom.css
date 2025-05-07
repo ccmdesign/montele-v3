@@ -1,5 +1,5 @@
 .multiselect {
-  padding-block: var(--_input-padding-block);
+  padding-block: var(--_multiselect-padding-block);
   position: relative;
 }
 
@@ -17,11 +17,27 @@
   top: anchor(bottom);
   right: anchor(right);
   width: auto;
-  box-shadow: var(--box-shadow-l);
+  box-shadow: var(--_multiselect-shadow);
   border: 0;
 }
 
+.form-field__select {
+  appearance: none;
+  width: 100%;
+  padding-inline: var(--_input-padding-inline);
+  border: var(--_input-border-width) solid var(--_input-border-color);
+  border-radius: var(--_input-border-radius);
+  font-size: var(--_input-font-size);
+  background-color: var(--_input-background-color);
+  color: var(--_input-color);
+  transition: all 0.2s ease;
+  cursor: pointer;
 
+  &:focus {
+    border-color: var(--_input-border-color-focus);
+    outline: none;
+  }
+}
 
 /* .combo-mutiple-custom {
   display: flex;
