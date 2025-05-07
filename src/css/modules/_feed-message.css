@@ -15,7 +15,6 @@
 
 .feed-message {
   position: relative;
-  margin-left: 160px;
   
   /* Ajusta o tamanho do markdown */
   &, .markdown { font-size: var(--size-0); }
@@ -58,6 +57,11 @@
 }
 
 @container main-panel (min-width: 1080px) {
+  
+  .feed-message {
+    margin-left: 160px;
+  }
+  
   .feed-message__title {
     margin-top: 0;
   }
