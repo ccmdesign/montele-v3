@@ -2,6 +2,11 @@
 
 .feed {
   max-width: 150ch;
+  display: grid;
+}
+
+.feed header {
+  padding-block: var(--space-m);
 }
 
 .feed-message.card {
@@ -10,7 +15,7 @@
 
 .feed-message {
   position: relative;
-  
+  margin-left: 160px;
   
   /* Ajusta o tamanho do markdown */
   &, .markdown { font-size: var(--size-0); }
@@ -46,7 +51,7 @@
 .feed-message__by-line {
   display: flex;
   align-items: center;
-  gap: var(--space-xs);
+  gap: var(--space-3xs);
   font-size: var(--size--1);
   border-bottom: 1px solid var(--base-color-10-tint);
   padding-bottom: var(--space-xs);
@@ -60,7 +65,6 @@
   .feed-message__by-line {
     position: absolute;
     flex-direction: column;
-    padding-top: var(--space-xs);
     width: 200px;
     left: -220px;
     align-items: flex-end;
