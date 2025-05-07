@@ -56,6 +56,7 @@
 @import "modules/dashboards/_custom-chart-bar.css" layer(modules);
 @import "modules/dashboards/_dash-summary.css" layer(modules);
 @import "modules/_anexos.css" layer(modules);
+@import "modules/_transcricao.css" layer(modules);
 
 /* Sections Layer */
 @import "sections/_gems.css" layer(sections);
