@@ -30,7 +30,8 @@
   label:has(input[type="radio"]):before,
   label:has(input[type="checkbox"])::before {
     font-size: 1.8rem;
-    margin-block: 6px;
+    margin-block: var(--space-3xs);
+    margin-inline: var(--space-2xs);
     line-height: 1;
     color: var(--_input-color);
     opacity: 0.4;
@@ -134,3 +135,4 @@
     overflow-y: auto;
   }
 }
+

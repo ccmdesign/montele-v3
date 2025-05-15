@@ -1,31 +1,24 @@
 ---
 layout: "_layouts/app.njk"
+doca_hidden: "true"
 title: "Transcrição"
 ---
 
-<div class="transcricao-view | center">
-  <header class="transcricao-view__header">
-    <h4>06/05/2025</h4>
-    <h2>André Lambert e Claudio Mendonca</h2>
-  </header>
+<div class="transcricao-view">
+  <div class="center">
+    <header class="transcricao-view__header">
+      <h4>06/05/2025</h4>
+      <h2>André Lambert e Claudio Mendonca</h2>
+    </header>
   
-  <main class="transcricao-view__main">
-    <div class="transcricao-view__content">
+    <main class="stack">
       {% for message in transcricao.transcript %}
-      <div class="transcricao-message">
-        <div class="transcricao-message__author">
-          {% if message.speaker == "André Lambert" %}
-          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Profile picture" class="profile-pic">
-          {% else %}
-          <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=3220&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Profile picture" class="profile-pic">
-          {% endif %}
-          <h6>{{ message.speaker }}</h6>
-        </div>
+      <div class="transcricao-message {% if message.speaker_role == 'client' %}card{% endif %}" data-speaker-role="{{ message.speaker_role }}">
+        <h6>{{ message.speaker }}</h6>
         <p>{{ message.message }}</p>
       </div>
       {% endfor %}
-    </div>
-  </main>
-
+    </main>
+  </div>
 </div>
 

@@ -19,7 +19,7 @@
 .form-field {
   display: grid;
   /* o 36ch controla a largura máxima dos labels do .form-field */
-  grid-template-columns: minmax(20ch, 1fr) 2fr;
+  grid-template-columns: minmax(200px, 1fr) 2fr;
   grid-template-rows: auto auto;
   grid-template-areas:
     "label input"

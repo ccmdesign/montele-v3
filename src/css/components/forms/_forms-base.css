@@ -135,11 +135,30 @@
 /* This form component is also set by the .button styles. Look at _button.css file for the full styles */
 input[type="file"] {
   background-color: var(--_input-background-color);
+  border: var(--_input-border-width) solid var(--_input-border-color);
   border-radius: var(--_input-border-radius);
   width: 100%;
+  padding: 0 var(--_input-padding-inline) 0 0;
+  color: var(--_input-color);
+  font-size: var(--_input-font-size);
+  transition: all 0.2s ease;
 }
 
 input::file-selector-button {
   margin-inline-end: var(--space-xs);
+  margin-block: -1px;
+  margin-inline-start: -1px;
   background-color: var(--white-color) !important;
+  border: var(--_input-border-width) solid var(--_input-border-color);
+  border-radius: var(--_input-border-radius);
+  padding: calc(var(--space-xs) + 1px) calc(var(--space-s) + 1px) !important;
+  color: var(--_input-color);
+  font-size: var(--_input-font-size);
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    --_input-border-color: var(--_input-border-color-hover);
+    --_input-background-color: var(--_input-background-color-hover);
+  }
 }

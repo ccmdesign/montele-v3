@@ -24,7 +24,7 @@
 .form-field__select {
   appearance: none;
   width: 100%;
-  padding-inline: var(--_input-padding-inline);
+  padding: calc(var(--space-xs) + 2px) calc(var(--space-s) + 2px);
   border: var(--_input-border-width) solid var(--_input-border-color);
   border-radius: var(--_input-border-radius);
   font-size: var(--_input-font-size);
@@ -32,10 +32,17 @@
   color: var(--_input-color);
   transition: all 0.2s ease;
   cursor: pointer;
+  font-weight: 200;
 
   &:focus {
     border-color: var(--_input-border-color-focus);
     outline: none;
+  }
+
+  option {
+    color: var(--_input-color);
+    font-size: var(--_input-font-size);
+    font-weight: 200;
   }
 }
 

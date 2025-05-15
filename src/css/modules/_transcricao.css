@@ -1,14 +1,15 @@
 .transcricao-view {
-
 }
 
 .transcricao-view__header {
   margin-bottom: var(--space-xl);
 }
 
-.transcricao-view__content {
+.transcricao-view {
+  --_stack-space: var(--space-s);
   padding-bottom: var(--space-xl);
   display: flex;
+  width: 100%;
   flex-direction: column;
   gap: var(--space-l);
   align-items: start;
@@ -17,12 +18,8 @@
 }
 
 .transcricao-message {
-  display: grid;
-  grid-template-columns: 120px 1fr;
   gap: var(--space-m);
-  align-items: center;
-  justify-items: center;
-
+  padding-inline: var(--base-padding-inline);
   > * {
     padding: 0;
     margin: 0;
@@ -31,16 +28,11 @@
   p {
     max-width: 40ch;
   }
-}
 
-.transcricao-message__author {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  width: 100%;
-
-  .profile-pic {
-    width: 40px;
-    height: 40px;
+  &.card {
+    margin-top: var(--space-xl);
   }
 }
+
+.transcricao-message[data-speaker-role="client"] h6 { color: var(--accent-color); }
+.transcricao-message[data-speaker-role="staff"] h6 { color: var(--primary-color); }
